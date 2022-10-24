@@ -1,12 +1,229 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangart</title>
+  <meta charset="utf-8">
+  <!-- le tag viewport est necessaire pour un affichage correct sur mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="design.css"/>
+  
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
+  <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md topbar">
+              <h4 class="toptitle">Réservez votre billet </h4>
+              <h4 class="toptitle viptext">VIP</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md navigation">
+              <div class="divLogo">
+                <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+              </div>
+              <ul class="menu">
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Programme</a></li>
+                <li><a href="">Lieu & Horaires</a></li>
+                <li><a href="">Concours</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+              <div class="profil">
+                <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                <h4>Se connecter</h4>
+              </div>
+            </div>
+        </div>
+    </div>
+  </header>
+  <div class="swiper swiper1" id="swiper1">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/slide1.jpg" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/slide2.jpg" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/slide3.jpg" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/slide4.jpg" alt="">
+      </div>
+
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="info">
+    <h3 class="info_title">DU STREETART HORS-NORME</h3>
+    <div class="line"></div>
+    <p class="info_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+      posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+      odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+      sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+  </div>
+  <div class="swiper swiper2" id="swiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/slide1-2.jpg" alt="">
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+            posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.
+            </br></br>
+            Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+        </div>
+      </div>
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/slide2-2.jpg" alt="">
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+            posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.
+            </br></br>
+            Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/slide3-2.jpg" alt="">
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+            posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.
+            </br></br>
+            Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/slide4-2.jpg" alt="">
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+            posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.
+            </br></br>
+            Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+            odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+            sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+  </div>
+  <div class="info2">
+    <h3 class="info_title">DÉCOUVREZ LES INTERVENANTS</h3>
+    <div class="line"></div>
+    <div class="div_btn">
+      <input type="button" class="info_btn" value="Jour 1">
+      <input type="button" class="info_btn" value="Jour 2">
+    </div>
+    <p class="info_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
+      posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
+      odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
+      sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+  </div>
+  <div class="div_intervenants">
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+    <div class="info_intervenants"> 
+      <img class="img_intervenants" src="img/CERCLES.svg" alt="">
+      <div class="text_intervenants">
+        <h4 class="title_intervenants">Nom Prénom</h4>
+        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
+          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="library.js"></script>
 </body>
 </html>
