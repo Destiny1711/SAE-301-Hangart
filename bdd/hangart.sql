@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 24 oct. 2022 à 11:53
+-- Généré le : mar. 25 oct. 2022 à 08:46
 -- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.0
+-- Version de PHP : 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,8 @@ CREATE TABLE `activité` (
   `id_activite` int(11) NOT NULL,
   `nom_activite` varchar(50) DEFAULT NULL,
   `date_activite` date DEFAULT NULL,
-  `horaires_activite` time DEFAULT NULL
+  `horaires_activite` time DEFAULT NULL,
+  `img_activite` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,6 +70,7 @@ CREATE TABLE `intervenants` (
   `prenom_intervenants` varchar(50) DEFAULT NULL,
   `pays_intervenants` varchar(50) DEFAULT NULL,
   `bio_intervenants` varchar(50) DEFAULT NULL,
+  `img_intervenants` text NOT NULL,
   `id_activite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
