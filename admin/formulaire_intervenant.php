@@ -30,7 +30,7 @@
         <!--******************************************************************************-->
         <!--formulaire pour rentrer info sur intervenant-->
 
-            <form method="POST" action="index.php" enctype="multipart/form-data">  
+        <form method="POST" action="index.php" enctype="multipart/form-data">  
 
         <fieldset>
 

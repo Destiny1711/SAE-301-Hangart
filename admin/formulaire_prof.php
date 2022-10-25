@@ -7,6 +7,20 @@
     session_start() ;
     $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
 
+    $requete='SELECT * FROM concours';
+    $resultats = $bdd->query($requete) ;
+    $tabconcours=$resultats->fetchAll() ;
+    $resultats->closeCursor() ;
+
+    $nbconcours=count($tabconcours);
+
+
+    $requete='SELECT * FROM activite';
+    $resultats = $bdd->query($requete) ;
+    $tabAct=$resultats->fetchAll() ;
+    $resultats->closeCursor() ;
+
+    $nbAct=count($tabAct);
 ?>
 
 
@@ -24,17 +38,24 @@
         <?php
         //recuperation donnée profil
         if (isset($_POST['SOUMETTRE'])){
-            $sql='INSERT INTO profil(nom_profil,prenom_profil,email_profil,mdp_profil,adresse_profil,tel_profil,id_profil) VALUES("'.$_POST["nom_prof"].'","'.$_POST["prenom_prof"].'","'.$_POST["email_prof"].'",'.$_POST["mdp_prof"].'","'.$_POST["adresse_prof"].'","'.$_POST["tel_prof"].'","'.$_POST["id_prof"].'")';
+            $sql='INSERT INTO profil(nom_profil,prenom_profil,email_profil,mdp_profil,adresse_profil,tel_profil) VALUES("'.$_POST["nom_profil"].'","'.$_POST["prenom_profil"].'","'.$_POST["email_profil"].'","'.$_POST["mdp_profil"].'","'.$_POST["adresse_profil"].'","'.$_POST["tel_profil"].'")';
             echo $sql;
             $sql=$bdd->query($sql);
             $sql->closeCursor();
+
+            $sql='INSERT INTO participe(id_concours) VALUES("'.$_POST["id_concours"].'")';
+            echo $sql;
+            $sql=$bdd->query($sql);
+            $sql->closeCursor();
+
+
         }
 
         ?>
 
 
         <!--formulaire pour profil-->
-        <form method="POST" action="index.php" enctype="multipart/form-data">  
+        <form method="POST" action="formulaire_prof.php" enctype="multipart/form-data">  
 
         <fieldset>
 
@@ -68,9 +89,21 @@
                 </p>
 
                 <p>
-                    <label for="tel_profil">Mot de passe</label>
+                    <label for="tel_profil">telephone</label>
                     <input type="text" name="tel_profil" >
                 </p>
+
+                <p>
+                    <label for="id_concours">concours</label>
+                    <select name="id_concours">
+                    <?php
+                        for($i=0; $i<$nbconcours; $i++){
+                            echo '<option value="'.$tabconcours[$i]["id_concours"].'">'.$tabconcours[$i]["nom_concours"].'</option>';
+                        }
+                    ?>
+                    </select>
+                </p>
+
 
                 <p>
                     <input type="submit" name="SOUMETTRE" value="Soumettre">

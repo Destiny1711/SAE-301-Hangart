@@ -102,7 +102,7 @@
                         
                         elseif($_FILES["upfiles"]["size"] > $file_max_size):
                             echo "le fichier dépasse la limite autorisée";
-                        else
+                        else:
                             echo "Pas de fichier joint";
                         endif;
           
