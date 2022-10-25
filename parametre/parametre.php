@@ -3,7 +3,7 @@
     //le fichier est relie sur chaque page
     $hote='localhost';
     $utilisateur='root';
-    $mdp='';
+    $mdp=' ';
     $port=3306;
     $nombase='hangart';
 ?>
