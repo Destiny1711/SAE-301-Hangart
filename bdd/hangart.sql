@@ -233,4 +233,20 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+--
+-- insertion des valeurs dans la table 'activité'
+--
+INSERT INTO `activité` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
+VALUES 
+('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'img Grafitti Introduction');
+('2', 'Custom Sneakers Inroduction', '2023-05-27', '10:00:00', 'img Custom Sneakers Inroduction'),
+('3', 'Silkscreen Printing Introduction', '2023-05-27', '10:00:00', 'img Silkscreen Printing Introduction'), 
+('4', 'Hip Hop Introduction', '2023-05-27', '10:00:00', 'img Hip Hop Introduction'),
+('5', 'Nike Lab Introduction', '2023-05-27', '10:00:00', 'img Nike Lab Introduction'),
+('6', 'Concert ', '2023-05-28', '02:00:00', 'img Concert');
+
+--
+--insertion des valeurs du concours dans la table 'concours'
+--
+INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) VALUES ('1', 'Concours VIP', '48:00:00');
 
