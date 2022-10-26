@@ -9,9 +9,9 @@
     </head>
 
     <body>
-        <form action="connexion.php" method="get">
+        <form action="choix.php" method="get">
             <button type="submit">admin</button>
         </form>
     </body>
 
-    </html>
+</html>

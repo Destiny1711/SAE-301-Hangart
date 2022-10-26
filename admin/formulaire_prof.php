@@ -1,5 +1,5 @@
 <?php
-
+    //connexion base de donnée
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
     include("parametre/parametre.php") ;
 
@@ -47,75 +47,67 @@
             echo $sql;
             $sql=$bdd->query($sql);
             $sql->closeCursor();
-
-
         }
-
         ?>
-
 
         <!--formulaire pour profil-->
         <form method="POST" action="formulaire_prof.php" enctype="multipart/form-data">  
 
-        <fieldset>
+            <fieldset>
 
-            <legend>Entrez les informations suivantes (infos profils)</legend>
+                <legend>inscription concours</legend>
 
-            <div class="formulaire" >
+                <div class="formulaire" >
 
-                <p>
-                    <label for="nom_profil">Nom</label>
-                    <input type="text" name="nom_profil" >
-                </p>
+                    <p>
+                        <label for="nom_profil">Nom</label>
+                        <input type="text" name="nom_profil" >
+                    </p>
 
-                <p>
-                    <label for="prenom_profil">Prénom</label>
-                    <input type="text" name="prenom_profil" >
-                </p>
+                    <p>
+                        <label for="prenom_profil">Prénom</label>
+                        <input type="text" name="prenom_profil" >
+                    </p>
 
-                <p>
-                    <label for="email_profil">Adresse mail</label>
-                    <input type="text" name="email_profil" >
-                </p>
+                    <p>
+                        <label for="email_profil">Adresse mail</label>
+                        <input type="text" name="email_profil" >
+                    </p>
 
-                <p>
-                    <label for="mdp_profil">Mot de passe</label>
-                    <input type="text" name="mdp_profil" >
-                </p>
+                    <p>
+                        <label for="mdp_profil">Mot de passe</label>
+                        <input type="text" name="mdp_profil" >
+                    </p>
 
-                <p>
-                    <label for="adresse_profil">Adresse profil</label>
-                    <input type="text" name="adresse_profil" >
-                </p>
+                    <p>
+                        <label for="adresse_profil">Adresse profil</label>
+                        <input type="text" name="adresse_profil" >
+                    </p>
 
-                <p>
-                    <label for="tel_profil">telephone</label>
-                    <input type="text" name="tel_profil" >
-                </p>
+                    <p>
+                        <label for="tel_profil">telephone</label>
+                        <input type="text" name="tel_profil" >
+                    </p>
 
-                <p>
-                    <label for="id_concours">concours</label>
-                    <select name="id_concours">
-                    <?php
-                        for($i=0; $i<$nbconcours; $i++){
-                            echo '<option value="'.$tabconcours[$i]["id_concours"].'">'.$tabconcours[$i]["nom_concours"].'</option>';
-                        }
-                    ?>
-                    </select>
-                </p>
+                    <p>
+                        <label for="id_concours">concours</label>
+                        <select name="id_concours">
+                        <?php
+                            for($i=0; $i<$nbconcours; $i++){
+                                echo '<option value="'.$tabconcours[$i]["id_concours"].'">'.$tabconcours[$i]["nom_concours"].'</option>';
+                            }
+                        ?>
+                        </select>
+                    </p>
 
 
-                <p>
-                    <input type="submit" name="SOUMETTRE" value="Soumettre">
-                    <input type="reset" value="annuler" name="annuler">
-                </p>
-
-                
-            </div>
-        </fieldset>
-
+                    <p>
+                        <input type="submit" name="SOUMETTRE" value="Soumettre">
+                        <input type="reset" value="annuler" name="annuler">
+                    </p>
+                </div>
+            </fieldset>
         </form>
     </body>
-
-    </html>
+</html>
     
