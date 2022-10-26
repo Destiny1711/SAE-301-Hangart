@@ -238,15 +238,48 @@ COMMIT;
 --
 INSERT INTO `activité` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
 VALUES 
-('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'img Grafitti Introduction');
-('2', 'Custom Sneakers Inroduction', '2023-05-27', '10:00:00', 'img Custom Sneakers Inroduction'),
-('3', 'Silkscreen Printing Introduction', '2023-05-27', '10:00:00', 'img Silkscreen Printing Introduction'), 
-('4', 'Hip Hop Introduction', '2023-05-27', '10:00:00', 'img Hip Hop Introduction'),
-('5', 'Nike Lab Introduction', '2023-05-27', '10:00:00', 'img Nike Lab Introduction'),
-('6', 'Concert ', '2023-05-28', '02:00:00', 'img Concert');
+('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'GrafittiIntroduction.png');
+('2', 'Custom Sneakers Inroduction', '2023-05-27', '10:00:00', 'CustomSneakersInroduction.png'),
+('3', 'Silkscreen Printing Introduction', '2023-05-27', '10:00:00', 'SilkscreenPrintingIntroduction.png'), 
+('4', 'Hip Hop Introduction', '2023-05-27', '10:00:00', 'HipHopIntroduction.png'),
+('5', 'Nike Lab Introduction', '2023-05-27', '10:00:00', 'NikeLabIntroduction.png'),
+('6', 'Concert ', '2023-05-28', '02:00:00', 'Concert.png');
 
 --
 --insertion des valeurs du concours dans la table 'concours'
 --
-INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) VALUES ('1', 'Concours VIP', '48:00:00');
+INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) 
+VALUES 
+('1', 'Concours VIP', '48:00:00');
 
+--
+--insertion des valeurs du concours dans la table 'concours'
+--
+INSERT INTO 'intervenants' ('id_intervenants', 'nom_intervenants', 'prenom_intervenants', 'pays_intervenants', 'bio_intervenants', 'img_intervenants', 'id_activite')
+VALUES
+('1', 'Alberni', 'Camille', 'France', '@Camille Alberni, aka Dege, is a graffiti artist from Puy-en-Velay, who has been passionate about art and especially about bomb painting since he was very young. Plasterer-painter entrepreneur and decorator by profession, the young man also one of the brightest graffiti artists in the department and far beyond. You can find it on the Grafitti stand.', 'CamilleAlberni.png', 'Grafitti Introduction'),
+('2', 'Kaes', 'Jay', 'England', '@Jay Kaes is presently working on a creative process that focuses on the interrelation of art and technology. It is about the change of human beings due to technology and its exponential growth, and the art especially reflects the human ability to deal with these changes that affect the way we see ourselves as well as our vision of the future as a society. You can find it on the Grafitti stand.', 'JayKaes.png', 'Grafitti Introduction'),
+('3', 'Rak', 'Natalia', 'Poland', '@Natalia Rak portraits, mostly, women and creates a mystery and metaphor around their stories. New to the streets, she has created some images that are already iconic in the street art world. She’s been mostly recognized for her murals. She will be present on the Grafitti stand.', 'NataliaRak.png', 'Grafitti Introduction'),
+('4', 'Giorgino', 'Francesco Camillo', 'Italy', '@Francesco Camillo Giorgino aka Millo, is an Italian artist who paints large-scale murals featuring locals exploring their urban setting. It uses simple lines in black and white with a few lines of color. He often incorporates architectural elements into his paintings on several floors. You can find it on the Grafitti stand.', 'FrancesCamilloGiorgino.png', 'Grafitti Introduction'),
+('5', 'Lopez', 'Fabio', 'Spain', '@Fabio Lopez known under the pseudonym DOURONE is a Spanish artist who entered the art world at the age of 14.  In 1999, he devoted himself to graffiti in the streets of Madrid, his hometown. You can find it on the Grafitti stand.', 'FabioLopez.png', 'Grafitti Introduction'),
+('6', 'Trasfi', 'Kenza', 'France', '@Knz.tv is an independent artist specialized in the customization of sneakers. Indeed, she was able to combine her two passions: drawing and sneakers and make it her main activity. She will be present on the Sneakers stand.', 'Knztv.png', 'Custom Sneakers Inroduction'),
+('7', 'Kiraya' 'Aida', 'England', '@AfroKickz is an independent artist inspired by Africa and black culture, which she transcribes on her various customs. She will be present on the Sneakers stand.', 'AfroKickz.png', 'Custom Sneakers Inroduction'),
+('8', 'Terzo', 'Marko', 'United States', '@Marko is a young American artist known mainly for his customs for the starts he puts on video on the YouTube platform. You can find it on the Sneakers stand.', 'Marko.png', 'Custom Sneakers Inroduction'),
+('9', 'Bembury', 'Salehe', 'United States', '@Salehe Bembury is a creative by trade. He is most notably making his mark in the world of footwear design. Since 2009, he has applied his Industrial Design degree and interdisciplinary design skills to a diverse array of footwear brands. You can find it on the Sneakers stand.', 'SalaheBembury.png', 'Custom Sneakers Inroduction'),
+('10', 'Esperluette', 'Emma', 'France', ' @Esperluette is a young rising artist from Le Puy-en-Velay, specialized in screen printing. She will be present on the Silkscreen Printing stand.', 'Esperluette.png', 'Silkscreen Printing Introduction'),
+('11', 'Bolino', 'Pakito', 'France', ' @PakitoB olino is a French artist, cartoonist and publisher. His style is a mixture of black romanticism, quirky and grotesque, crossed by punk energy and humor no less black, devastating. You can find it on the Silkscreen Printing stand.', 'PakitoBolino.png', 'Silkscreen Printing Introduction'),
+('12', 'Carbone', 'Aude', 'France', ' @Aude Carbone is a screen printing artist known for her abstract creations, which she describes as a journey into the imagination. She will be present on the Silkscreen Printing stand.', 'AudeCarbone.png', 'Silkscreen Printing Introduction'),
+('13', 'Bourgeois', 'Larry & Laurent', 'France', ' @TheTwins are a duo of dancers-choreographers, specialized in New-Style, a style composing the dances of Hip-hop. You can find them on the Hip Hop stand.', 'LesTwins.png', 'Hip Hop Introduction'),
+('14', 'Merzouki  ', 'Mourad', 'France', ' @Mourad Merzouki is a French choreographer specialized in Hip-Hop. Director of the Centre Chorégraphique de Créteil and Val de Marne, Mourad Merzouki will be present on the Hip Hop stand.', 'MouradMerzouki.png', 'Hip Hop Introduction'),
+('15', 'Robson', 'Wade', 'Australia', '@Wade Robson is young and dynamic, Wade Robson is rocking the under-30 scene in hip hop dance. In 2007, Wade Robson won an Emmy Award for his choreography in the hugely popular television show. You can find it on the Hip Hop stand. ', 'WadeRobson.png', 'Hip Hop Introduction'),
+('16', 'Rémy', 'Batiste', 'France', '@Batiste Rémy is a designer from Avignon working for the brand swoosh, nike. He is known for having participated in the design of the air max + collection. You can find it on the Nike Lab stand. ', 'BatisteRémy.png','Introduction'),
+('17', 'Team', 'Nike Lab', 'England', '@Nike Lab Teamwill be happy to welcome you, to help you customize your most beautiful pieces.', 'NikeLabTeam.png','Introduction');
+
+--
+-- insertion des valeurs dans la table 'lots'
+--
+INSERT INTO 'lots' ('id_lots', 'nom_lots', 'description_lots', 'id_concours')
+VALUES
+('1', 'Painting', 'Try to win the work of the artist of your choice.', '1'),
+('2', 'Nike Outfit', 'Try to win the Nike outfit of your choice.', '1'),
+('3s', 'Sneaker', 'Try to win the Nike Sneakers custom of your choice.', '1');
