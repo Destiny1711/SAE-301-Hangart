@@ -1,5 +1,5 @@
 <?php
-
+    //connexion base de donnée
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
     include("parametre/parametre.php") ;
 
@@ -16,7 +16,6 @@
 
 ?>
 
-
 <!DOCTYPE html>
     <html lang="fr">
     <head>         
@@ -30,64 +29,59 @@
         <!--******************************************************************************-->
         <!--formulaire pour rentrer info sur intervenant-->
 
-        <form method="POST" action="index.php" enctype="multipart/form-data">  
+        <form method="POST" action="choix.php" enctype="multipart/form-data">  
+            <fieldset>
+                <legend>Infos intervenant</legend>
+                <div class="formulaire" >
 
-        <fieldset>
+                    <p>
+                        <label for="nom_inter">Nom intervenant</label>
+                        <input type="text" name="nom_inter" >
+                    </p>
 
-            <legend>Infos intervenant</legend>
+                    <p>
+                        <label for="prenom_inter">Prénom intervenant</label>
+                        <input type="text" name="prenom_inter" >
+                    </p>
 
-            <div class="formulaire" >
+                    <p>
+                        <label for="pays_inter">Pays intervenant</label>
+                        <input type="text" name="pays_inter" >
+                    </p>
 
-                <p>
-                    <label for="nom_inter">Nom intervenant</label>
-                    <input type="text" name="nom_inter" >
-                </p>
+                    <p>
+                        <label for="id_act">activité</label>
+                        <select name="id_act">
+                        <?php
+                            for($i=0; $i<$nbAct; $i++){
+                                echo '<option value="'.$tabAct[$i]["id_activite"].'">'.$tabAct[$i]["nom_activite"].'</option>';
+                            }
+                        ?>
+                        </select>
+                    </p>
 
-                <p>
-                    <label for="prenom_inter">Prénom intervenant</label>
-                    <input type="text" name="prenom_inter" >
-                </p>
+                    <p>
+                        <label for="bio_inter">Bio intervenant</label>
+                        <input type="text" name="bio_inter" >
+                    </p>
 
-                <p>
-                    <label for="pays_inter">Pays intervenant</label>
-                    <input type="text" name="pays_inter" >
-                </p>
+                    <p>
+                        <label for="limage">L'image</label>
+                        <input type="file" name="limage" />(<i> *.jpg *.png</i>)
+                    </p>
 
-                <p>
-                    <label for="id_act">activité</label>
-                    <select name="id_act">
-                    <?php
-                        for($i=0; $i<$nbAct; $i++){
-                            echo '<option value="'.$tabAct[$i]["id_activite"].'">'.$tabAct[$i]["nom_activite"].'</option>';
-                        }
-                    ?>
-                    </select>
-                </p>
-
-                <p>
-                    <label for="bio_inter">Bio intervenant</label>
-                    <input type="text" name="bio_inter" >
-                </p>
-
-                <p>
-                    <label for="limage">L'image</label>
-                    <input type="file" name="limage" />(<i> *.jpg *.png</i>)
-                </p>
-
-                <p>
-                    <input type="submit" name="soumettre" value="Soumettre">
-                    <input type="reset" value="annuler" name="annuler">
-                </p>
-                
-            </div>
-        </fieldset>
+                    <p>
+                        <input type="submit" name="soumettre" value="Soumettre">
+                        <input type="reset" value="annuler" name="annuler">
+                    </p>
+                    
+                </div>
+            </fieldset>
 
         </form>
         <!--******************************************************************************-->
 
         <?php
-
-
         //rentrée des données intervenants dans la bdd
         //verification si il y a une correspondance dans la base de donnee
         $requete='SELECT * FROM intervenants';
@@ -142,12 +136,9 @@
             echo $sql;
             $sql=$bdd->query($sql);
             $sql->closeCursor();
-
         }
-
         ?>
 
     </body>
-
-    </html>
+</html>
     

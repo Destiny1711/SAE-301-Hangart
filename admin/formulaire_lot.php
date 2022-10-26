@@ -1,4 +1,5 @@
 <?php
+    //connexion base de donnée
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
     include("parametre/parametre.php") ;
 
@@ -12,9 +13,7 @@
     $resultats->closeCursor() ;
 
     $nbconcours=count($tabconcours);
-
 ?>
-
 
 <!DOCTYPE html>
     <html lang="fr">
@@ -28,44 +27,39 @@
     <body>       
         <!--**************************************************************************-->
         <!--formulaire pour rentrer info sur activité-->
+        <form method="POST" action="choix.php" enctype="multipart/form-data">  
+            <fieldset>
+            <legend>infos lots</legend>
+                <div class="formulaire" >
 
-        <form method="POST" action="formulaire_lot.php" enctype="multipart/form-data">  
+                    <p>
+                        <label for="nom_lots">Nom lots</label>
+                        <input type="text" name="nom_lots" >
+                    </p>
 
-        <fieldset>
+                    <p>
+                        <label for="desc_lots">Description lots</label>
+                        <input type="text" name="desc_lots" >
+                    </p>
 
-        <legend>infos lots</legend>
+                    <p>
+                            <label for="id_concours">concours</label>
+                            <select name="id_concours">
+                            <?php
+                                for($i=0; $i<$nbconcours; $i++){
+                                    echo '<option value="'.$tabconcours[$i]["id_concours"].'">'.$tabconcours[$i]["nom_concours"].'</option>';
+                                }
+                            ?>
+                            </select>
+                    </p>
 
-        <div class="formulaire" >
+                    <p>
+                        <input type="submit" name="soumettre0" value="Soumettre">
+                        <input type="reset" value="annuler" name="annuler">
+                    </p>
 
-            <p>
-                <label for="nom_lots">Nom lots</label>
-                <input type="text" name="nom_lots" >
-            </p>
-
-            <p>
-                <label for="desc_lots">Description lots</label>
-                <input type="text" name="desc_lots" >
-            </p>
-
-            <p>
-                    <label for="id_concours">concours</label>
-                    <select name="id_concours">
-                    <?php
-                        for($i=0; $i<$nbconcours; $i++){
-                            echo '<option value="'.$tabconcours[$i]["id_concours"].'">'.$tabconcours[$i]["nom_concours"].'</option>';
-                        }
-                    ?>
-                    </select>
-            </p>
-
-            <p>
-                <input type="submit" name="soumettre0" value="Soumettre">
-                <input type="reset" value="annuler" name="annuler">
-            </p>
-
-        </div>
-        </fieldset>
-
+                </div>
+            </fieldset>
         </form>
         <!--**********************************************************************-->
 
@@ -81,6 +75,5 @@
         ?>
 
     </body>
-
-    </html>
+</html>
     

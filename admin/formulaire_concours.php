@@ -1,4 +1,5 @@
 <?php
+    //connexion base de donnée
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
     include("parametre/parametre.php") ;
 
@@ -21,33 +22,27 @@
     <body>       
         <!--**************************************************************************-->
         <!--formulaire pour rentrer info sur activité-->
+        <form method="POST" action="formulaire_choix.php" enctype="multipart/form-data">  
+            <fieldset>
+            <legend>infos concours</legend>
+                <div class="formulaire" >
 
-        <form method="POST" action="formulaire_concours.php" enctype="multipart/form-data">  
+                    <p>
+                        <label for="nom_concours">Nom concours</label>
+                        <input type="text" name="nom_concours" >
+                    </p>
 
-        <fieldset>
+                    <p>
+                        <label for="date_concours">Date concours</label>
+                        <input type="text" name="date_concours" >
+                    </p>
 
-        <legend>infos concours</legend>
-
-        <div class="formulaire" >
-
-            <p>
-                <label for="nom_concours">Nom concours</label>
-                <input type="text" name="nom_concours" >
-            </p>
-
-            <p>
-                <label for="date_concours">Date concours</label>
-                <input type="text" name="date_concours" >
-            </p>
-
-            <p>
-                <input type="submit" name="soumettre" value="Soumettre">
-                <input type="reset" value="annuler" name="annuler">
-            </p>
-
-        </div>
-        </fieldset>
-
+                    <p>
+                        <input type="submit" name="soumettre" value="Soumettre">
+                        <input type="reset" value="annuler" name="annuler">
+                    </p>
+                </div>
+            </fieldset>
         </form>
         <!--**********************************************************************-->
 
@@ -62,5 +57,4 @@
         ?>
 
     </body>
-
-    </html>
+</html>
