@@ -43,10 +43,7 @@
             $sql=$bdd->query($sql);
             $sql->closeCursor();
 
-            $sql='INSERT INTO participe(id_concours) VALUES("'.$_POST["id_concours"].'")';
-            echo $sql;
-            $sql=$bdd->query($sql);
-            $sql->closeCursor();
+
         }
         ?>
 
