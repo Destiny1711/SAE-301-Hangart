@@ -117,7 +117,6 @@
 <!--******************************************************************************-->
 <?php
 //rentrée des données activités dans la bdd
-//recuperation donnée activite
 if (isset($_POST['soumettre1'])) {
         //enregistrement des données d'une activite dans la base de données
             //enregistrement de l'image lié à l'activite
@@ -152,9 +151,12 @@ if (isset($_POST['soumettre1'])) {
                 else:
                     echo "Pas de fichier joint";
                 endif;
+//recuperation des données d'activité
     $sql='INSERT INTO activite(nom_activite,date_activite,horaires_activite,img_activite) VALUES("'.$_POST["nom_act"].'","'.$_POST["date_act"].'","'.$_POST["horaires_act"].'","'.$get_the_file.'")';
     $sql=$bdd->query($sql);
     $sql->closeCursor();
+    $message='Informations envoyées';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
 }
 ?>
     

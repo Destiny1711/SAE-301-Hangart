@@ -87,6 +87,11 @@ a:hover {
     height: 100%;
     width: 100%;
 }
+.formulaire2 {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
 .champs {
     display: flex;
     flex-wrap: wrap;

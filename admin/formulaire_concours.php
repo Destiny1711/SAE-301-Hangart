@@ -41,22 +41,26 @@
             </div>
         </header>
         <div class="containerForm">
-            <!--formulaire pour rentrer info sur activité-->
-            <form method="POST" action="formulaire_act.php" enctype="multipart/form-data"> 
+            <!--formulaire pour rentrer info sur concours-->
+            <form method="POST" action="formulaire_concours.php" enctype="multipart/form-data"> 
                 <div class="blocForm">
                     <h2>INFORMATIONS CONCOURS</h2>
                     <div class="formulaire">
                         <div class="champs">
                             <label for="nom_concours">Nom du concours</label>
-                            <input class="input-group" type="text" name="nom_concours" placeholder="ex : Graffiti">
+                            <input class="input-group" type="text" name="nom_concours">
                         </div>
                         <div class="champs">
-                            <label for="date_concours">Date du concours</label>
+                            <label for="date_act">Date du concours</label>
                             <input class="input-group" type="date" name="date_concours" >
+                        </div>
+                        <div class="champs">
+                            <label for="horaires_concours">Horaire du concours</label>
+                            <input class="input-group" type="time" name="horaires_concours">
                         </div>
                     </div>
                     <div class="envoyer">
-                        <input class="btn1" type="submit" name="soumettre1" value="Envoyer">
+                        <input class="btn1" type="submit" name="soumettre3" value="Envoyer">
                         <input class="btn1" type="reset" name="annuler" value="Annuler"> 
                     </div>
                 </div>
@@ -103,3 +107,14 @@
         </footer>
     </body>
 </html>
+<!--******************************************************************************-->
+<?php
+//recuperation données des concours
+if (isset($_POST['soumettre3'])) {
+    $sql='INSERT INTO concours(nom_concours,date_concours,horaires_concours) VALUES("'.$_POST["nom_concours"].'","'.$_POST["date_concours"].'","'.$_POST["horaires_concours"].'")';
+    $sql=$bdd->query($sql);
+    $sql->closeCursor();
+    $message='Informations envoyées';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+}
+?>

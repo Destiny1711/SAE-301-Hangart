@@ -47,17 +47,17 @@
         </header>
         <div class="containerForm">
             <!--formulaire pour rentrer info sur lots-->
-            <form method="POST" action="formulaire_act.php" enctype="multipart/form-data">  
+            <form method="POST" action="formulaire_lot.php" enctype="multipart/form-data">  
                 <div class="blocForm">
-                    <h2>INFORMATIONS DES LOTS</h2>
-                    <div class="formulaire" >
+                    <h2>INFORMATIONS DU LOT</h2>
+                    <div class="formulaire2" >
                         <div class="champs">
-                            <label for="nom_lots">Nom des lots</label>
+                            <label for="nom_lots">Nom du lot</label>
                             <input class="input-group" type="text" name="nom_lots" >
                         </div>
-                        <div class="champs">
-                            <label for="desc_lots">Description des lots</label>
-                            <input class="input-group" type="text" name="desc_lots" >
+                        <div class="bio-area">
+                            <label for="desc_lots">Description du lot</label>
+                            <textarea class="input-group" id="bio" name="description_lots"></textarea>
                         </div>
                     </div>         
                     <div class="select">
@@ -71,7 +71,7 @@
                         </select>
                     </div>
                     <div class="envoyer">
-                        <input class="btn1" type="submit" name="soumettre2" value="Envoyer">
+                        <input class="btn1" type="submit" name="soumettre4" value="Envoyer">
                         <input class="btn1" type="reset" name="annuler" value="Annuler"> 
                     </div>
                 </div>
@@ -118,12 +118,14 @@
         </footer>
     </body>
 </html>
+<!--******************************************************************************-->
 <?php
-//recuperation donnée lot
-if (isset($_POST['soumettre0'])) {
+//recuperation des données des lots
+if (isset($_POST['soumettre4'])) {
     $sql='INSERT INTO lots(nom_lots,description_lots,id_concours) VALUES("'.$_POST["nom_lots"].'","'.$_POST["description_lots"].'","'.$_POST["id_concours"].'")';
-    echo $sql;
     $sql=$bdd->query($sql);
     $sql->closeCursor();
+    $message='Informations envoyées';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
 }
 ?>

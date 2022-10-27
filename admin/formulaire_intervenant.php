@@ -48,7 +48,7 @@
         </header>
         <div class="containerForm">
             <!--formulaire pour rentrer info sur intervenant-->
-            <form method="POST" action="formulaire_act.php" enctype="multipart/form-data">  
+            <form method="POST" action="formulaire_intervenant.php" enctype="multipart/form-data">  
                 <div class="blocForm">
                     <h2>INFORMATIONS INTERVENANT</h2>
                     <div class="formulaire" >
@@ -134,8 +134,9 @@
         </footer>
     </body>
 </html>
+<!--******************************************************************************-->
 <?php
-//rentrée des données intervenants dans la bdd
+//rentrée des données des intervenants dans la bdd
 //verification si il y a une correspondance dans la base de donnee
 $requete='SELECT * FROM intervenants';
 $resultats = $bdd->query($requete) ;
@@ -179,6 +180,8 @@ if (isset($_POST['soumettre2'])) {
     $sql='INSERT INTO intervenants(nom_intervenants,prenom_intervenants,pays_intervenants,id_activite,bio_intervenants,img_intervenants) VALUES("'.$_POST["nom_inter"].'","'.$_POST["prenom_inter"].'","'.$_POST["pays_inter"].'","'.$_POST["id_act"].'","'.$_POST["bio_inter"].'","'.$get_the_file.'")';
     $sql=$bdd->query($sql);
     $sql->closeCursor();
+    $message='Informations envoyées';
+    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
 }
 ?>
     
