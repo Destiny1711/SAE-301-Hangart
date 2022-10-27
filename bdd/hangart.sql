@@ -171,7 +171,7 @@ ALTER TABLE `profil`
 --
 -- AUTO_INCREMENT pour la table `activité`
 --
-ALTER TABLE `activité`
+ALTER TABLE `activite`
   MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT;
 
 --
