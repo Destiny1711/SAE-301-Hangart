@@ -238,7 +238,7 @@ COMMIT;
 --
 INSERT INTO `activité` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
 VALUES 
-('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'GrafittiIntroduction.png');
+('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'GrafittiIntroduction.png'),
 ('2', 'Custom Sneakers Inroduction', '2023-05-27', '10:00:00', 'CustomSneakersInroduction.png'),
 ('3', 'Silkscreen Printing Introduction', '2023-05-27', '10:00:00', 'SilkscreenPrintingIntroduction.png'), 
 ('4', 'Hip Hop Introduction', '2023-05-27', '10:00:00', 'HipHopIntroduction.png'),
