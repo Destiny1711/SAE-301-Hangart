@@ -1,11 +1,11 @@
 * {
   
-  color:white;
   font: TW CEN MT, sans-serif;
-  font-weight:bold;
   color:black;
   
 }
+
+
 
 .topbar {
   color:white;
@@ -593,6 +593,7 @@ a:hover {
 
 .mb-3 {
   text-transform: uppercase;
+  font-weight: bold;
   font-size: 1vw;
   width:50%;
   padding: 1vw;
@@ -812,7 +813,41 @@ footer > div {
 
 
 /* 
-  
+  COMPTE INFORMATION
 
 
 */
+.body_compte {
+
+  margin:0;
+  padding:0;
+}
+
+.log_form > h2 {
+
+  text-align: center;
+  font-weight: bold;
+
+  width:100%;
+}
+
+
+.div_btn_compte {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modif_btn {
+  
+  width: 10vw;
+  cursor:pointer;
+  border:none;
+  background-color: #fedf87;
+  text-align: center;
+  font-size:1vw;
+  border-radius:1vw;
+  padding:0.5vw;
+}
+
