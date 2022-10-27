@@ -69,7 +69,7 @@ CREATE TABLE `intervenants` (
   `nom_intervenants` varchar(50) DEFAULT NULL,
   `prenom_intervenants` varchar(50) DEFAULT NULL,
   `pays_intervenants` varchar(50) DEFAULT NULL,
-  `bio_intervenants` varchar(50) DEFAULT NULL,
+  `bio_intervenants` varchar(500) DEFAULT NULL,
   `img_intervenants` text NOT NULL,
   `id_activite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -246,16 +246,16 @@ VALUES
 ('6', 'Concert ', '2023-05-28', '02:00:00', 'Concert.png');
 
 --
---insertion des valeurs du concours dans la table 'concours'
+-- insertion des valeurs du concours dans la table 'concours'
 --
 INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) 
 VALUES 
 ('1', 'Concours VIP', '48:00:00');
 
 --
---insertion des valeurs du concours dans la table 'intervenants'
+-- insertion des valeurs du concours dans la table 'intervenants'
 --
-INSERT INTO 'intervenants' ('id_intervenants', 'nom_intervenants', 'prenom_intervenants', 'pays_intervenants', 'bio_intervenants', 'img_intervenants', 'id_activite')
+INSERT INTO `intervenants` (`id_intervenants`, `nom_intervenants`, `prenom_intervenants`, `pays_intervenants`, `bio_intervenants`, `img_intervenants`, `id_activite`)
 VALUES
 ('1', 'Alberni', 'Camille', 'France', '@Camille Alberni, aka Dege, is a graffiti artist from Puy-en-Velay, who has been passionate about art and especially about bomb painting since he was very young. Plasterer-painter entrepreneur and decorator by profession, the young man also one of the brightest graffiti artists in the department and far beyond. You can find it on the Grafitti stand.', 'CamilleAlberni.png', '1'),
 ('2', 'Kaes', 'Jay', 'England', '@Jay Kaes is presently working on a creative process that focuses on the interrelation of art and technology. It is about the change of human beings due to technology and its exponential growth, and the art especially reflects the human ability to deal with these changes that affect the way we see ourselves as well as our vision of the future as a society. You can find it on the Grafitti stand.', 'JayKaes.png', '1'),
@@ -263,7 +263,7 @@ VALUES
 ('4', 'Giorgino', 'Francesco Camillo', 'Italy', '@Francesco Camillo Giorgino aka Millo, is an Italian artist who paints large-scale murals featuring locals exploring their urban setting. It uses simple lines in black and white with a few lines of color. He often incorporates architectural elements into his paintings on several floors. You can find it on the Grafitti stand.', 'FrancesCamilloGiorgino.png', '1'),
 ('5', 'Lopez', 'Fabio', 'Spain', '@Fabio Lopez known under the pseudonym DOURONE is a Spanish artist who entered the art world at the age of 14.  In 1999, he devoted himself to graffiti in the streets of Madrid, his hometown. You can find it on the Grafitti stand.', 'FabioLopez.png', '1'),
 ('6', 'Trasfi', 'Kenza', 'France', '@Knz.tv is an independent artist specialized in the customization of sneakers. Indeed, she was able to combine her two passions: drawing and sneakers and make it her main activity. She will be present on the Sneakers stand.', 'Knztv.png', '2'),
-('7', 'Kiraya' 'Aida', 'England', '@AfroKickz is an independent artist inspired by Africa and black culture, which she transcribes on her various customs. She will be present on the Sneakers stand.', 'AfroKickz.png', '2'),
+('7', 'Kiraya', 'Aida', 'England', '@AfroKickz is an independent artist inspired by Africa and black culture, which she transcribes on her various customs. She will be present on the Sneakers stand.', 'AfroKickz.png', '2'),
 ('8', 'Terzo', 'Marko', 'United States', '@Marko is a young American artist known mainly for his customs for the starts he puts on video on the YouTube platform. You can find it on the Sneakers stand.', 'Marko.png', '2'),
 ('9', 'Bembury', 'Salehe', 'United States', '@Salehe Bembury is a creative by trade. He is most notably making his mark in the world of footwear design. Since 2009, he has applied his Industrial Design degree and interdisciplinary design skills to a diverse array of footwear brands. You can find it on the Sneakers stand.', 'SalaheBembury.png', '2'),
 ('10', 'Esperluette', 'Emma', 'France', ' @Esperluette is a young rising artist from Le Puy-en-Velay, specialized in screen printing. She will be present on the Silkscreen Printing stand.', 'Esperluette.png', '3'),
@@ -278,7 +278,7 @@ VALUES
 --
 -- insertion des valeurs dans la table 'lots'
 --
-INSERT INTO 'lots' ('id_lots', 'nom_lots', 'description_lots', 'id_concours')
+INSERT INTO `lots` (`id_lots`, `nom_lots`, `description_lots`, `id_concours`)
 VALUES
 ('1', 'Painting', 'Try to win the work of the artist of your choice.', '1'),
 ('2', 'Nike Outfit', 'Try to win the Nike outfit of your choice.', '1'),
