@@ -282,4 +282,4 @@ INSERT INTO 'lots' ('id_lots', 'nom_lots', 'description_lots', 'id_concours')
 VALUES
 ('1', 'Painting', 'Try to win the work of the artist of your choice.', '1'),
 ('2', 'Nike Outfit', 'Try to win the Nike outfit of your choice.', '1'),
-('3s', 'Sneaker', 'Try to win the Nike Sneakers custom of your choice.', '1');
+('3', 'Sneaker', 'Try to win the Nike Sneakers custom of your choice.', '1');
