@@ -851,25 +851,206 @@ footer > div {
   padding:0.5vw;
 }
 
+.div_btnp > a {
+
+  width:20%;
+  
+}
+
 .div_btnp {
 
   display: flex;
   width:100%;
   align-items: center;
   justify-content: center;
-  margin:3vw 3vw 0vw 3vw;
+  
 }
 .info_btnp {
-  width:65%;
+  width:100%;
+  
+  font-weight: bold;
   background-color: #fedf87;
   border: none;
-  border-radius:2vw;
-  padding: 0.5vw 2vw 0.5vw 2vw;
+  border-radius:1vw;
+  padding: 0.5vw 1vw 0.5vw 1vw;
   font-size: 1vw;
-  color:white;
+  color:black;
   text-align:center;
-  margin:2vw;
-  margin-top: 5vw;
-  margin-bottom: 10vw;
+  margin: 5vw 1vw 10vw 1vw;
 
+}
+
+
+.info_btnp:hover{
+
+  color:white;
+  background-color: #ffbb00;
+
+}
+
+/* */
+/* */
+/* */
+/* */
+/* FORMULAIRE DE LA PAGE ADMINISTRATION */
+/* */
+/* */
+/* */
+/* */
+
+.containerForm {
+  margin-top: 10vh;
+  margin: 10vh 6.50vw;
+}
+.blocForm {
+  background-color: rgb(248, 248, 248);
+  margin-top: 10vh;
+  padding: 10vh 0vh;
+}
+.blocForm > div {
+  padding-top: 2vh;
+}
+.blocForm > h2 {
+  text-align: center;
+  padding-bottom: 5vh;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size:2vw;
+}
+.formulaire {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.formulaire2 {
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.champs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.bio-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.champs>input, .champs>label {
+  width: 100%;
+}
+.select {
+  display: flex;
+  justify-content: center;
+}
+.upload, .envoyer {
+  display: flex;
+  justify-content: center;
+}
+.input-group {
+  border: 2px solid #e7e7e7;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: .3s;
+  border-color: gray;
+}
+label {
+  font-size: 1.2rem;
+  margin-bottom: 1vh;
+}
+.btn-dl {
+  position: relative;
+  padding: 11px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #FFBB00;
+  border: 0;
+  transition: 0.2s;
+  overflow: hidden;
+}
+.btn-dl input[type = "file"] {
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(3);
+  opacity: 0;
+}
+.btn-dl:hover {
+  background-color: #d9a400;
+}
+.btn1 {
+  padding: 10px 15px;
+  text-align: center;
+  border: none;
+  background: gray;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  margin: 10px;
+}
+.btn1:hover {
+  transform: translateY(-5px);
+  background-color: black;
+}
+a > button {
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background: gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  margin: 2vw;
+}
+a > button:hover {
+  background-color: black;
+}
+.boutons {
+  display: flex;
+  justify-content: space-between;
+}
+a > button {
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background: gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  margin: 2vw;
+}
+a > button:hover {
+  background-color: black;
+}
+.list {
+  margin: 0vw 1vw;
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: gray;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+.list > option {
+  color:white;
+}
+
+.list:hover {
+  
+  color:white;
 }

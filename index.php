@@ -1,3 +1,11 @@
+<?php 
+ //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
+ include("parametre/parametre.php") ;
+
+ //connexion a la base de donnee
+ $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +26,7 @@
     <div class="container-fluid" id="accueil">
         <div class="row">
             <div class="col-md topbar">
-              <h4 class="toptitle" >Réservez votre billet </h4>
+              <h4 class="toptitle" >Book a ticket</h4>
               <img class="toptitle viptext" src="img/brush_vip.png"></h4>
             </div>
         </div>
@@ -28,10 +36,10 @@
                 <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
               </div>
               <ul class="menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#programme">Programme</a></li>
-                <li><a href="#lieu">Lieu & Horaires</a></li>
-                <li><a href="#concours">Concours</a></li>
+                <li><a href="#accueil">Home</a></li>
+                <li><a href="#programme">Program</a></li>
+                <li><a href="#lieu">Location & Schedules</a></li>
+                <li><a href="#concours">Contest</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
               <div class="profil">
@@ -44,9 +52,15 @@
                         echo '<a class="text_profil" href="login.php">Se connecter</a>';
                       } else {
                         echo '<a class="text_profil" href="#">Profil</a>
-                        <ul>
-                          <li><a href="#" class="text_profil">Admin</a></li>
-                          <li><a href="#" class="text_profil">Compte</a></li>
+                        <ul>';
+                        $requete='SELECT * FROM profil WHERE id_profil="1"';
+                        $resultats=$bdd->query($requete);
+                        $tabAdmin = $resultats->fetchAll();
+                        $resultats->closeCursor();
+                        if($_GET['id']==$tabAdmin[0]['id_profil']){
+                          echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
+                        }
+                          echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
                           <li><a href="index.php" class="text_profil">Se déconnecter</a></li>
                         </ul>';
                       }
@@ -56,11 +70,7 @@
                   </ul>
                 </div>
                 <div class="lang_div">
-                <?php 
-                  if(isset($_GET['id'])){
-                    echo '<a href="index_en.php?id='.$_GET['id'].'"><img src="img/lang_en.png" class="lang" alt=""></a>';
-                  } else { echo '<a href="index_en.php"><img src="img/lang_en.png" class="lang" alt=""></a>'; }
-                  ?>
+                  <img src="img/lang_en.png" class="lang" alt="">
                 </div>
               </div>
               
@@ -94,14 +104,14 @@
   </div>
   <div class="swiper-pagination"></div>
   <div class="info">
-    <h3 class="info_title" id="programme">DU STREETART HORS-NORME</h3>
+    <h3 class="info_title" id="programme">OUTSTANDING STREET ART</h3>
     <div class="line"></div>
-    <p class="info_description">Bienvenue à la 1e édition du Hangart lieu de création ouvert sur l’Europe. Le Hangart est un événement de 
-      street art dans lequel des artistes vous initieront à leur art. Il se déroulera dans les entrepôts des transports en commun de 
-      l’agglomération du Puy en Velay où se tiendront les différents stands. Récemment, la flotte de véhicule public de la ville a été 
-      renouvelée, laissant les anciens bus à l’abandon. Nous leur offrons une seconde vie avec cet événement, ils seront au cœur du 
-      weekend, rénové et transformé en stand. Une fois l’événement fini, ils seront ensuite donnés aux artistes pour leur permettre 
-      de poursuivre leur tournée dans les différents pays européens.</p>
+    <p class="info_description">Welcome to the 1st edition of the Hangart place of creation open to Europe. Hangart is a street art event 
+      in which artists will introduce you to their art. It will take place in the public transport warehouses of the agglomeration of 
+      Puy en Velay where the various stands will be held. Recently, the city’s public vehicle fleet has been renewed, leaving the old 
+      buses abandoned. We offer them a second life with this event, they will be at the heart of the weekend, renovated and transformed 
+      into a stand. Once the event is over, they will then be given to the artists to allow them to continue their tour in the different 
+      European countries.</p>
   </div>
   <div class="swiper swiper2" id="swiper2">
     <div class="swiper-wrapper">
@@ -110,12 +120,12 @@
           <div class="divImage_slide2">
             <img class="img_slide2" src="img/slide1-2.jpg" alt="">
           </div>
-          <p>1- Personnalisation Sneaker.
+          <p>1- Custom Sneakers.
             </br></br>
-            C’est une pratique qui consiste à personnaliser ses chaussures. Au cœur du sujet, la personnalisation ne date pas d’hier, 
-            les prémices du custom actuel remontent en réalité aux années 70 lorsque Bill Bowerman, l’un des deux fondateurs de Nike,
-            modifiait lui-même les chaussures de sport des athlètes qu’il entrainait. Aujourd’hui, la pratique a été reprise par de
-            nombreux artistes indépendants, laissant exprimer leur créativité sur des chaussures.</p>
+            It is a practice to customize your shoes. At the heart of the subject, personalization is not new, the beginnings of the 
+            current custom actually go back to the 70s when Bill Bowerman, one of the two founders of Nike, modified the sports shoes 
+            of the athletes he trained. Today, the practice has been taken up by many independent artists, allowing their creativity 
+            to be expressed on shoes.</p>
         </div>
       </div>
       <div class="swiper-slide slide-flex">
@@ -125,10 +135,10 @@
           </div>
           <p>2- Graffiti.
             </br></br>
-            Graffiti est le nom générique donné aux dessins ou inscriptions calligraphiées, peintes, ou tracées de diverses manières sur 
-            un support qui n'est pas prévu pour cela. Certains considèrent le graffiti comme une forme d'art qui mérite d'être exposée 
-            dans des galeries tandis que d'autres le perçoivent comme indésirable. Cette pratique est aujourd’hui réalisée à travers le 
-            monde, les artistes redoublant de créativité pour impressionner par leur art.</p>
+            Graffiti is the generic name given to calligraphic drawings or inscriptions, painted, or drawn in various ways on a medium 
+            that is not intended for this purpose. Some consider graffiti as an art form that deserves to be exhibited in galleries 
+            while others perceive it as undesirable. This practice is now carried out throughout the world, artists redoubling their 
+            creativity to impress with their art..</p>
         </div>
       </div>
 
@@ -137,11 +147,11 @@
           <div class="divImage_slide2">
             <img class="img_slide2" src="img/slide3-2.jpg" alt="">
           </div>
-          <p>3- Sérigraphie.
+          <p>3- Silkscreen Printing.
             </br></br>
-            La sérigraphie est une technique d’imprimerie qui utilise des pochoirs (à l'origine, des écrans de soie) interposés entre 
-            l’encre et le support. Les supports utilisés peuvent être variés (papier, carton, textile, métal, verre, bois, etc.). 
-            Il est aujourd’hui utilisé dans de nombreux domaines..</p>
+            Silkscreen Printing is a printing technique that uses stencils (originally silk screens) interposed between the ink and the 
+            substrate. The supports used can be varied (paper, cardboard, textile, metal, glass, wood, etc.). It is now used in many 
+            fields.</p>
         </div>
       </div>
 
@@ -150,26 +160,11 @@
           <div class="divImage_slide2">
             <img class="img_slide2" src="img/slide4-2.jpg" alt="">
           </div>
-          <p>4- Personnalisation Vêtements (Nike Lab).
+          <p>4- Custom Clothes (Nike Lab).
             </br></br>
-            La mode du fast fashion fait qu’aujourd’hui lorsque vous sortez dans la rue de nombreuses personnes portent les mêmes 
-            styles de vêtements. Le custom de vêtement permet de casser cette uniformisation dans le style, vous permet de porter
-            des pièces uniques et d’ainsi vous démarquer. Désormais, des artistes réalisent de véritables pièces d’art mêlant style 
-            et qualité.</p>
-        </div>
-      </div>
-
-      <div class="swiper-slide slide-flex">
-        <div class="slide-div-flex">
-          <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide4-2.jpg" alt="">
-          </div>
-          <p>5- Hip Hop.
-            </br></br>
-            Le hip-hop est un genre musical de musique populaire caractérisé par un rythme accompagné par son expression musicale : 
-            le rap et de la culture artistique l'entourant créé à New York dans le South Bronx au début des années 1970. 
-            La culture hip-hop connaît 5 disciplines : le Rap (ou MCing), le DJing, le Break dancing (ou b-boying), le Graffiti, 
-              le Beatboxing.</p>
+            The fashion of fast fashion makes that today when you go out on the street many people wear the same styles of clothes. 
+            The custom garment allows to break this uniformity in style, allows you to wear unique pieces and thus to stand out. 
+            From now on, artists produce genuine pieces of art combining style and quality.</p>
         </div>
       </div>
 
@@ -180,7 +175,7 @@
     
   </div>
   <div class="info2">
-    <h3 class="info_title">DÉCOUVREZ LES INTERVENANTS</h3>
+    <h3 class="info_title">DISCOVER THE GUESTS</h3>
     <div class="line"></div>
     <div class="div_btn">
       <input type="button" class="info_btn" value="Jour 1">
@@ -192,81 +187,27 @@
       sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
   </div>
   <div class="div_intervenants">
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
-    <div class="info_intervenants"> 
-      <img class="img_intervenants" src="img/cercles.png" alt="">
-      <img class="pp_intervenants" src="img/pp.png" alt="">
-      <div class="text_intervenants">
-        <h4 class="title_intervenants">Nom Prénom</h4>
-        <p class="bio_intervenants">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. 
-          Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus.</p>
-      </div>
-    </div>
+      <?php 
+        $requete='SELECT * FROM intervenants';
+        $resultats=$bdd->query($requete);
+        $tabIntervenants = $resultats->fetchAll();
+        $resultats->closeCursor();
+        $nbIntervenants = count($tabIntervenants);
+        for($i=1; $i < $nbIntervenants; $i++){
+          echo '<div class="info_intervenants">';
+          echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="">';
+          echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="">';
+          echo '<div class="text_intervenants">
+                  <h4 class="title_intervenants">'.$tabIntervenants[$i]['nom_intervenants'].' '.$tabIntervenants[$i]['prenom_intervenants'].'</h4>
+                  <p class="bio_intervenants">'.$tabIntervenants[$i]['bio_intervenants'].'</p>
+                </div>
+              </div>';
+        }
+      
+      ?>
   </div>
   <div class="section_map">
-    <h3 class="info_title" id="lieu">LIEU & HORAIRES</h3>
+    <h3 class="info_title" id="lieu">LOCATION & SCHEDULES</h3>
     <div class="line"></div>
     <div class="global_map">
       <div class="info_map">
@@ -275,10 +216,10 @@
         </div>
         <div class="text_map">
           <h4 class="title_map">WHERE TO FIND US</h4>
-          <p>Nos équipes seront heureuses de vous accueillir au cours du week-end du 27 au 28 mai au 4 Rte de Coubon, 43700 Brives-Charensac.</p>
+          <p>Our teams will be happy to welcome you during the weekend of May 27 to 28 at 4 Rte de Coubon, 43700 Brives-Charensac.</p>
           <ul>
-            <li>L'équipe du</li>
             <li>Hangart</li>
+            <li>Team</li>
           </ul>
         </div>
         
@@ -287,60 +228,59 @@
     </div>
   </div>
   <div class="section_lots">
-    <h3 class="concours_title" id="concours">PARTICIPEZ AU CONCOURS</h3>
+    <h3 class="concours_title" id="concours">PARTICIPATE IN THE CONTEST</h3>
     <div class="line_lots"></div>
     <div class="bandeau_lots">
-      <h4>LOTS A GAGNER</h4>
+      <h4>PRIZES TO WIN</h4>
     </div>
     <div class="col-md-10 form">
       <form class="index_form">
         
         <div class="mb-3">
-          <label for="" class="form-label">Nom</label>
+          <label for="" class="form-label">Last Name</label>
           <input type="text" class="form-control" aria-describedby="emailHelp">
           
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Prenom</label>
+          <label for="" class="form-label">First Name</label>
           <input type="text" class="form-control">
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Adresse Mail</label>
+          <label for="" class="form-label">Mail Adress</label>
           <input type="email" class="form-control" aria-describedby="emailHelp">
           
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Mot de Passe</label>
+          <label for="" class="form-label">Password</label>
           <input type="password" class="form-control">
         </div>
         
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>
   <footer>
     <div class="footer_left" id="contact">
       <img src="img/logo_blanc.png" alt="">
-      <p>L'événement Hangart se répand dans l’Europe d’ici 2023 et ramène un concept nouveau en accueillant son public dans des entrepôts
-         afin d’être initié à plusieurs activités et notamment personnaliser des bus inutilisés de la ville par des graffitis. 
-         Le but est de rassembler différents artistes venant de plusieurs pays européens et de créer une communauté plus forte 
-         autour du street art.</p>
+      <p>The Hangart event is spreading across Europe by 2023 and brings back a new concept by welcoming its public in warehouses to be 
+        introduced to several activities and in particular customize unused buses of the city by graffiti. The aim is to bring together 
+        different artists from several European countries and create a stronger community around street art.</p>
     </div>
     <div class="footer_center">
       <h3 class="footer_title">LIENS</h3>
       <div class="footer_line"></div>
       <ul class="footer_menu">
-        <li><h5>></h5><a href="#accueil">Accueil</a></li>
-        <li><h5>></h5><a href="#programme">Programme</a></li>
-        <li><h5>></h5><a href="#lieu">Lieu & Horaires</a></li>
-        <li><h5>></h5><a href="#concours">Concours</a></li>
+        <li><h5>></h5><a href="#accueil">Home</a></li>
+        <li><h5>></h5><a href="#programme">Program</a></li>
+        <li><h5>></h5><a href="#lieu">Location & Schedules</a></li>
+        <li><h5>></h5><a href="#concours">Contest</a></li>
       </ul>
     </div>
     <div class="footer_right">
-      <h3 class="footer_title">CONTACTEZ-NOUS</h3>
+      <h3 class="footer_title">CONTACT US</h3>
       <div class="footer_line"></div>
         <p>4 Rte de Coubon, 43700 Brives-Charensac</p>
-        <h4>Tél : 07 81 84 69 90</h4>
-        <h4>Adresse Mail : LeHangart@gmail.com</h4>
+        <h4>Phone number : 07 81 84 69 90<</h4>
+        <h4>Mail Adress : LeHangart@gmail.com</h4>
         <div class="flex_reseaux">
           <img src="img/facebook.png" alt="">
           <img src="img/instagram.png" alt="">

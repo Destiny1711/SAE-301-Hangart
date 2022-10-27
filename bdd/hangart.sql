@@ -234,7 +234,7 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 --
--- insertion des valeurs dans la table 'activité'
+-- insertion des valeurs dans la table `activité`
 --
 INSERT INTO `activité` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
 VALUES 
@@ -246,15 +246,27 @@ VALUES
 ('6', 'Concert ', '2023-05-28', '02:00:00', 'Concert.png');
 
 --
+<<<<<<< Updated upstream
 -- insertion des valeurs du concours dans la table 'concours'
+=======
+-- insertion des valeurs dans la table 'concours'
+>>>>>>> Stashed changes
 --
+
+
 INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) 
 VALUES 
 ('1', 'Concours VIP', '48:00:00');
 
 --
+<<<<<<< Updated upstream
 -- insertion des valeurs du concours dans la table 'intervenants'
 --
+=======
+-- insertion des valeurs dans la table `intervenants`
+--
+
+>>>>>>> Stashed changes
 INSERT INTO `intervenants` (`id_intervenants`, `nom_intervenants`, `prenom_intervenants`, `pays_intervenants`, `bio_intervenants`, `img_intervenants`, `id_activite`)
 VALUES
 ('1', 'Alberni', 'Camille', 'France', '@Camille Alberni, aka Dege, is a graffiti artist from Puy-en-Velay, who has been passionate about art and especially about bomb painting since he was very young. Plasterer-painter entrepreneur and decorator by profession, the young man also one of the brightest graffiti artists in the department and far beyond. You can find it on the Grafitti stand.', 'CamilleAlberni.png', '1'),
@@ -276,7 +288,11 @@ VALUES
 ('17', 'Team', 'Nike Lab', 'England', '@Nike Lab Teamwill be happy to welcome you, to help you customize your most beautiful pieces.', 'NikeLabTeam.png','5');
 
 --
+<<<<<<< Updated upstream
 -- insertion des valeurs dans la table 'lots'
+=======
+-- insertion des valeurs dans la table `lots`
+>>>>>>> Stashed changes
 --
 INSERT INTO `lots` (`id_lots`, `nom_lots`, `description_lots`, `id_concours`)
 VALUES

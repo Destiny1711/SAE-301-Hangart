@@ -1,6 +1,6 @@
 <?php
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
-    include("parametre/parametre.php") ;
+    include("../parametre/parametre.php") ;
 
     //connexion a la base de donnee
     session_start() ;

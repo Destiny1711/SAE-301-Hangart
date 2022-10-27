@@ -15,7 +15,7 @@
     $nbconcours=count($tabconcours);
 
 
-    $requete='SELECT * FROM activité';
+    $requete='SELECT * FROM activite';
     $resultats = $bdd->query($requete) ;
     $tabAct=$resultats->fetchAll() ;
     $resultats->closeCursor() ;
@@ -99,7 +99,7 @@
                 </select>
             </div>
             <p>Déjà un compte ? <a href="login.php">Connectez-vous</a></p>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <input type="submit" class="btn btn-primary">
             <?php 
 
 
@@ -125,6 +125,7 @@ if (isset($_POST['email_profil'])){
     $tel_profil=$_POST['tel_profil'];
     Insert($nom_profil,$prenom_profil,$email_profil,$mdp_profil,$adresse_profil,$tel_profil);
     header('Location: login.php');
+    
   }
 }
 

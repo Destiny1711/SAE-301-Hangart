@@ -1,6 +1,6 @@
 <?php
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
-    include("parametre/parametre.php") ;
+    include("../parametre/parametre.php") ;
     //connexion a la base de donnee
     session_start() ;
     $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
@@ -11,8 +11,8 @@
         <meta charset="utf-8">
         <!-- le tag viewport est necessaire pour un affichage correct sur mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
-        <link href="style-formulaire.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css_bootstrap/bootstrap.min.css" />
+        <link href="../design.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
         <title>Page administrateur</title>
@@ -22,20 +22,52 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md navigation">
-                    <div class="divLogo">
-                        <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
-                    </div>
-                    <ul class="menu">
-                        <li><a href="">Accueil</a></li>
-                        <li><a href="">Programme</a></li>
-                        <li><a href="">Lieu & Horaires</a></li>
-                        <li><a href="">Concours</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                    <div class="profil">
-                        <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
-                        <h4>Se connecter</h4>
-                    </div>
+                        <div class="divLogo">
+                            <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+                        </div>
+                        <ul class="menu">
+                            <li><a href="../index.php#accueil">Accueil</a></li>
+                            <li><a href="../index.php#programme">Programme</a></li>
+                            <li><a href="../index.php#lieu">Lieu & Horaires</a></li>
+                            <li><a href="../index.php#concours">Concours</a></li>
+                            <li><a href="../index.php#contact">Contact</a></li>
+                        </ul>
+                        <div class="profil">
+                            <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                            <div class="compte">
+                            <ul class="profil_list">
+                                <li>
+                                <?php 
+                                if(!isset($_GET['id'])){
+                                    echo '<a class="text_profil" href="../login.php">Se connecter</a>';
+                                } else {
+                                    echo '<a class="text_profil" href="#">Profil</a>
+                                    <ul>';
+                                    $requete='SELECT * FROM profil WHERE id_profil="1"';
+                                    $resultats=$bdd->query($requete);
+                                    $tabAdmin = $resultats->fetchAll();
+                                    $resultats->closeCursor();
+                                    if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                    echo '<li><a href="admin/pagePasserelle.php" class="text_profil">Admin</a></li>';
+                                    }
+                                    echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                                    <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                    </ul>';
+                                }
+                                ?>
+                                
+                                </li>
+                            </ul>
+                            </div>
+                            <div class="lang_div">
+                            <?php 
+                            if(isset($_GET['id'])){
+                                echo '<a href="index_en.php?id='.$_GET['id'].'"><img src="img/lang_en.png" class="lang" alt=""></a>';
+                            } else { echo '<a href="index_en.php"><img src="img/lang_en.png" class="lang" alt=""></a>'; }
+                            ?>
+                            </div>
+                        </div>
+                    
                     </div>
                 </div>
             </div>
@@ -73,17 +105,20 @@
                 </div>
             </form>
             <div class="boutons">
-                <a class="btn3" href="formulaire_lot.php">
+                <?php 
+                echo '
+                <a class="btn3" href="formulaire_lot.php?id='.$_GET['id'].'"">
                     <button>< Retour</button>
                 </a> 
-                <a class="btn2" href="formulaire_intervenant.php">
+                <a class="btn2" href="formulaire_intervenant.php?id='.$_GET['id'].'"">
                     <button>Suivant ></button>
-                </a> 
+                </a> ';
+                ?>
             </div> 
         </div>
         <footer>
-            <div class="footer_left">
-            <img src="img/logo_blanc.png" alt="">
+            <div class="footer_left" id="contact">
+            <img src="../img/logo_blanc.png" alt="">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
                 posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
                 odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
@@ -93,22 +128,22 @@
             <h3 class="footer_title">LIENS</h3>
             <div class="footer_line"></div>
             <ul class="footer_menu">
-                <li><h5>></h5><a href="">Accueil</a></li>
-                <li><h5>></h5><a href="">Programme</a></li>
-                <li><h5>></h5><a href="">Lieu & Horaires</a></li>
-                <li><h5>></h5><a href="">Concours</a></li>
+                <li><h5>></h5><a href="../index.php#accueil">Accueil</a></li>
+                <li><h5>></h5><a href="../index.php#programme">Programme</a></li>
+                <li><h5>></h5><a href="../index.php#lieu">Lieu & Horaires</a></li>
+                <li><h5>></h5><a href="../index.php#concours">Concours</a></li>
             </ul>
             </div>
             <div class="footer_right">
             <h3 class="footer_title">CONTACTEZ-NOUS</h3>
             <div class="footer_line"></div>
                 <p>8 Rue Jean Batiste Fabre, 43000, Le Puy-en-Velay</p>
-                <h4>Tèl :</h4>
-                <h4>Adresse Mail</h4>
+                <h4>Tél :</h4>
+                <h4>Adresse Mail :</h4>
                 <div class="flex_reseaux">
-                <img src="img/facebook.png" alt="">
-                <img src="img/instagram.png" alt="">
-                <img src="img/twitter.png" alt="">
+                <img src="../img/facebook.png" alt="">
+                <img src="../img/instagram.png" alt="">
+                <img src="../img/twitter.png" alt="">
                 </div>
             </div>
         </footer>

@@ -1,5 +1,6 @@
-<?php
+<!--Page racap de lot-->
 
+<?php
     class lots{
         public $nom = "";
         public $desc = "";
@@ -27,11 +28,39 @@
     $resultats->closeCursor() ;
     $nblots=count($tablots);
 
-
     $listlots=array();
-    for ($i=0; $i<$nblots; $i++){
-        $listlots[$i]= new lots ($tablots[$i][1],$tablots[$i][2]);
-
-    }
-    
 ?>
+
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>         
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="author" content="Dieste Sacha" />
+        <meta name="description" content="Connexion Site" />
+        <title>recap lots</title>
+    </head>
+
+    <body>
+        <form action="formulaire_lot.php" method="get">
+            <button type="submit">Ajouter lot</button>
+        </form>
+          
+        <?php
+            for ($i=0; $i<$nblots ; $i++){
+                $listlots[$i]= new lots ($tablots[$i][1],$tablots[$i][2]);
+                echo'
+                <form action="recap_lots.php" method="post">
+                    <button type="submit" name="soumettre'.$i.'" value="Soumettre">supprimer</button>
+                </form>
+                <form action="modif_lots.php" method="get">
+                    <button type="submit" name="renvoi" value="'.$tablots[$i][0].'">modifier</button>
+                </form>';
+                if(isset($_POST['soumettre'.$i])){
+                    $sql='DELETE from lots where id_lots='.$tablots[$i][0];
+                    $sth = $bdd->prepare($sql);
+                    $sth->execute();
+                }
+            }
+        ?>
+    </body>
+</html>

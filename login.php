@@ -3,7 +3,6 @@
  include("parametre/parametre.php") ;
 
  //connexion a la base de donnee
- session_start() ;
  $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
 ?>
 
@@ -24,52 +23,57 @@
 </head>
 <body>
     <div class="col-md-10 div_global_form">
-        <form class="log_form">
+        <form class="log_form" method="POST">
             <div class="mb-3 img_log">
                 <img src="img/logo_hangart.png" class="logo_log" alt="">
             </div>
             <div class="mb-3 div_form">
             <label for="" class="form-label">Adresse Mail</label>
-            <input type="email" class="form-control" aria-describedby="emailHelp">
+            <input type="email" name="email_profil" class="form-control" aria-describedby="emailHelp">
             
             </div>
             <div class="mb-3 div_form">
             <label for="" class="form-label">Mot de Passe</label>
-            <input type="password" class="form-control">
+            <input type="password" name="mdp_profil" class="form-control">
             </div>
             <p>Vous n'avez pas de compte ? <a href="signin.php">Créez un compte</a></p>
             <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
-    </div>
-    <?php
+            <?php
 
       /** Verifie que les champs ne sont pas vides**/
 
-      if (isset($_POST['mail']) && isset($_POST['password'])){
+      if (isset($_POST['email_profil'])){
 
-        $requete='SELECT * FROM user WHERE mail="'.$_POST['mail'].'"';
-        $resultats=$connection->query($requete);
-        $tabUser = $resultats->fetchAll();
+        $requete='SELECT * FROM profil WHERE email_profil="'.$_POST['email_profil'].'"';
+        $resultats=$bdd->query($requete);
+        $tabMail = $resultats->fetchAll();
         $resultats->closeCursor();
-        $nbMail = count($tabUser);
+        $nbMail = count($tabMail);
         if ($nbMail==0){
-          echo "L'email saisit est incorrect";
+          echo "<p style='text-align:center; color:red; padding-top:2vw;'>L'email saisit est incorrect</p>";
         }
-
+        
         /** Execute une requete sql verifiant si le mail saisit existe dans la table*/
 
-        $requete='SELECT * FROM user WHERE password="'.$_POST['password'].'"';
-        $resultats=$connection->query($requete);
-        $tabUser = $resultats->fetchAll();
+        $requete='SELECT * FROM profil WHERE mdp_profil="'.$_POST['mdp_profil'].'"';
+        $resultats=$bdd->query($requete);
+        $tabPassword = $resultats->fetchAll();
         $resultats->closeCursor();
-        $nbPassword = count($tabUser);
+        $nbPassword = count($tabPassword);
         if ($nbPassword==0) {
-          echo "Le mot de passe est incorrect";
+          echo "<p style='text-align:center; color:red;'>Le mot de passe est incorrect</p>";
+        }
+        if ($nbMail==1 && $nbPassword!=0) {
+
+          header('Location: index.php?id='.$tabMail[0]['id_profil']);
         }
       }
 
       ?>
 
+        </form>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>

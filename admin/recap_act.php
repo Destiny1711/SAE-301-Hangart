@@ -1,5 +1,6 @@
-<?php
+<!--Page racap de activite-->
 
+<?php
     class activite{
         public $nom = "";
         public $date = "";
@@ -9,7 +10,7 @@
             $this -> nom = $n;
             $this -> date = $d;
             $this -> horaire = $h;
-            echo'<brnom:'.$this->nom.' date:'.$this->date.'  horaire:'.$this->horaire;
+            echo'<br>nom:'.$this->nom.' date:'.$this->date.'  horaire:'.$this->horaire;
         }
 
     }
@@ -29,15 +30,8 @@
     $resultats->closeCursor() ;
     $nbact=count($tabAct);
 
-
     $listactivite=array();
-    for ($i=0; $i<$nbact; $i++){
-        $listactivite[$i]= new activite ($tabAct[$i][1],$tabAct[$i][2],$tabAct[$i][3]);
-
-    }
 ?>
-
-
 
 <!DOCTYPE html>
     <html lang="fr">
@@ -48,22 +42,24 @@
         <title>recap act</title>
     </head>
 
-    <body>       
-        <form method="POST" action="recap_act.php" enctype="multipart/form-data">  
-
-                <div class="formulaire" >
-                    <p>
-                        <input type="submit" name="soumettre" value="Soumettre">
-                    </p>
-
-                </div>
+    <body>
+        <form action="formulaire_act.php" method="get">
+            <button type="submit">Ajouter activité</button>
         </form>
+        <?php
+            for ($i=0; $i<$nbact ; $i++){
+                $listactivite[$i]= new activite ($tabAct[$i][1],$tabAct[$i][2],$tabAct[$i][3]);
+                echo'<form action="recap_act.php" method="post">
+                    <button type="submit" name="soumettre'.$i.'" value="Soumettre">supprimer</button>
+                </form>';
+                if(isset($_POST['soumettre'.$i])){
+                    $sql='DELETE from activite where id_activite='.$tabAct[$i][0];
+                    $sth = $bdd->prepare($sql);
+                    $sth->execute();
+                }
+            }
+        ?>
     </body>
 </html>
 
-<?php
-        //recuperation donnée lot
-        if (isset($_POST['soumettre'])) {
-            
-        }
-?>
+
