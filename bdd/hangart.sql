@@ -253,7 +253,7 @@ VALUES
 ('1', 'Concours VIP', '48:00:00');
 
 --
---insertion des valeurs du concours dans la table 'concours'
+--insertion des valeurs du concours dans la table 'intervenants'
 --
 INSERT INTO 'intervenants' ('id_intervenants', 'nom_intervenants', 'prenom_intervenants', 'pays_intervenants', 'bio_intervenants', 'img_intervenants', 'id_activite')
 VALUES
