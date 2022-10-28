@@ -263,7 +263,6 @@ VALUES
 -- insertion des valeurs dans la table `intervenants`
 --
 
->>>>>>> Stashed changes
 INSERT INTO `intervenants` (`id_intervenants`, `nom_intervenants`, `prenom_intervenants`, `pays_intervenants`, `bio_intervenants`, `img_intervenants`, `id_activite`)
 VALUES
 ('1', 'Alberni', 'Camille', 'France', '@Camille Alberni, aka Dege, is a graffiti artist from Puy-en-Velay, who has been passionate about art and especially about bomb painting since he was very young. Plasterer-painter entrepreneur and decorator by profession, the young man also one of the brightest graffiti artists in the department and far beyond. You can find it on the Grafitti stand.', 'CamilleAlberni.png', '1'),
