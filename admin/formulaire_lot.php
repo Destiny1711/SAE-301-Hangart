@@ -31,7 +31,8 @@
                             <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
                         </div>
                         <ul class="menu">
-                        <?php echo'
+                        <?php 
+                            echo'
                             <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
                             <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
                             <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
@@ -44,30 +45,28 @@
                             <div class="compte">
                             <ul class="profil_list">
                                 <li>
-                                <?php 
-                                if(!isset($_GET['id'])){
-                                    echo '<a class="text_profil" href="../login.php">Se connecter</a>';
-                                } else {
-                                    echo '<a class="text_profil" href="#">Profil</a>
-                                    <ul>';
-                                    $requete='SELECT * FROM profil WHERE id_profil="1"';
-                                    $resultats=$bdd->query($requete);
-                                    $tabAdmin = $resultats->fetchAll();
-                                    $resultats->closeCursor();
-                                    if($_GET['id']==$tabAdmin[0]['id_profil']){
-                                        echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
-                                      }
-                                        echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                                        <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
-                                      </ul>';
-                                }
-                                ?>
-                                
+                                    <?php 
+                                        if(!isset($_GET['id'])){
+                                            echo '<a class="text_profil" href="../login.php">Se connecter</a>';
+                                        } else {
+                                            echo '<a class="text_profil" href="#">Profil</a>
+                                            <ul>';
+                                            $requete='SELECT * FROM profil WHERE id_profil="1"';
+                                            $resultats=$bdd->query($requete);
+                                            $tabAdmin = $resultats->fetchAll();
+                                            $resultats->closeCursor();
+                                            if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                                echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
+                                              }
+                                                echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                                                <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                              </ul>';
+                                        }
+                                    ?>                               
                                 </li>
                             </ul>
                             </div>
-                        </div>
-                    
+                        </div>                  
                     </div>
                 </div>
             </div>
@@ -105,13 +104,13 @@
             </form>
             <div class="boutons">
                 <?php 
-                echo '
-                <a class="btn3" href="formulaire_concours.php?id='.$_GET['id'].'"">
-                    <button>< Retour</button>
-                </a> 
-                <a class="btn2" href="formulaire_act.php?id='.$_GET['id'].'"">
-                    <button>Suivant ></button>
-                </a>';
+                    echo '
+                    <a class="btn3" href="formulaire_concours.php?id='.$_GET['id'].'"">
+                        <button>< Retour</button>
+                    </a> 
+                    <a class="btn2" href="formulaire_act.php?id='.$_GET['id'].'"">
+                        <button>Suivant ></button>
+                    </a>';
                 ?>
             </div>
         </div>
@@ -152,12 +151,12 @@
 </html>
 <!--******************************************************************************-->
 <?php
-//recuperation des données des lots
-if (isset($_POST['soumettre4'])) {
-    $sql='INSERT INTO lots(nom_lots,description_lots,id_concours) VALUES("'.$_POST["nom_lots"].'","'.$_POST["description_lots"].'","'.$_POST["id_concours"].'")';
-    $sql=$bdd->query($sql);
-    $sql->closeCursor();
-    $message='Informations envoyées';
-    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
-}
+    //recuperation des données des lots
+    if (isset($_POST['soumettre4'])) {
+        $sql='INSERT INTO lots(nom_lots,description_lots,id_concours) VALUES("'.$_POST["nom_lots"].'","'.$_POST["description_lots"].'","'.$_POST["id_concours"].'")';
+        $sql=$bdd->query($sql);
+        $sql->closeCursor();
+        $message='Informations envoyées';
+        echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+    }
 ?>
