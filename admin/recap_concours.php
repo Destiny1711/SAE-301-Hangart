@@ -1,6 +1,7 @@
-<!--Page racap de concours-->
+<!--Page recap de concours-->
 
 <?php
+    //definition classe
     class concours{
         public $nom = "";
         public $horaire = "";
@@ -41,13 +42,19 @@
     <body>    
         <form action="formulaire_concours.php" method="get">
             <button type="submit">Ajouter concours</button>
+        <!--Page menu de pour les éléments du concours-->
         </form>
         <?php
             for ($i=0; $i<$nbconcours ; $i++){
                 $listconcours[$i]= new concours ($tabconcours[$i][1],$tabconcours[$i][2]);
-                echo'<form action="recap_concours.php" method="post">
-                    <button type="submit" name="soumettre'.$i.'" value="Soumettre">supprimer</button>
-                </form>';
+                echo'
+                    <form action="recap_concours.php" method="post">
+                        <button type="submit" name="soumettre'.$i.'" value="Soumettre">supprimer</button>
+                    </form>
+                        <form action="modif_concours.php" method="get">
+                        <button type="submit" name="renvoi" value="'.$i.'">modifier</button>
+                    </form>
+                ';
                 if(isset($_POST['soumettre'.$i])){
                     $sql='DELETE from concours where id_concours='.$tabconcours[$i][0];
                     $sth = $bdd->prepare($sql);
