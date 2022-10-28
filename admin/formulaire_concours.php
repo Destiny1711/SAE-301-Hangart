@@ -20,7 +20,7 @@
     <body>
         <header>
             <div class="container-fluid">
-            <div class="row">
+                <div class="row">
                     <div class="col-md navigation">
                         <div class="divLogo">
                             <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
@@ -37,32 +37,31 @@
                         <div class="profil">
                             <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
                             <div class="compte">
-                            <ul class="profil_list">
-                                <li>
-                                <?php 
-                                if(!isset($_GET['id'])){
-                                    echo '<a class="text_profil" href="../login.php">Se connecter</a>';
-                                } else {
-                                    echo '<a class="text_profil" href="#">Profil</a>
-                                    <ul>';
-                                    $requete='SELECT * FROM profil WHERE id_profil="1"';
-                                    $resultats=$bdd->query($requete);
-                                    $tabAdmin = $resultats->fetchAll();
-                                    $resultats->closeCursor();
-                                    if($_GET['id']==$tabAdmin[0]['id_profil']){
-                                        echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
-                                      }
+                                <ul class="profil_list">
+                                    <li>
+                                    <?php 
+                                    if(!isset($_GET['id'])){
+                                        echo '<a class="text_profil" href="../login.php">Se connecter</a>';
+                                    } 
+                                    else {
+                                        echo '<a class="text_profil" href="#">Profil</a>
+                                        <ul>';
+                                        $requete='SELECT * FROM profil WHERE id_profil="1"';
+                                        $resultats=$bdd->query($requete);
+                                        $tabAdmin = $resultats->fetchAll();
+                                        $resultats->closeCursor();
+                                        if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                            echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
+                                        }
                                         echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
                                         <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
-                                      </ul>';
-                                }
-                                ?>
-                                
-                                </li>
-                            </ul>
+                                        </ul>';
+                                    }
+                                    ?>                                
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                    
+                        </div>                    
                     </div>
                 </div>
             </div>
