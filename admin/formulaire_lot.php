@@ -1,8 +1,10 @@
 <?php
-    //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
-    include("../parametre/parametre.php") ;
+   include("../parametre/parametre.php") ;
+   include('recap_lots.php');
+   //connexion a la base de donnee
+   session_start() ;
     //connexion a la base de donnee
-    session_start() ;
+    
     $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
     $requete='SELECT * FROM concours';
     $resultats = $bdd->query($requete) ;
@@ -103,6 +105,26 @@
                     </div>
                 </div>
             </form>
+            <?php 
+            $requete='SELECT * FROM lots';
+            $resultats = $bdd->query($requete) ;
+            $tablots=$resultats->fetchAll() ;
+            $resultats->closeCursor() ;
+            $nblots=count($tablots);
+        
+            $listlots=array();
+            for ($i=0; $i<$nblots ; $i++){
+                $listlots[$i]= new lots ($tablots[$i][1],$tablots[$i][2]);
+                echo'
+                <form action="annexe_lots.php?id='.$_GET['id'].'&i='.$tablots[$i][0].'" method="POST">
+                    <input type="submit" name="soumettre" value="Supprimer">
+                </form>
+                <form action="modif_lots.php?id='.$_GET['id'].'&id_lots='.$tablots[$i][0].'" method="POST">
+                    <input type="submit" value="Modifier">
+                </form>';
+            }
+            
+            ?>
             <div class="boutons">
                 <?php 
                 echo '
@@ -151,13 +173,3 @@
     </body>
 </html>
 <!--******************************************************************************-->
-<?php
-//recuperation des données des lots
-if (isset($_POST['soumettre4'])) {
-    $sql='INSERT INTO lots(nom_lots,description_lots,id_concours) VALUES("'.$_POST["nom_lots"].'","'.$_POST["description_lots"].'","'.$_POST["id_concours"].'")';
-    $sql=$bdd->query($sql);
-    $sql->closeCursor();
-    $message='Informations envoyées';
-    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
-}
-?>

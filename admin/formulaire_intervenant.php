@@ -138,7 +138,7 @@
                         <form action="annexe.php?id='.$_GET['id'].'&i='.$tabintervenant[$i][0].'" method="post">
                             <input type="submit" name="soumettre" value="Supprimer">
                         </form>
-                        <form action="modif.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
+                        <form action="modif_intervenant.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
                             <input type="submit" value="Modifier">
                         </form>
                         ';
@@ -171,7 +171,7 @@
                     sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
             </div>
             <div class="footer_center">
-                <h3 class="footer_title">LIENS</h3>
+                <h3 class="footer_title">LINKS</h3>
                 <div class="footer_line"></div>
                 <ul class="footer_menu">
                 <?php echo'
@@ -183,7 +183,7 @@
                 </ul>
             </div>
             <div class="footer_right">
-                <h3 class="footer_title">CONTACTEZ-NOUS</h3>
+                <h3 class="footer_title">CONTACT US</h3>
                 <div class="footer_line"></div>
                 <p>8 Rue Jean Batiste Fabre, 43000, Le Puy-en-Velay</p>
                 <h4>Tél :</h4>

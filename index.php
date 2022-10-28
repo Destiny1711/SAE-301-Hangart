@@ -81,19 +81,15 @@
   <div class="swiper swiper1" id="swiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="img/slide1.jpg" alt="">
+        <img src="img/img-slide1/hangart-3.png" alt="">
       </div>
 
       <div class="swiper-slide">
-        <img src="img/slide2.jpg" alt="">
+        <img src="img/img-slide1/hangart-1.png" alt="">
       </div>
 
       <div class="swiper-slide">
-        <img src="img/slide3.jpg" alt="">
-      </div>
-
-      <div class="swiper-slide">
-        <img src="img/slide4.jpg" alt="">
+        <img src="img/img-slide1/hangart-2.png" alt="">
       </div>
 
 
@@ -118,10 +114,10 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide1-2.jpg" alt="">
+            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="">
           </div>
           <p>1- Custom Sneakers.
-            </br></br>
+            </br>
             It is a practice to customize your shoes. At the heart of the subject, personalization is not new, the beginnings of the 
             current custom actually go back to the 70s when Bill Bowerman, one of the two founders of Nike, modified the sports shoes 
             of the athletes he trained. Today, the practice has been taken up by many independent artists, allowing their creativity 
@@ -131,7 +127,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide2-2.jpg" alt="">
+            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="">
           </div>
           <p>2- Graffiti.
             </br></br>
@@ -145,7 +141,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide3-2.jpg" alt="">
+            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="">
           </div>
           <p>3- Silkscreen Printing.
             </br></br>
@@ -158,7 +154,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide4-2.jpg" alt="">
+            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="">
           </div>
           <p>4- Custom Clothes (Nike Lab).
             </br></br>
@@ -167,11 +163,10 @@
             From now on, artists produce genuine pieces of art combining style and quality.</p>
         </div>
       </div>
-      
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/slide5-2.jpg" alt="">
+            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="">
           </div>
           <p>5- Hip Hop.
             </br></br>
@@ -180,6 +175,7 @@
             Rap (or MCing), DJing, Break dancing (or b-boying), Graffiti, Beatboxing.</p>
         </div>
       </div>
+
 
     </div>
     <div class="swiper-button-next"></div>
@@ -190,13 +186,11 @@
     <h3 class="info_title">DISCOVER THE GUESTS</h3>
     <div class="line"></div>
     <div class="div_btn">
-      <input type="button" class="info_btn" value="Jour 1">
-      <input type="button" class="info_btn" value="Jour 2">
+      <input type="button" class="info_btn" value="27 Mai 2023">
     </div>
-    <p class="info_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam hendrerit commodo. Vestibulum vulputate dui dapibus enim mollis, ac blandit augue dapibus. Aliquam posuere
-      posuere leo, a consectetur lacus dictum id. Suspendisse urna quam, sodales non iaculis at, fringilla a ante. Curabitur vitae nisi euismod, elementum augue sed, imperdiet purus. Nunc eu
-      odio dignissim, tempor leo sit amet, volutpat libero. Morbi imperdiet neque lacus, non elementum odio tempor a. Morbi sit amet viverra dolor. Sed id tortor vel lectus efficitur aliquam
-      sed quis urna. Suspendisse elementum id mauris eu elementum.</p>
+    <p class="info_description">It is with pleasure that we welcome you to the Hangart. Our different teams will be at your disposal for all requests of 
+information on the program of the event as well as information on the various stakeholders.
+For the various speakers present, we let you check the information below.</p>
   </div>
   <div class="div_intervenants">
       <?php 
@@ -247,27 +241,22 @@
     </div>
     <div class="col-md-10 form">
       <form class="index_form">
-        
-        <div class="mb-3">
-          <label for="" class="form-label">Last Name</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp">
+        <?php
+        $requete='SELECT * FROM lots';
+        $resultats=$bdd->query($requete);
+        $tabLots = $resultats->fetchAll();
+        $resultats->closeCursor();
+        $nbLots = count($tabLots);
+        for($i=0; $i < $nbLots; $i++){
+        echo'
+        <div class="mb-4">
+          <h5> <b>'.$tabLots[$i]['nom_lots'].':</b></h5>
+          <h5> '.$tabLots[$i]['description_lots'].'</h5>
           
-        </div>
-        <div class="mb-3">
-          <label for="" class="form-label">First Name</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="mb-3">
-          <label for="" class="form-label">Mail Adress</label>
-          <input type="email" class="form-control" aria-describedby="emailHelp">
-          
-        </div>
-        <div class="mb-3">
-          <label for="" class="form-label">Password</label>
-          <input type="password" class="form-control">
-        </div>
+        </div>';
+        }
+        ?>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>
   <footer>
@@ -278,7 +267,7 @@
         different artists from several European countries and create a stronger community around street art.</p>
     </div>
     <div class="footer_center">
-      <h3 class="footer_title">LIENS</h3>
+      <h3 class="footer_title">LINKS</h3>
       <div class="footer_line"></div>
       <ul class="footer_menu">
         <li><h5>></h5><a href="#accueil">Home</a></li>
