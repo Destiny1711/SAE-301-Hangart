@@ -167,7 +167,19 @@
             From now on, artists produce genuine pieces of art combining style and quality.</p>
         </div>
       </div>
-
+      
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/slide5-2.jpg" alt="">
+          </div>
+          <p>5- Hip Hop.
+            </br></br>
+            Hip-hop is a genre of popular music characterized by a rhythm accompanied by its musical expression: rap and the surrounding 
+            artistic culture created in New York in the South Bronx in the early 1970s. Hip-hop culture knows 5 disciplines: 
+            Rap (or MCing), DJing, Break dancing (or b-boying), Graffiti, Beatboxing.</p>
+        </div>
+      </div>
 
     </div>
     <div class="swiper-button-next"></div>
