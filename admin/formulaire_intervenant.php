@@ -1,6 +1,7 @@
 <?php
     //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
     include("../parametre/parametre.php") ;
+    include('recap_intervenant.php');
     //connexion a la base de donnee
     session_start() ;
     $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
@@ -33,11 +34,13 @@
                             <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
                         </div>
                         <ul class="menu">
-                            <li><a href="../index.php#accueil">Accueil</a></li>
-                            <li><a href="../index.php#programme">Programme</a></li>
-                            <li><a href="../index.php#lieu">Lieu & Horaires</a></li>
-                            <li><a href="../index.php#concours">Concours</a></li>
-                            <li><a href="../index.php#contact">Contact</a></li>
+                        <?php echo'
+                            <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                            <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                            <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                            <li><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>
+                            <li><a href="../index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
+                        ?>
                         </ul>
                         <div class="profil">
                             <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
@@ -55,11 +58,11 @@
                                     $tabAdmin = $resultats->fetchAll();
                                     $resultats->closeCursor();
                                     if($_GET['id']==$tabAdmin[0]['id_profil']){
-                                    echo '<li><a href="admin/pagePasserelle.php" class="text_profil">Admin</a></li>';
-                                    }
-                                    echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                                    <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
-                                    </ul>';
+                                        echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
+                                      }
+                                        echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                                        <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                      </ul>';
                                 }
                                 ?>
                                 
@@ -75,7 +78,7 @@
             <!--formulaire pour rentrer info sur intervenant-->
             <?php 
             echo'
-            <form method="POST" action="pagePasserelle.php?id='.$_GET['id'].'" enctype="multipart/form-data">';  ?>
+            <form method="POST" action="annexe.php?id='.$_GET['id'].'" enctype="multipart/form-data">';  ?>
                 <div class="blocForm">
                     <h2>INFORMATIONS INTERVENANT</h2>
                     
@@ -121,7 +124,29 @@
                     </div>
                 </div>
             </form>
-            <?php include('recap_intervenant.php') ?>
+            <?php 
+            $requete='SELECT * FROM intervenants';
+            $resultats = $bdd->query($requete) ;
+            $tabintervenant=$resultats->fetchAll() ;
+            $resultats->closeCursor() ;
+            $nbintervenant=count($tabintervenant);
+        
+            $listintervenant=array();
+                for ($i=0; $i<$nbintervenant ; $i++){
+                    $listintervenant[$i]= new intervenant ($tabintervenant[$i][1],$tabintervenant[$i][2],$tabintervenant[$i][3],$tabintervenant[$i][4],$tabintervenant[$i][5]);
+                    echo'
+                        <form action="annexe.php?id='.$_GET['id'].'&i='.$tabintervenant[$i][0].'" method="post">
+                            <input type="submit" name="soumettre" value="Supprimer">
+                        </form>
+                        <form action="modif.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
+                            <input type="submit" value="Modifier">
+                        </form>
+                        ';
+                    
+                    
+                }
+            
+            ?>
 
 
             <div class="boutons">
@@ -149,10 +174,12 @@
                 <h3 class="footer_title">LIENS</h3>
                 <div class="footer_line"></div>
                 <ul class="footer_menu">
-                    <li><h5>></h5><a href="../index.php#accueil">Accueil</a></li>
-                    <li><h5>></h5><a href="../index.php#programme">Programme</a></li>
-                    <li><h5>></h5><a href="../index.php#lieu">Lieu & Horaires</a></li>
-                    <li><h5>></h5><a href="../index.php#concours">Concours</a></li>
+                <?php echo'
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>';
+                    ?>
                 </ul>
             </div>
             <div class="footer_right">
@@ -171,55 +198,5 @@
     </body>
 </html>
 <!--******************************************************************************-->
-<?php
-//rentrée des données des intervenants dans la bdd
-//verification si il y a une correspondance dans la base de donnee
-$requete='SELECT * FROM intervenants';
-$resultats = $bdd->query($requete) ;
-$tabinter=$resultats->fetchAll() ;
-$resultats->closeCursor() ;
-//recuperation donnée intervenants
-if (isset($_POST['soumettre2'])) {
-        //enregistrement des données d'un intervenant dans la base de données
-           //enregistrement de l'image lié à l'intervenant
-            // taille autorisées (min & max -- en octets)
-            $file_min_size = 0;
-            $file_max_size = 10000000;
-            // On vérifie la présence d"un fichier à uploader
-            if (($_FILES["image"]["size"] > $file_min_size) && ($_FILES["image"]["size"] < $file_max_size)) :
-                // dossier où sera déplacé le fichier; ce dossier doit exister
-                $content_dir = "img/img_inter";
-                $tmp_file = $_FILES["image"]["tmp_name"];
-                if( !is_uploaded_file($tmp_file) ){
-                    echo "Fichier non trouvé";
-                }
-                // on vérifie l"extension
-                $path = $_FILES["image"]["name"];
-                $ext = pathinfo($path, PATHINFO_EXTENSION); // on récupère l"extension
-                if(!strstr($ext, "jpg")&& !strstr($ext, "png")&& !strstr($ext, "jpeg")){
-                    echo "EXTENSION ".$ext." NON AUTORISEE";
-                }
-                // Si le formulaire est validé, on copie le fichier dans le dossier de destination
-                if(empty($errors)){
-                    $name_file = md5(uniqid(rand(), true)).".".$ext; // on crée un nom unique en conservant l"extension
-                    if( !move_uploaded_file($tmp_file, $content_dir . $name_file) ){
-                        echo "Il y a des erreurs! Impossible de copier le fichier dans le dossier cible";
-                    }
-                } 
-                // On récupère l"url du fichier envoyé
-                $get_the_file = $content_dir.$name_file;
-                elseif($_FILES["upfiles"]["size"] > $file_max_size):
-                    echo "le fichier dépasse la limite autorisée";
-                else :
-                    echo "Pas de fichier joint";
-                endif;   
-    $sql='INSERT INTO intervenants(nom_intervenants,prenom_intervenants,pays_intervenants,id_activite,bio_intervenants,img_intervenants) VALUES("'.$_POST["nom_inter"].'","'.$_POST["prenom_inter"].'","'.$_POST["pays_inter"].'","'.$_POST["id_act"].'","'.$_POST["bio_inter"].'","'.$get_the_file.'")';
-    $sql=$bdd->query($sql);
-    $sql->closeCursor();
-    $message='Informations envoyées';
-    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
-    
-    
-}
-?>
+
     

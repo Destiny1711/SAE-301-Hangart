@@ -29,11 +29,13 @@
                 <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
               </div>
               <ul class="menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#programme">Programme</a></li>
-                <li><a href="#lieu">Lieu & Horaires</a></li>
-                <li><a href="#concours">Concours</a></li>
-                <li><a href="#contact">Contact</a></li>
+              <?php echo'
+                <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                <li><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>
+                <li><a href="../index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
+              ?>
               </ul>
               <div class="profil">
                 <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
@@ -51,10 +53,10 @@
                         $tabAdmin = $resultats->fetchAll();
                         $resultats->closeCursor();
                         if($_GET['id']==$tabAdmin[0]['id_profil']){
-                          echo '<li><a href="pagePasserelle.php" class="text_profil">Admin</a></li>';
+                          echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
                         }
-                          echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                          <li><a href="index.php" class="text_profil">Se déconnecter</a></li>
+                          echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                          <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
                         </ul>';
                       }
                       ?>
@@ -101,10 +103,12 @@
       <h3 class="footer_title">LIENS</h3>
       <div class="footer_line"></div>
       <ul class="footer_menu">
-        <li><h5>></h5><a href="../index.php#accueil">Accueil</a></li>
-        <li><h5>></h5><a href="../index.php#programme">Programme</a></li>
-        <li><h5>></h5><a href="../index.php#lieu">Lieu & Horaires</a></li>
-        <li><h5>></h5><a href="../index.php#concours">Concours</a></li>
+        <?php echo'
+        <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+        <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+        <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+        <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>';
+        ?>
       </ul>
     </div>
     <div class="footer_right">

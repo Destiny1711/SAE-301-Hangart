@@ -786,6 +786,10 @@ footer > div {
   width:50%;
   
 }
+.max{
+  width:100%;
+  text-align: center;
+}
 .div_form > input {
 
   height:2.5vw;
@@ -948,6 +952,7 @@ footer > div {
 .upload, .envoyer {
   display: flex;
   justify-content: center;
+
 }
 .input-group {
   border: 2px solid #e7e7e7;
