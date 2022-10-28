@@ -40,36 +40,38 @@
                             <ul class="profil_list">
                                 <li>
                                 <?php 
-                                if(!isset($_GET['id'])){
+                                    if(!isset($_GET['id'])){
                                     echo '<a class="text_profil" href="../login.php">Se connecter</a>';
-                                } else {
-                                    echo '<a class="text_profil" href="#">Profil</a>
-                                    <ul>';
-                                    $requete='SELECT * FROM profil WHERE id_profil="1"';
-                                    $resultats=$bdd->query($requete);
-                                    $tabAdmin = $resultats->fetchAll();
-                                    $resultats->closeCursor();
-                                    if($_GET['id']==$tabAdmin[0]['id_profil']){
-                                        echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
-                                      }
+                                    } 
+                                    else {
+                                        echo '<a class="text_profil" href="#">Profil</a>
+                                        <ul>';
+                                        $requete='SELECT * FROM profil WHERE id_profil="1"';
+                                        $resultats=$bdd->query($requete);
+                                        $tabAdmin = $resultats->fetchAll();
+                                        $resultats->closeCursor();
+                                        if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                            echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
+                                        }
                                         echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                                        <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
-                                      </ul>';
-                                }
-                                ?>
-                                
+                                              <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                             </ul>';
+                                    }
+                                ?>                               
                                 </li>
                             </ul>
                             </div>
                             <div class="lang_div">
                             <?php 
-                            if(isset($_GET['id'])){
-                                echo '<a href="index_en.php?id='.$_GET['id'].'"><img src="img/lang_en.png" class="lang" alt=""></a>';
-                            } else { echo '<a href="index_en.php"><img src="img/lang_en.png" class="lang" alt=""></a>'; }
+                                if(isset($_GET['id'])){
+                                    echo '<a href="index_en.php?id='.$_GET['id'].'"><img src="img/lang_en.png" class="lang" alt=""></a>';
+                                } 
+                                else { 
+                                    echo '<a href="index_en.php"><img src="img/lang_en.png" class="lang" alt=""></a>'; 
+                                }
                             ?>
                             </div>
-                        </div>
-                    
+                        </div>                    
                     </div>
                 </div>
             </div>
@@ -108,13 +110,13 @@
             </form>
             <div class="boutons">
                 <?php 
-                echo '
-                <a class="btn3" href="formulaire_lot.php?id='.$_GET['id'].'"">
-                    <button>< Retour</button>
-                </a> 
-                <a class="btn2" href="formulaire_intervenant.php?id='.$_GET['id'].'"">
-                    <button>Suivant ></button>
-                </a> ';
+                    echo '
+                    <a class="btn3" href="formulaire_lot.php?id='.$_GET['id'].'"">
+                        <button>< Retour</button>
+                    </a> 
+                    <a class="btn2" href="formulaire_intervenant.php?id='.$_GET['id'].'"">
+                        <button>Suivant ></button>
+                    </a> ';
                 ?>
             </div> 
         </div>
@@ -130,12 +132,13 @@
             <h3 class="footer_title">LIENS</h3>
             <div class="footer_line"></div>
             <ul class="footer_menu">
-            <?php echo'
-                <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
-                <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
-                <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
-                <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>';
-                ?>
+            <?php 
+                echo'
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                    <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>';
+            ?>
             </ul>
             </div>
             <div class="footer_right">
