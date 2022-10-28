@@ -1,3 +1,5 @@
+<!-- Page passerelle pour l'administrateur -->
+
 <?php 
  //appel du fichier contenant les differents identifiants pour se connecter a la base de donnee
  include("../parametre/parametre.php") ;

@@ -49,9 +49,14 @@
         <?php
             for ($i=0; $i<$nbact ; $i++){
                 $listactivite[$i]= new activite ($tabAct[$i][1],$tabAct[$i][2],$tabAct[$i][3]);
-                echo'<form action="recap_act.php" method="post">
+                echo'
+                <form action="recap_act.php" method="post">
                     <button type="submit" name="soumettre'.$i.'" value="Soumettre">supprimer</button>
-                </form>';
+                </form>
+                <form action="recap_act.php" method="get">
+                        <button type="submit" name="renvoi" value="'.$i.'">modifier</button>
+                </form>
+                ';
                 if(isset($_POST['soumettre'.$i])){
                     $sql='DELETE from activite where id_activite='.$tabAct[$i][0];
                     $sth = $bdd->prepare($sql);
