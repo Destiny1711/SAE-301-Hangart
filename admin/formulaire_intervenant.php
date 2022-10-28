@@ -10,7 +10,6 @@
     $tabAct=$resultats->fetchAll() ;
     $resultats->closeCursor() ;
     $nbAct=count($tabAct);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +33,8 @@
                             <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
                         </div>
                         <ul class="menu">
-                        <?php echo'
+                        <?php 
+                            echo'
                             <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
                             <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
                             <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
@@ -50,7 +50,9 @@
                                 <?php 
                                 if(!isset($_GET['id'])){
                                     echo '<a class="text_profil" href="../login.php">Se connecter</a>';
-                                } else {
+                                } 
+                                else 
+                                {
                                     echo '<a class="text_profil" href="#">Profil</a>
                                     <ul>';
                                     $requete='SELECT * FROM profil WHERE id_profil="1"';
@@ -60,12 +62,11 @@
                                     if($_GET['id']==$tabAdmin[0]['id_profil']){
                                         echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
                                       }
-                                        echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                                        <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
-                                      </ul>';
+                                     echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                                           <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                           </ul>';
                                 }
-                                ?>
-                                
+                                ?>                                
                                 </li>
                             </ul>
                             </div>
@@ -77,8 +78,9 @@
         <div class="containerForm">
             <!--formulaire pour rentrer info sur intervenant-->
             <?php 
-            echo'
-            <form method="POST" action="annexe.php?id='.$_GET['id'].'" enctype="multipart/form-data">';  ?>
+                echo'
+                    <form method="POST" action="annexe.php?id='.$_GET['id'].'" enctype="multipart/form-data">';  
+            ?>
                 <div class="blocForm">
                     <h2>INFORMATIONS INTERVENANT</h2>
                     
@@ -125,40 +127,36 @@
                 </div>
             </form>
             <?php 
-            $requete='SELECT * FROM intervenants';
-            $resultats = $bdd->query($requete) ;
-            $tabintervenant=$resultats->fetchAll() ;
-            $resultats->closeCursor() ;
-            $nbintervenant=count($tabintervenant);
-        
-            $listintervenant=array();
-                for ($i=0; $i<$nbintervenant ; $i++){
-                    $listintervenant[$i]= new intervenant ($tabintervenant[$i][1],$tabintervenant[$i][2],$tabintervenant[$i][3],$tabintervenant[$i][4],$tabintervenant[$i][5]);
-                    echo'
-                        <form action="annexe.php?id='.$_GET['id'].'&i='.$tabintervenant[$i][0].'" method="post">
-                            <input type="submit" name="soumettre" value="Supprimer">
-                        </form>
-                        <form action="modif.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
-                            <input type="submit" value="Modifier">
-                        </form>
-                        ';
-                    
-                    
-                }
-            
+                $requete='SELECT * FROM intervenants';
+                $resultats = $bdd->query($requete) ;
+                $tabintervenant=$resultats->fetchAll() ;
+                $resultats->closeCursor() ;
+                $nbintervenant=count($tabintervenant);
+
+                $listintervenant=array();
+                    for ($i=0; $i<$nbintervenant ; $i++){
+                        $listintervenant[$i]= new intervenant ($tabintervenant[$i][1],$tabintervenant[$i][2],$tabintervenant[$i][3],$tabintervenant[$i][4],$tabintervenant[$i][5]);
+                        echo'
+                            <form action="annexe.php?id='.$_GET['id'].'&i='.$tabintervenant[$i][0].'" method="post">
+                                <input type="submit" name="soumettre" value="Supprimer">
+                            </form>
+                            <form action="modif.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
+                                <input type="submit" value="Modifier">
+                            </form>
+                            ';
+                    }            
             ?>
 
 
             <div class="boutons">
                 <?php 
-                echo'
-                <a class="btn3" href="formulaire_act.php?id='.$_GET['id'].'">
-                    <button>< Retour</button>
-                </a> 
-                <a class="btn2" href="formulaire_concours.php?id='.$_GET['id'].'">
-                    <button>Suivant ></button>
-                </a> ';
-
+                    echo'
+                    <a class="btn3" href="formulaire_act.php?id='.$_GET['id'].'">
+                        <button>< Retour</button>
+                    </a> 
+                    <a class="btn2" href="formulaire_concours.php?id='.$_GET['id'].'">
+                        <button>Suivant ></button>
+                    </a> ';
                 ?>
             </div>
         </div>
