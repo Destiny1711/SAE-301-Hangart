@@ -20,24 +20,20 @@
 <body class="body_compte">
     <div class="div_global_form">
         <form class="log_form" method="POST" enctype="multipart/form-data">  
-            <h2>MODIFIER L'INTERVENANT</h2>
+            <h2>MODIFIER L'ACTIVITÉ</h2>
             <div class="line"></div>
             <div style="width:100%; margin-bottom:2vw; text-align:center;">Attention : Toutes les informations saisit sont toutes de nouvelles valeurs</div>
             <div class="mb-3 div_form_signin">
                 <label for="" class="form-label">Nom</label>
-                <input type="name" class="form-control" name="nom_profil" aria-describedby="emailHelp" required>
+                <input type="name" class="form-control" name="nom_activite" aria-describedby="emailHelp">
             </div>
             <div class="mb-3 div_form_signin">
-                <label for="" class="form-label">Prénom</label>
-                <input type="name" name="prenom_profil" class="form-control" required>
+                <label for="" class="form-label">Date</label>
+                <input type="date" name="date_activite" class="form-control">
             </div>
             <div class="mb-3 div_form_signin max">
-                <label for="" class="form-label">Pays</label>
-                <input type="text" name="email_profil" class="form-control" aria-describedby="emailHelp" required>     
-            </div>
-            <div class="mb-3 div_form_signin max">
-                <label for="" class="form-label">Biographie</label>
-                <textarea name="mdp_profil" class="form-control" required></textarea>
+                <label for="" class="form-label">Horaire</label>
+                <input type="time" name="horaires_activite" class="form-control" aria-describedby="emailHelp">    
             </div>
             <div class="mb-3 div_form_signin max">
                 <label for="image"></label>
@@ -49,7 +45,7 @@
             <input class="btn2" type="submit" name="btn" value="Envoyer">
             <?php
                 echo'
-                    <form action="formulaire_intervenant.php?id='.$_GET['id'].'" method="POST">
+                    <form action="formulaire_act.php?id='.$_GET['id'].'" method="POST">
                         <input class="btn2" type="submit" value="Retourner sur la page précédente">
                     </form>
                 ';
@@ -87,13 +83,12 @@
                         else :
                             echo "Pas de fichier joint";
                         endif;   
-                    $requete='UPDATE intervenants SET 
-                    nom_intervenants="'.$_POST['nom_profil'].'", 
-                    prenom_intervenants="'.$_POST['prenom_profil'].'",
-                    pays_intervenants="'.$_POST['email_profil'].'",
-                    bio_intervenants="'.$_POST['mdp_profil'].'",
-                    img_intervenants="'.$get_the_file.'"
-                    WHERE id_intervenants="'.$_GET['id_intervenant'].'"';
+                    $requete='UPDATE activite SET 
+                    nom_activite="'.$_POST['nom_activite'].'", 
+                    date_activite="'.$_POST['date_activite'].'",
+                    horaires_activite="'.$_POST['horaires_activite'].'",
+                    img_activite="'.$get_the_file.'"
+                    WHERE id_activite="'.$_GET['id_act'].'"';
                     $resultats=$bdd->query($requete);
                 }
             ?>

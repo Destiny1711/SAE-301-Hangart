@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `activité`
+-- Structure de la table `activite`
 --
 
-CREATE TABLE `activité` (
+CREATE TABLE `activite` (
   `id_activite` int(11) NOT NULL,
   `nom_activite` varchar(50) DEFAULT NULL,
   `date_activite` date DEFAULT NULL,
@@ -55,7 +55,8 @@ CREATE TABLE `assiste` (
 CREATE TABLE `concours` (
   `id_concours` int(11) NOT NULL,
   `nom_concours` varchar(50) DEFAULT NULL,
-  `horaires_concours` time DEFAULT NULL
+  `horaires_concours` time DEFAULT NULL,
+  `date_concours` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -119,9 +120,9 @@ CREATE TABLE `profil` (
 --
 
 --
--- Index pour la table `activité`
+-- Index pour la table `activite`
 --
-ALTER TABLE `activité`
+ALTER TABLE `activite`
   ADD PRIMARY KEY (`id_activite`);
 
 --
@@ -169,7 +170,7 @@ ALTER TABLE `profil`
 --
 
 --
--- AUTO_INCREMENT pour la table `activité`
+-- AUTO_INCREMENT pour la table `activite`
 --
 ALTER TABLE `activite`
   MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT;
@@ -207,13 +208,13 @@ ALTER TABLE `profil`
 --
 ALTER TABLE `assiste`
   ADD CONSTRAINT `assiste_ibfk_1` FOREIGN KEY (`id_profil`) REFERENCES `profil` (`id_profil`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `assiste_ibfk_2` FOREIGN KEY (`id_activite`) REFERENCES `activité` (`id_activite`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `assiste_ibfk_2` FOREIGN KEY (`id_activite`) REFERENCES `activite` (`id_activite`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `intervenants`
 --
 ALTER TABLE `intervenants`
-  ADD CONSTRAINT `intervenants_ibfk_1` FOREIGN KEY (`id_activite`) REFERENCES `activité` (`id_activite`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `intervenants_ibfk_1` FOREIGN KEY (`id_activite`) REFERENCES `activite` (`id_activite`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `lots`
@@ -234,39 +235,34 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 --
--- insertion des valeurs dans la table `activité`
+-- insertion des valeurs dans la table `activite`
 --
-INSERT INTO `activité` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
+INSERT INTO `activite` (`id_activite`, `nom_activite`, `date_activite`, `horaires_activite`, `img_activite`) 
 VALUES 
 ('1', 'Grafitti Introduction', '2023-05-27', '10:00:00', 'GrafittiIntroduction.png'),
 ('2', 'Custom Sneakers Inroduction', '2023-05-27', '10:00:00', 'CustomSneakersInroduction.png'),
 ('3', 'Silkscreen Printing Introduction', '2023-05-27', '10:00:00', 'SilkscreenPrintingIntroduction.png'), 
 ('4', 'Hip Hop Introduction', '2023-05-27', '10:00:00', 'HipHopIntroduction.png'),
 ('5', 'Nike Lab Introduction', '2023-05-27', '10:00:00', 'NikeLabIntroduction.png'),
-('6', 'Concert ', '2023-05-28', '02:00:00', 'Concert.png');
+('6', 'Concert ', '2023-05-27', '02:00:00', 'Concert.png');
 
 --
-<<<<<<< Updated upstream
 -- insertion des valeurs du concours dans la table 'concours'
-=======
 -- insertion des valeurs dans la table 'concours'
->>>>>>> Stashed changes
 --
 
 
-INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`) 
+INSERT INTO `concours` (`id_concours`, `nom_concours`, `horaires_concours`, `date_concours`) 
 VALUES 
-('1', 'Concours VIP', '48:00:00');
+('1', 'Concours VIP', '48:00:00', '2023-05-27');
 
 --
-<<<<<<< Updated upstream
 -- insertion des valeurs du concours dans la table 'intervenants'
 --
-=======
+
 -- insertion des valeurs dans la table `intervenants`
 --
 
->>>>>>> Stashed changes
 INSERT INTO `intervenants` (`id_intervenants`, `nom_intervenants`, `prenom_intervenants`, `pays_intervenants`, `bio_intervenants`, `img_intervenants`, `id_activite`)
 VALUES
 ('1', 'Alberni', 'Camille', 'France', '@Camille Alberni, aka Dege, is a graffiti artist from Puy-en-Velay, who has been passionate about art and especially about bomb painting since he was very young. Plasterer-painter entrepreneur and decorator by profession, the young man also one of the brightest graffiti artists in the department and far beyond. You can find it on the Grafitti stand.', 'CamilleAlberni.png', '1'),
@@ -288,11 +284,7 @@ VALUES
 ('17', 'Team', 'Nike Lab', 'England', '@Nike Lab Teamwill be happy to welcome you, to help you customize your most beautiful pieces.', 'NikeLabTeam.png','5');
 
 --
-<<<<<<< Updated upstream
--- insertion des valeurs dans la table 'lots'
-=======
 -- insertion des valeurs dans la table `lots`
->>>>>>> Stashed changes
 --
 INSERT INTO `lots` (`id_lots`, `nom_lots`, `description_lots`, `id_concours`)
 VALUES

@@ -1,30 +1,23 @@
 * {
-  
   font: TW CEN MT, sans-serif;
-  color:black;
-  
+  color:black; 
 }
-
-
-
+.container-fluid {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
 .topbar {
   color:white;
   display:flex;
   align-items: center;
   justify-content: center;
   background-color: #303030;
-
   height: 3vw;
-
 }
-
 .toptitle {
   margin:0.5vw;
   color: white;
   font-size:1.1vw;
-
 }
-
 .navigation {
   display:flex;
   position:relative;
@@ -32,75 +25,46 @@
   justify-content: space-between;
   color:black;
   height: 5vw;
-  
-
 }
-
 .viptext {
-
   width:3.5%;
 }
-
 .divLogo {
-
   width: 20%;
   margin-top:0.5vw;
   display:flex;
   align-items:center;
   justify-content: flex-start;
-
 }
-
 .logo {
   margin-left:2vw;
   width: 8vw;
 }
-
-
 li {
-
   list-style-type: none;
-
 }
-
-a{
-
+a {
   text-decoration: none;
   color: black;
   font-weight:600;
-
 }
 
-a:hover {
-  
+a:hover { 
   color: #ffbb00;
-
 }
-
-
-
-
-.icon_connect{
-
+.icon_connect {
   width: 2vw;
-
 }
-
 .menu {
-
   display:flex;
   width: 80%;
   justify-content: center;
   align-items: center;
   margin:0;
-  padding:0;
-
-  
+  padding:0; 
 }
-
 .menu li {
   display: inline-block;
-  
   margin: 0 1.5vw 0 1.5vw;
   padding:0;
   font-size:1.1vw;
@@ -137,17 +101,11 @@ a:hover {
 .menu a:hover:after, .menu .current a:after {
   max-width: 100%;
 }
-
 .profil {
-
   display:flex;
   align-items:center;
- 
   width: 20%;
- 
-
 }
-
 .compte {
   width: 100%;
   margin: 0;
@@ -156,34 +114,25 @@ a:hover {
   display:flex;
   align-items: center;
 }
-
 .profil_list{
   padding: 0;
   margin: 0;
   position: absolute;
 }
-
 .profil_list li {
   list-style: none;
   width:9vw;
 }
-
 .profil_list a {
   padding: 0.5vw 0;
   text-decoration: none;
   color: black;
   display: block;
 }
-
-
-
 .profil_list li:hover, .profil_list a:hover {
   background-color: #fedf87;
   font-weight:bold;
-  
 }
-
-
 .profil_list li ul {
   display: none;
   height: auto;
@@ -192,208 +141,134 @@ a:hover {
   position:absolute;
   width:9vw;
 }
-
 .profil_list li:hover ul {
   display: block;
 }
-
 .profil_list li ul li {
   background-color: white;
 }
-
 .profil_list li ul li a:hover {
   background-color: #fedf87;
 }
-
-.text_profil{
-
+.text_profil {
   font-size:1.1vw;
   font-weight: 600;
   margin: 0 0.5vw 0 0.5vw;
   padding:0;
-  
-
 }
-
 .lang_div {
   display: flex;
   align-items: center;
   width:100%;
 }
-
 .lang {
   margin-left:3vw;
   width:2vw;
-
 }
-
 .swiper {
-
   width: 100%;
   height: 100%;
-
 }
-
-.swiper-wrapper {
-
-  height: 50vh;
-
-}
-
 .swiper-slide {
-  
   width:100%;
   height:100%;
   position:absolute;
   overflow: hidden;
-
 }
-
 .swiper-slide > img {
-
   position: relative;
   width:100%;
-  height:77vh;
-  
-
-  
+  height:100%; 
 }
-
-
 .swiper-button-next {
-
   color:#fedf87 !important;
   margin-right: 1vw !important;
-
 }
-
 .swiper-button-prev {
-
   color:#fedf87 !important;
-  margin-left: 1vw !important;
-   
+  margin-left: 1vw !important;  
 }
-
-.swiper-pagination {
-  
+.swiper-pagination { 
   bottom:0 !important;
   --swiper-theme-color:#ffbb00 !important;
-  
   position: static !important;
   text-align:center !important;
- 
-
 }
-
 .swiper-pagination-bullet {
   width: 0.6vw !important;
   height: 0.6vw !important;
   margin:1vw 0.3vw 1vw 0.3vw !important;
 }
-
 .info {
-
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin:4vw;
 }
-
 .info_title {
-
-  
   text-align: center;
   font-size:2vw;
   width:100%;
   font-family: Montserrat;
   font-weight:bold;
 }
-
 .line{
-
   border-top: 0.2vw solid #ffbb00;
   width : 5vw;
 
 }
-
 .info_description{
-
   width:100%;
   text-align: center;
   margin:2vw 2vw 1vw 2vw;
- 
-  font: 1vw/1.2vw Montserrat;
-  
+  font: 1vw/1.2vw Montserrat; 
 }
-
 .swiper2 {
-
-
   width:90%;
   height:70vh;
   margin:5vw;
 }
-
-.slide-flex{
+.slide-flex {
   display:flex;
   background-color: rgb(248, 248, 248);
   justify-content: center;
   align-items: center;
-
-
 }
-
 .slide-div-flex {
   width:90%;
   display:flex;
   justify-content: space-between;
-  align-items: center;
-  
-
-  
+  align-items: center; 
 }
-
 .divImage_slide2 {
   width:50%;
-  
-
 }
 .img_slide2{
-  
   width:100%;
-  height:100%;
-  
-  
+  height:100%; 
   box-shadow: 1.2vw 1.2vw 0px 0.1vw rgba(254, 223, 135, 1);
-
 }
 .slide-flex > div > p {
   width:50%;
   text-align:justify;
   padding:2vw 2vw 2vw 4vw;
   font: 1vw/1.2vw Montserrat;
-
 }
-
 .info2 {
-
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin:1vw;
 }
-
 .div_btn {
-
   display: flex;
   width:100%;
   align-items: center;
   justify-content: center;
   margin:3vw 3vw 0vw 3vw;
 }
-
 .info_btn {
   width:15%;
   background-color: #fedf87;
@@ -404,11 +279,8 @@ a:hover {
   color:white;
   text-align:center;
   margin:2vw;
-
+  font-weight:bold;
 }
-
-
-
 .div_intervenants {
   display:flex;
   flex-wrap:wrap;
@@ -416,23 +288,19 @@ a:hover {
   align-items: center;
   padding:0vw 5vw 4vw 5vw;
 }
-
 .info_intervenants {
   display: flex;
   width:50%;
   align-items: center;
 }
 .img_intervenants {
-
   width:10vw;
   position: absolute;
 }
 .pp_intervenants {
-
-  width:10vw;
+  width:9.9vw;
   height:auto;
   
-
 }
 .text_intervenants {
     width:80%;
@@ -443,94 +311,69 @@ a:hover {
   font: 1.3vw Montserrat;
   font-weight:bold;
   text-transform: uppercase;
-
 }
 .bio_intervenants {
-
   width:100%;
   font: 1vw Montserrat;
-
 }
-
 .section_map {
-
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
- 
-
 }
-
 .global_map {
-
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:5vw 0vw 2vw 0vw;
-    
-    
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:5vw 0vw 2vw 0vw;     
 }
-
 .info_map {
-
   width:90%;
-  height:70vh;
-  
-  
+  height:70vh; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
   background-color: rgb(248, 248, 248);
 }
-
 .div_map {
   display: flex;
   justify-content: center;
   height:100%;
   width: 50%;
 }
-.div_map > iframe{
+.div_map > iframe {
   box-shadow: 5px 5px 10px -9px black;
   width:100%;
   height:100%;
   border-radius: 1vw;
 }
-
 .text_map {
-  
   padding:5vw;
   width:50%;
 }
-
 .title_map {
-
   text-align: justify;
   font-size:2vw;
   margin-bottom:5vw;
   width:100%;
   font-family: Montserrat;
   font-weight:bold;
-
 }
-
+.horaires {
+  font-family: Montserrat;
+  font-weight:bold;
+  padding-top: 5vh;
+}
 .text_map > p, .text_map > ul > li {
-
   font: 1vw Montserrat;
   font-weight:normal;
-
 }
-
 .text_map > ul > li {
-
   margin-top: 0.5vw;
 }
-
 .concours_title {
-
-  
   text-align: center;
   font-size:2vw;
   width:100%;
@@ -538,59 +381,46 @@ a:hover {
   font-weight:bold;
   margin-top:4vw;
 }
-
-.line_lots{
-
+.line_lots {
   border-top: 0.2vw solid #ffbb00;
   width : 5vw;
   margin-bottom:4vw;
 }
-
-
 .bandeau_lots {
-
   display:flex;
   justify-content: center;
   align-items: center;
   width:100%;
   height:10vh;
   background-color:#fedf87;
-  margin: 2vw 0vw 2vw 0vw;
-  
+  margin: 2vw 0vw 2vw 0vw; 
 }
-
 .bandeau_lots h4 {
-
   font: 1vw Montserrat;
   font-weight:bold;
   margin:0;
-
-
 }
-
 .section_lots {
-
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
- 
-
 }
-
 .index_form {
-
   height:50vh;
   box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items:center;
   margin: 2vw 0vw 5vw 0vw;
   padding:2vw;
   background-color: rgb(250, 250, 250);
 }
-
+.mb-4{
+  display: flex;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+}
 .mb-3 {
   text-transform: uppercase;
   font-weight: bold;
@@ -598,14 +428,10 @@ a:hover {
   width:50%;
   padding: 1vw;
 }
-
 .mb-3 > input {
-
   height:4vh;
 }
-
 .btn {
-
   border-color: #fedf87;
   background-color: #fedf87;
   color:black;
@@ -616,15 +442,11 @@ a:hover {
   padding:0.2vw;
   margin-top:2vw;
 }
-
 .btn:hover {
-
   background-color:#ffbb00 !important;
   color: white !important;
   border-color:#ffbb00 !important;
 }
-
-
 footer {
   width:100%;
   background-color: #303030;
@@ -632,123 +454,79 @@ footer {
   display: flex;
   flex-wrap:wrap;
 }
-
-
-
 footer > div {
-
   width: 33%;
   padding:3vw 4vw 4vw 4vw;
-
 }
-
 .footer_left > img {
-
   width: 30%;
   margin-bottom: 3vw;
-
 }
-
 .footer_left > p {
   color:white;
   font-size: 1vw;
   font-weight:normal;
   text-align: justify;
 }
-
 .footer_menu > li > h5 {
-
   color:#fedf87;
   margin-right: 1vw;
   font-size:1vw;
 }
-
 .footer_menu {
   padding:0;
-  margin-top:3vw;
-  
+  margin-top:3vw; 
 }
-
 .footer_menu > li {
   display: flex;
   flex-wrap:wrap;
   align-items: center;
   margin-bottom:1vw;
-  font-size: 1vw;
-  
+  font-size: 1vw; 
 }
-
 .footer_menu > li > a {
-
   color:white;
   font-weight:normal;
 }
-
 .footer_menu > li > a:hover {
-
   color: #fedf87;
-
 }
-
-
 .footer_title {
   font-size:2vw;
   color:white;
 }
-
-
-.footer_line{
-
+.footer_line {
   border-top: 0.2vw solid #fedf87;
   width : 100%;
-
 }
-.flex_reseaux{
-
+.flex_reseaux {
   display: flex;
- 
 }
-
 .footer_right > h4, .footer_right > p {
-
   color:white;
 }
-
 .footer_right > p {
   font-size:1vw;
   font-weight:normal;
   margin: 3vw 0vw 1vw 0vw;
 }
-
 .footer_right > h4 {
-
   font-size:1vw;
   margin-bottom: 1vw;
 }
-
 .flex_reseaux > img {
-
-
   width: 10%;
   margin: 1vw 3vw 0vw 0vw;
 }
-
-
 .div_global_form {
   background: linear-gradient(#e7e7e7, #ffffff);
-
   width: 100%;
   height:100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
-
 }
-
-.log_form {
-  
+.log_form { 
   padding: 2vw;
   width:40%;
   background-color: white;
@@ -760,87 +538,59 @@ footer > div {
   align-items: center;
 }
 .log_form > p {
-  
   width:100%;
   font-weight:normal;
   margin-left:1vw;
 }
-
 .log_form > p > a {
-
   font-weight:bold;
-
 }
-
 .div_form {
   padding-top:0;
   margin:0;
   width:100%;
-  
 }
-
 .div_form_signin {
-
   padding-top:0;
   margin:0;
   width:50%;
-  
+}
+.max {
+  width:100%;
+  text-align: center;
 }
 .div_form > input {
-
   height:2.5vw;
-
 }
-
-
 .logo_log {
-
   width:15vw;
-  
 }
-
 .img_log {
-
   width:100%;
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  
 }
 
+/**********************************COMPTE INFORMATION**********************************/
 
-
-/* 
-  COMPTE INFORMATION
-
-
-*/
 .body_compte {
-
   margin:0;
   padding:0;
 }
-
 .log_form > h2 {
-
   text-align: center;
   font-weight: bold;
-
   width:100%;
 }
-
-
 .div_btn_compte {
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .modif_btn {
-  
   width: 10vw;
   cursor:pointer;
   border:none;
@@ -850,24 +600,17 @@ footer > div {
   border-radius:1vw;
   padding:0.5vw;
 }
-
 .div_btnp > a {
-
   width:20%;
-  
 }
-
 .div_btnp {
-
   display: flex;
   width:100%;
   align-items: center;
-  justify-content: center;
-  
+  justify-content: center; 
 }
 .info_btnp {
-  width:100%;
-  
+  width:100%; 
   font-weight: bold;
   background-color: #fedf87;
   border: none;
@@ -877,26 +620,13 @@ footer > div {
   color:black;
   text-align:center;
   margin: 5vw 1vw 10vw 1vw;
-
 }
-
-
 .info_btnp:hover{
-
   color:white;
   background-color: #ffbb00;
-
 }
 
-/* */
-/* */
-/* */
-/* */
-/* FORMULAIRE DE LA PAGE ADMINISTRATION */
-/* */
-/* */
-/* */
-/* */
+/**********************************FORMULAIRE DE LA PAGE ADMINISTRATION**********************************/
 
 .containerForm {
   margin-top: 10vh;
@@ -936,7 +666,12 @@ footer > div {
 .bio-area {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+}
+.bio-area > label {
+  margin: 0% 3%;
+}
+.area {
+  margin: 1% 3%;
 }
 .champs>input, .champs>label {
   width: 100%;
@@ -946,6 +681,11 @@ footer > div {
   justify-content: center;
 }
 .upload, .envoyer {
+  display: flex;
+  justify-content: center;
+
+}
+.envoyer2 {
   display: flex;
   justify-content: center;
 }
@@ -1000,6 +740,21 @@ label {
   transform: translateY(-5px);
   background-color: black;
 }
+.btn2 {
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background: gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  margin: 2vw;
+}
+.btn2:hover {
+  background-color: black;
+}
 a > button {
   padding: 5px 10px;
   text-align: center;
@@ -1049,8 +804,18 @@ a > button:hover {
 .list > option {
   color:white;
 }
-
 .list:hover {
-  
   color:white;
+}
+.recap{
+  border: 2px solid #e7e7e7;
+  padding: 5px 15px;
+  margin: 2% 3%;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: .3s;
+  border-color: gray;
+  font-size:1vw;
+  font-weight:normal;
+  font: 1vw/1.2vw Montserrat; 
 }
