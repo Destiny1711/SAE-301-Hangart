@@ -2,6 +2,40 @@
   font: TW CEN MT, sans-serif;
   color:black; 
 }
+@media screen and (max-width: 700px) {
+  .info_intervenants {
+    width:100% !important;
+
+  }
+  .img_intervenants {
+    width:30vw !important;
+  }
+  .pp_intervenants {
+    width:29.9vw !important;
+    
+  }
+
+  .title_intervenants {
+    font: 3vw Montserrat !important;
+
+  }
+  .bio_intervenants {
+
+    font: 2vw Montserrat !important;
+  }
+  .div_map {
+
+    width: 100% !important;
+    height:50% !important;
+  }
+
+  .text_map {
+    width:100% !important;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
 .container-fluid {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -226,17 +260,21 @@ a:hover {
 }
 .swiper2 {
   width:90%;
-  height:70vh;
+  min-height:10vh;
+  padding:10vw;
   margin:5vw;
 }
 .slide-flex {
   display:flex;
-  background-color: rgb(248, 248, 248);
+  background-color: blue;
+  /*background-color: rgb(248, 248, 248);*/
   justify-content: center;
   align-items: center;
+  height:80%;
 }
 .slide-div-flex {
   width:90%;
+  
   display:flex;
   justify-content: space-between;
   align-items: center; 
@@ -288,11 +326,16 @@ a:hover {
   align-items: center;
   padding:0vw 5vw 4vw 5vw;
 }
+
+
 .info_intervenants {
   display: flex;
   width:50%;
   align-items: center;
 }
+
+
+
 .img_intervenants {
   width:10vw;
   position: absolute;
@@ -362,12 +405,13 @@ a:hover {
   font-weight:bold;
 }
 .horaires {
-  font-family: Montserrat;
+  
+  font: 1.2vw Montserrat;
   font-weight:bold;
   padding-top: 5vh;
 }
 .text_map > p, .text_map > ul > li {
-  font: 1vw Montserrat;
+  font: 1.2vw Montserrat;
   font-weight:normal;
 }
 .text_map > ul > li {
@@ -468,7 +512,7 @@ footer > div {
   font-weight:normal;
   text-align: justify;
 }
-.footer_menu > li > h5 {
+.footer_menu > li > p {
   color:#fedf87;
   margin-right: 1vw;
   font-size:1vw;
@@ -584,28 +628,19 @@ footer > div {
   font-weight: bold;
   width:100%;
 }
+
+
 .div_btn_compte {
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-<<<<<<< HEAD
 .last_name{
   margin-top:3vw;
 
-=======
-.modif_btn {
-  width: 10vw;
-  cursor:pointer;
-  border:none;
-  background-color: #fedf87;
-  text-align: center;
-  font-size:1vw;
-  border-radius:1vw;
-  padding:0.5vw;
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
 }
+
 .div_btnp > a {
   width:20%;
 }
@@ -748,21 +783,6 @@ label {
   background-color:gray !important;
   color: white !important;
   border-color:gray !important;
-}
-.btn2 {
-  padding: 5px 10px;
-  text-align: center;
-  border: none;
-  background: gray;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  color: white;
-  cursor: pointer;
-  transition: .3s;
-  margin: 2vw;
-}
-.btn2:hover {
-  background-color: black;
 }
 .btn2 {
   padding: 5px 10px;
