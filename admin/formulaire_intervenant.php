@@ -118,8 +118,13 @@
                     </button>
                 </div>
                 <div class="envoyer">
+<<<<<<< HEAD
 		    <input class="btn1" type="reset" name="annuler" value="Annuler"> 
                     <input class="btn" type="submit" name="soumettre2" value="Ajouter">      
+=======
+                    <input class="btn1" type="submit" name="soumettre2" value="Ajouter">
+                    <input class="btn1" type="reset" name="annuler" value="Annuler"> 
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
                 </div>
                 <?php 
                     $requete='SELECT * FROM intervenants';
@@ -136,7 +141,11 @@
                                     <input class="btn1" type="submit" name="soumettre" value="Supprimer">
                                 </form>
                                 <form action="modif_intervenant.php?id='.$_GET['id'].'&id_intervenant='.$tabintervenant[$i][0].'" method="POST">
+<<<<<<< HEAD
                                     <input class="btn" type="submit" value="Modifier">
+=======
+                                    <input class="btn1" type="submit" value="Modifier">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
                                 </form>
                             </div>
                         ';                             

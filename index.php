@@ -3,7 +3,10 @@
   include("parametre/parametre.php") ;
   //connexion a la base de donnee
   $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
+<<<<<<< HEAD
 
+=======
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <meta name="description" content="It is a website created on the occasion of the event organized by Hangart, in order to promote the activities proposed on the theme of Street Art">
+=======
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="design.css"/>
@@ -27,7 +33,11 @@
         <div class="row">
             <div class="col-md topbar">
               <h4 class="toptitle">Book a ticket</h4>
+<<<<<<< HEAD
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+=======
+              <img class="toptitle viptext" src="img/brush_vip.png"></h4>
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
             </div>
         </div>
         <div class="row">
@@ -79,6 +89,7 @@
   <div class="swiper swiper1" id="swiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
+<<<<<<< HEAD
         <img src="img/img-slide1/HANGART-3.png" alt="slider image 1">
       </div>
       <div class="swiper-slide">
@@ -89,6 +100,18 @@
       </div>
       <div class="swiper-slide">
         <img src="img/img-slide1/HANGART-2.png" alt="slider image 4">
+=======
+        <img src="img/img-slide1/HANGART-3.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/img-slide1/HANGART-1.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/img-slide1/HANGART-4.png" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/img-slide1/HANGART-2.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -110,7 +133,11 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
+<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="slider 2 image 1 sneakers">
+=======
+            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>1 - Custom Sneakers</b>
             </br></br>
@@ -123,7 +150,11 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
+<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="slider 2 image 2 graffiti">
+=======
+            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>2 - Graffiti</b>
             </br></br>
@@ -136,7 +167,11 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
+<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="slider 2 image 3 serigraphie">
+=======
+            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>3 - Silkscreen Printing</b>
             </br></br>
@@ -148,7 +183,11 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
+<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/clothes.png" alt="slider 2 image 4 clothes">
+=======
+            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>4 - Custom Clothes (Nike Lab)</b>
             </br></br>
@@ -160,7 +199,11 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
+<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="slider 2 image 5 hip-hop">
+=======
+            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>5 - Hip Hop</b>
             </br></br>
@@ -192,8 +235,13 @@
       $nbIntervenants = count($tabIntervenants);
       for($i=0; $i < $nbIntervenants; $i++){
         echo '<div class="info_intervenants">';
+<<<<<<< HEAD
         echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="yellow cercle">';
         echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="speakers image">';
+=======
+        echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="">';
+        echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="">';
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
         echo '<div class="text_intervenants">
                 <h4 class="title_intervenants">'.$tabIntervenants[$i]['nom_intervenants'].' '.$tabIntervenants[$i]['prenom_intervenants'].'</h4>
                 <p class="bio_intervenants">'.$tabIntervenants[$i]['bio_intervenants'].'</p>

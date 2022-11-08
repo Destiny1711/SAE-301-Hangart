@@ -584,19 +584,28 @@ footer > div {
   font-weight: bold;
   width:100%;
 }
-
-
 .div_btn_compte {
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+<<<<<<< HEAD
 .last_name{
   margin-top:3vw;
 
+=======
+.modif_btn {
+  width: 10vw;
+  cursor:pointer;
+  border:none;
+  background-color: #fedf87;
+  text-align: center;
+  font-size:1vw;
+  border-radius:1vw;
+  padding:0.5vw;
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
 }
-
 .div_btnp > a {
   width:20%;
 }
@@ -739,6 +748,21 @@ label {
   background-color:gray !important;
   color: white !important;
   border-color:gray !important;
+}
+.btn2 {
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background: gray;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  margin: 2vw;
+}
+.btn2:hover {
+  background-color: black;
 }
 .btn2 {
   padding: 5px 10px;

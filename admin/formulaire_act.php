@@ -106,8 +106,13 @@
                     </button>
                 </div>
                 <div class="envoyer">
+<<<<<<< HEAD
 		    <input class="btn1" type="reset" name="annuler" value="Annuler"> 
                     <input class="btn" type="submit" name="soumettre1" value="Ajouter">
+=======
+                    <input class="btn1" type="submit" name="soumettre1" value="Ajouter">
+                    <input class="btn1" type="reset" name="annuler" value="Annuler"> 
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
                 </div>
                 <?php
                     $requete='SELECT * FROM activite';
@@ -120,11 +125,19 @@
                         $listactivite[$i]= new activite ($tabact[$i][1],$tabact[$i][2],$tabact[$i][3]);
                         echo'
                             <div class="envoyer2">
+<<<<<<< HEAD
                                 <form action="annexe_act.php?id='.$_GET['id'].'&i='.$tabact[$i][0].'" method="POST">
                                     <input class="btn1" type="submit" name="soumettre" value="Supprimer">
                                 </form>
                                 <form action="modif_act.php?id='.$_GET['id'].'&i='.$tabact[$i][0].'" method="POST">
                                     <input class="btn" type="submit" value="Modifier">
+=======
+                                <form action="annexe_act.php?id='.$_GET['id'].'&i='.$tabact[$i][0].'" method="post">
+                                    <input class="btn1" type="submit" name="soumettre" value="Supprimer">
+                                </form>
+                                <form action="modif_act.php?id='.$_GET['id'].'&i='.$tabact[$i][0].'" method="POST">
+                                    <input class="btn1" type="submit" value="Modifier">
+>>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
                                 </form>
                             </div>
                         ';
