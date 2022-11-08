@@ -79,16 +79,16 @@
   <div class="swiper swiper1" id="swiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-3.webp" alt="slider image 1">
+        <img src="img/img-slide1/HANGART-3.webp" alt="Roché Saint Michel">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-1.webp" alt="slider image 2">
+        <img src="img/img-slide1/HANGART-1.webp" alt="Hangart">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-4.webp" alt="slider image 3">
+        <img src="img/img-slide1/HANGART-4.webp" alt="Tudip">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-2.webp" alt="slider image 4">
+        <img src="img/img-slide1/HANGART-2.webp" alt="Tupid Custom">
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -110,7 +110,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="slider 2 image 1 sneakers">
+            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="Nike Air Jordan Art">
           </div>
           <p><b>1 - Custom Sneakers</b>
             </br></br>
@@ -123,7 +123,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="slider 2 image 2 graffiti">
+            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="Graffiti Painting">
           </div>
           <p><b>2 - Graffiti</b>
             </br></br>
@@ -136,7 +136,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="slider 2 image 3 serigraphie">
+            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="Skillscreen Printing">
           </div>
           <p><b>3 - Silkscreen Printing</b>
             </br></br>
@@ -148,7 +148,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="slider 2 image 4 clothes">
+            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="Nike Lab Workshop">
           </div>
           <p><b>4 - Custom Clothes (Nike Lab)</b>
             </br></br>
@@ -160,7 +160,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="slider 2 image 5 hip-hop">
+            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="Hip-Hop Choreography">
           </div>
           <p><b>5 - Hip Hop</b>
             </br></br>
@@ -193,7 +193,7 @@
       for($i=0; $i < $nbIntervenants; $i++){
         echo '<div class="info_intervenants">';
         echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="yellow cercle">';
-        echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="speakers image">';
+        echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="  speakers image">';
         echo '<div class="text_intervenants">
                 <h4 class="title_intervenants">'.$tabIntervenants[$i]['nom_intervenants'].' '.$tabIntervenants[$i]['prenom_intervenants'].'</h4>
                 <p class="bio_intervenants">'.$tabIntervenants[$i]['bio_intervenants'].'</p>
