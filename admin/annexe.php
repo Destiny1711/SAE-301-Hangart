@@ -62,7 +62,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../css_bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../design.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/design.css"/>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     <title>HANGART - ANNEXE</title>
 </head>
