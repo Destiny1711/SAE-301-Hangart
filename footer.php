@@ -1,6 +1,6 @@
 <footer>
     <div class="footer_left" id="contact">
-      <img src="img/logo_blanc.png" alt="white hangart logo">
+      <img src="img/logo_blanc.png" alt="White Hangart Logo">
       <p>The Hangart event is spreading across Europe by 2023 and brings back a new concept by welcoming its public in warehouses to be 
         introduced to several activities and in particular customize unused buses of the city by graffiti. The aim is to bring together 
         different artists from several European countries and create a stronger community around street art.</p>
@@ -22,9 +22,9 @@
         <h4>Phone number : 07 81 84 69 90<</h4>
         <h4>E-mail : LeHangart@gmail.com</h4>
         <div class="flex_reseaux">
-          <img src="img/facebook.png" alt="facebook icon">
-          <img src="img/instagram.png" alt="instagram icon">
-          <img src="img/twitter.png" alt="twitter icon">
+          <img src="img/facebook.png" alt="Facebook Icon">
+          <img src="img/instagram.png" alt="Instagram Icon">
+          <img src="img/twitter.png" alt="Twitter Icon">
         </div>
     </div>
   </footer>
