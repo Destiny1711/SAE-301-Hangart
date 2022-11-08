@@ -14,7 +14,7 @@
   <meta name="description" content="It is a website created on the occasion of the event organized by Hangart, in order to promote the activities proposed on the theme of Street Art">
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="design.css"/>
+  <link rel="stylesheet" type="text/css" href="css/design.css"/>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
