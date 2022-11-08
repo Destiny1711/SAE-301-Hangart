@@ -23,7 +23,7 @@
   <div class="col-md-10 div_global_form">
     <form class="log_form" method="POST">
       <div class="mb-3 img_log">
-        <img src="img/logo_hangart.png" class="logo_log" alt="">
+        <img src="img/logo_hangart.png" class="logo_log" alt="Hangart Logo">
       </div>
       <div class="mb-3 div_form">
         <label for="" class="form-label">E-mail</label>
