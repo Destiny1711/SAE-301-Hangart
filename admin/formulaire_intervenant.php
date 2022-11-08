@@ -44,7 +44,7 @@
                         ?>
                     </ul>
                     <div class="profil">
-                        <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                        <img class="icon_connect" src="img/profil.png" alt="Profil Icon">
                         <div class="compte">
                             <ul class="profil_list">
                                 <li>
