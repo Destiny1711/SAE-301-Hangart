@@ -3,10 +3,7 @@
   include("parametre/parametre.php") ;
   //connexion a la base de donnee
   $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
-<<<<<<< HEAD
 
-=======
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
   <meta name="description" content="It is a website created on the occasion of the event organized by Hangart, in order to promote the activities proposed on the theme of Street Art">
-=======
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="design.css"/>
@@ -33,11 +27,7 @@
         <div class="row">
             <div class="col-md topbar">
               <h4 class="toptitle">Book a ticket</h4>
-<<<<<<< HEAD
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
-=======
-              <img class="toptitle viptext" src="img/brush_vip.png"></h4>
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
             </div>
         </div>
         <div class="row">
@@ -89,29 +79,16 @@
   <div class="swiper swiper1" id="swiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-<<<<<<< HEAD
-        <img src="img/img-slide1/HANGART-3.png" alt="slider image 1">
+        <img src="img/img-slide1/HANGART-3.webp" alt="slider image 1">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-1.png" alt="slider image 2">
+        <img src="img/img-slide1/HANGART-1.webp" alt="slider image 2">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-4.png" alt="slider image 3">
+        <img src="img/img-slide1/HANGART-4.webp" alt="slider image 3">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-2.png" alt="slider image 4">
-=======
-        <img src="img/img-slide1/HANGART-3.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-1.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-4.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-2.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
+        <img src="img/img-slide1/HANGART-2.webp" alt="slider image 4">
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -133,11 +110,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="slider 2 image 1 sneakers">
-=======
-            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>1 - Custom Sneakers</b>
             </br></br>
@@ -150,11 +123,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="slider 2 image 2 graffiti">
-=======
-            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>2 - Graffiti</b>
             </br></br>
@@ -167,11 +136,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="slider 2 image 3 serigraphie">
-=======
-            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>3 - Silkscreen Printing</b>
             </br></br>
@@ -183,11 +148,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/clothes.png" alt="slider 2 image 4 clothes">
-=======
-            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>4 - Custom Clothes (Nike Lab)</b>
             </br></br>
@@ -199,11 +160,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-<<<<<<< HEAD
             <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="slider 2 image 5 hip-hop">
-=======
-            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
           </div>
           <p><b>5 - Hip Hop</b>
             </br></br>
@@ -235,13 +192,8 @@
       $nbIntervenants = count($tabIntervenants);
       for($i=0; $i < $nbIntervenants; $i++){
         echo '<div class="info_intervenants">';
-<<<<<<< HEAD
         echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="yellow cercle">';
         echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="speakers image">';
-=======
-        echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="">';
-        echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="">';
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
         echo '<div class="text_intervenants">
                 <h4 class="title_intervenants">'.$tabIntervenants[$i]['nom_intervenants'].' '.$tabIntervenants[$i]['prenom_intervenants'].'</h4>
                 <p class="bio_intervenants">'.$tabIntervenants[$i]['bio_intervenants'].'</p>
@@ -257,7 +209,7 @@
     <div class="global_map">
       <div class="info_map">
         <div class="div_map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.99142479641!2d3.9221753154152874!3d45.04539587909817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5f07e2b87e4df%3A0xf4b12ac0573ec759!2s4%20Rte%20de%20Coubon%2C%2043700%20Brives-Charensac!5e0!3m2!1sfr!2sfr!4v1666621926071!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.99142479641!2d3.9221753154152874!3d45.04539587909817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5f07e2b87e4df%3A0xf4b12ac0573ec759!2s4%20Rte%20de%20Coubon%2C%2043700%20Brives-Charensac!5e0!3m2!1sfr!2sfr!4v1666621926071!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" title="location of Hangart event" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="text_map">
           <h4 class="title_map">WHERE TO FIND US</h4>
@@ -295,36 +247,7 @@
         ?>  
       </form>
   </div>
-  <footer>
-    <div class="footer_left" id="contact">
-      <img src="img/logo_blanc.png" alt="white hangart logo">
-      <p>The Hangart event is spreading across Europe by 2023 and brings back a new concept by welcoming its public in warehouses to be 
-        introduced to several activities and in particular customize unused buses of the city by graffiti. The aim is to bring together 
-        different artists from several European countries and create a stronger community around street art.</p>
-    </div>
-    <div class="footer_center">
-      <h3 class="footer_title">LINKS</h3>
-      <div class="footer_line"></div>
-      <ul class="footer_menu">
-        <li><h5>></h5><a href="#accueil">Home</a></li>
-        <li><h5>></h5><a href="#programme">Program</a></li>
-        <li><h5>></h5><a href="#lieu">Location & Schedules</a></li>
-        <li><h5>></h5><a href="#concours">Contest</a></li>
-      </ul>
-    </div>
-    <div class="footer_right">
-      <h3 class="footer_title">CONTACT US</h3>
-      <div class="footer_line"></div>
-        <p>8 Rue Jean Batiste Fabre, 43000, Le Puy-en-Velay</p>
-        <h4>Phone number : 07 81 84 69 90<</h4>
-        <h4>E-mail : LeHangart@gmail.com</h4>
-        <div class="flex_reseaux">
-          <img src="img/facebook.png" alt="facebook icon">
-          <img src="img/instagram.png" alt="instagram icon">
-          <img src="img/twitter.png" alt="twitter icon">
-        </div>
-    </div>
-  </footer>
+  <?php include('footer.php'); ?>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="library.js"></script>
 </body>

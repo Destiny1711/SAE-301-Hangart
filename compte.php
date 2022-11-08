@@ -26,24 +26,16 @@
                 $resultats=$bdd->query($requete);
                 $tabCompte = $resultats->fetchAll();
                 $resultats->closeCursor();
-<<<<<<< HEAD
                 echo '<p class="last_name"><b>Last Name : </b>'.$tabCompte[0]['nom_profil'].'</p>';
-=======
-                echo '<p><b>Last Name : </b>'.$tabCompte[0]['nom_profil'].'</p>';
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
                 echo '<p><b>First Name : </b>'.$tabCompte[0]['prenom_profil'].'</p>';
                 echo '<p><b>E-mail : </b>'.$tabCompte[0]['email_profil'].'</p>';
                 echo '<p><b>Password : </b>'.$tabCompte[0]['mdp_profil'].'</p>';
                 echo '<p><b>Postal Adress : </b>'.$tabCompte[0]['adresse_profil'].'</p>';
                 echo '<p><b>Mobile : </b>'.$tabCompte[0]['tel_profil'].'</p>';
-<<<<<<< HEAD
                 echo '<div class="div_btn_compte"><a href="form_compte.php?id='.$_GET['id'].'"><button class="btn">EDIT</button></a><div>'
 	     ?>     
-=======
-                echo '<div class="div_btn_compte"><a href="form_compte.php?id='.$_GET['id'].'"><button class="modif_btn">EDIT</button></a><div>'
-            ?>     
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
         </div>
     </div>
+    <?php include('footer.php'); ?>
 </body>
 </html>

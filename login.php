@@ -34,11 +34,7 @@
         <input type="password" name="mdp_profil" class="form-control">
       </div>
       <p>Don't have an account ? <a href="signin.php">Create an account</a></p>
-<<<<<<< HEAD
       <button type="submit" class="btn">Send</button>
-=======
-      <button type="submit" class="btn1">Send</button>
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
       <?php
         /** Verifie que les champs ne sont pas vides**/
         if (isset($_POST['email_profil'])){

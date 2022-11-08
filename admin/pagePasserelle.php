@@ -91,37 +91,6 @@
       ';
     ?>
   </ul>
-  <footer>
-    <div class="footer_left" id="contact">
-      <img src="../img/logo_blanc.png" alt="">
-      <p>L’événement Hangart se répand à travers l’Europe d’ici 2023 et ramène un nouveau concept en accueillant son public dans des entrepôts pour s’initier à plusieurs activités et notamment personnaliser les bus inutilisés de la ville par des graffitis. Le but est de réunir différents artistes de plusieurs pays européens et de créer une communauté plus forte autour du street art.</p>
-    </div>
-    <div class="footer_center">
-      <h3 class="footer_title">LIENS</h3>
-      <div class="footer_line"></div>
-      <ul class="footer_menu">
-        <?php 
-          echo'
-            <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
-            <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
-            <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
-            <li><h5>></h5><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>
-          ';
-        ?>
-      </ul>
-    </div>
-    <div class="footer_right">
-      <h3 class="footer_title">CONTACTEZ-NOUS</h3>
-      <div class="footer_line"></div>
-      <p>8 Rue Jean Batiste Fabre, 43000, Le Puy-en-Velay</p>
-      <h4>Téléphone : 07 81 84 69 90</h4>
-      <h4>Adresse mail : LeHangart@gmail.com</h4>
-      <div class="flex_reseaux">
-        <img src="../img/facebook.png" alt="">
-        <img src="../img/instagram.png" alt="">
-        <img src="../img/twitter.png" alt="">
-      </div>
-    </div>
-  </footer>
+  <?php include('../footer.php'); ?>
 </body>
 </html>

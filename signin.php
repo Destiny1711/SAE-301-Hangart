@@ -88,11 +88,7 @@
                 </select>
             </div>
             <p>Have an account ? <a href="login.php">Login-in</a></p>
-<<<<<<< HEAD
             <input type="submit" value="Send" class="btn">
-=======
-            <input type="submit" value="Send" class="btn1">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
             <?php 
                 if (isset($_POST['email_profil'])){
                 /** Execute une requete sql verifiant si le mail saisit existe dans la table*/

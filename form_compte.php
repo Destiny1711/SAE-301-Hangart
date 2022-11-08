@@ -46,11 +46,7 @@
                 <label for="" class="form-label">Mobile</label>
                 <input type="number" name="tel_profil" class="form-control" required>
             </div>
-<<<<<<< HEAD
             <input class="btn" type="submit" name="btn" value="Send">
-=======
-            <input class="btn1" type="submit" name="btn" value="Send">
->>>>>>> d6bda332c3a7b1764e08d6685f1477ad9f774784
             <?php 
                 if (isset($_POST['btn'])){
                 /** Execute une requete sql verifiant si le mail saisit existe dans la table*/
@@ -69,5 +65,6 @@
             ?>
         </form>
     </div>
+    <?php include('footer.php'); ?>
 </body>
 </html>
