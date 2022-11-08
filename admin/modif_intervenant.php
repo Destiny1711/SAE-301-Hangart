@@ -70,7 +70,7 @@
                         // on vérifie l"extension
                         $path = $_FILES["image"]["name"];
                         $ext = pathinfo($path, PATHINFO_EXTENSION); // on récupère l"extension
-                        if(!strstr($ext, "jpg")&& !strstr($ext, "png")&& !strstr($ext, "jpeg")){
+                        if(!strstr($ext, "jpg")&& !strstr($ext, "png")&& !strstr($ext, "jpeg")&& !strstr($ext, "webp")){
                             echo "EXTENSION ".$ext." NON AUTORISEE";
                         }
                         // Si le formulaire est validé, on copie le fichier dans le dossier de destination
