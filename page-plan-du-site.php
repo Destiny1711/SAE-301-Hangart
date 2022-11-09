@@ -87,7 +87,7 @@
           
           <h4 class="title_plan"><a href="#contact">CONTACT</a></h4>
         
-          <h4 class="title_plan"><a href="#login.php">CONNECTION</a></h4>
+          <h4 class="title_plan"><a href="login.php">CONNECTION</a></h4>
         
         </div>
       </div>
