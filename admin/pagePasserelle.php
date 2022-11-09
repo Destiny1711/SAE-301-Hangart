@@ -37,7 +37,7 @@
             ?>
           </ul>
           <div class="profil">
-            <img class="icon_connect" src="img/profil.png" alt="Profil Icone">
+            <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
             <div class="compte">
               <ul class="profil_list">
                 <li>

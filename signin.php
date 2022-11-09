@@ -43,13 +43,12 @@
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js_bootstrap/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
   <title>HANGART - SIGNIN</title>
 </head>
 <body>
     <div class="col-md-10 div_global_form">
-        <form class="log_form" method="POST" enctype="multipart/form-data">  
+        <form class="log_form signin_form" method="POST" enctype="multipart/form-data">  
             <div class="mb-3 img_log">
                 <img src="img/logo_hangart.png" class="logo_log" alt="">
             </div>
@@ -105,7 +104,7 @@
                     $nom_profil=$_POST['nom_profil'];
                     $prenom_profil=$_POST['prenom_profil'];
                     $email_profil=$_POST['email_profil'];
-                    $mdp_profil=md5($_POST['mdp_profil']);
+                    $mdp_profil=$_POST['mdp_profil'];
                     $adresse_profil=$_POST['adresse_profil'];
                     $tel_profil=$_POST['tel_profil'];
                     Insert($nom_profil,$prenom_profil,$email_profil,$mdp_profil,$adresse_profil,$tel_profil);

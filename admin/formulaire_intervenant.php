@@ -30,7 +30,15 @@
             <div class="row">
                 <div class="col-md navigation">
                     <div class="divLogo">
-                        <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+                    <?php
+                        if(isset($_GET['id'])){
+                        echo'
+                        <a href="index.php?id='.$_GET['id'].'"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                        } else { 
+                        echo'
+                        <a href="index.php"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                        }
+                    ?>
                     </div>
                     <ul class="menu">
                         <?php 
@@ -44,7 +52,7 @@
                         ?>
                     </ul>
                     <div class="profil">
-                        <img class="icon_connect" src="img/profil.png" alt="Profil Icon">
+                        <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
                         <div class="compte">
                             <ul class="profil_list">
                                 <li>

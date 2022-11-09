@@ -23,7 +23,7 @@
   <div class="col-md-10 div_global_form">
     <form class="log_form" method="POST">
       <div class="mb-3 img_log">
-        <img src="img/logo_hangart.png" class="logo_log" alt="Hangart Logo">
+        <img src="img/logo_hangart.png" class="logo_log" alt="">
       </div>
       <div class="mb-3 div_form">
         <label for="" class="form-label">E-mail</label>
@@ -47,7 +47,7 @@
             echo "<p style='text-align:center; color:red; padding-top:2vw;'>L'email saisit est incorrect</p>";
           }
           /** Execute une requete sql verifiant si le mail saisit existe dans la table*/
-          $requete='SELECT * FROM profil WHERE mdp_profil="'.md5($_POST['mdp_profil']).'"';
+          $requete='SELECT * FROM profil WHERE mdp_profil="'.$_POST['mdp_profil'].'"';
           $resultats=$bdd->query($requete);
           $tabPassword = $resultats->fetchAll();
           $resultats->closeCursor();

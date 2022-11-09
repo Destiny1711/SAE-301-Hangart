@@ -17,23 +17,33 @@
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js_bootstrap/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
+  <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>HANGART Street Art</title>
 </head>
 <body>
   <header>
     <div class="container-fluid" id="accueil">
         <div class="row">
-            <div class="col-md topbar">
+            <div class="topbar">
               <h4 class="toptitle">Book a ticket</h4>
-              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
             </div>
         </div>
         <div class="row">
             <div class="col-md navigation">
               <div class="divLogo">
-                <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+                <?php
+                if(isset($_GET['id'])){
+                echo'
+                <a href="index.php?id='.$_GET['id'].'"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                } else { 
+                  echo'
+                <a href="index.php"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                }
+                ?>
               </div>
               <ul class="menu">
                 <li><a href="#accueil">Home</a></li>
@@ -60,8 +70,8 @@
                             if($_GET['id']==$tabAdmin[0]['id_profil']){
                               echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
                             }
-                              echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
-                              <li><a href="index.php" class="text_profil">Se déconnecter</a></li>
+                              echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
+                              <li><a href="index.php" class="text_profil">Log Out</a></li>
                           </ul>';
                         }
                       ?>   
@@ -88,7 +98,7 @@
         <img src="img/img-slide1/HANGART-4.webp" alt="Tudip">
       </div>
       <div class="swiper-slide">
-        <img src="img/img-slide1/HANGART-2.webp" alt="Tupid Custom">
+        <img src="img/img-slide1/HANGART-2.webp" alt="Custom Tudip">
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -96,21 +106,21 @@
   </div>
   <div class="swiper-pagination"></div>
   <div class="info">
-    <h3 class="info_title" id="programme">OUTSTANDING STREET ART</h3>
-    <div class="line"></div>
-    <p class="info_description">Welcome to the 1st edition of the Hangart place of creation open to Europe. Hangart is a street art event 
+    <h3 class="info_title" id="programme" data-aos="fade-up">OUTSTANDING STREET ART</h3>
+    <div class="line" data-aos="fade-up"></div>
+    <p class="info_description" data-aos="fade-up">Welcome to the 1st edition of the Hangart place of creation open to Europe. Hangart is a street art event 
       in which artists will introduce you to their art. It will take place in the public transport warehouses of the agglomeration of 
       Puy en Velay where the various stands will be held. Recently, the city’s public vehicle fleet has been renewed, leaving the old 
       buses abandoned. We offer them a second life with this event, they will be at the heart of the weekend, renovated and transformed 
       into a stand. Once the event is over, they will then be given to the artists to allow them to continue their tour in the different 
       European countries.</p>
   </div>
-  <div class="swiper swiper2" id="swiper2">
+  <div class="swiper swiper2" id="swiper2" data-aos="fade-up">
     <div class="swiper-wrapper">
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/sneakers.png" alt="Nike Air Jordan Art">
+            <img class="img_slide2" src="img/img-slide2/sneakers.webp" alt="Nike Air Jordan Art">
           </div>
           <p><b>1 - Custom Sneakers</b>
             </br></br>
@@ -123,7 +133,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/graffiti.png" alt="Graffiti Painting">
+            <img class="img_slide2" src="img/img-slide2/graffiti.webp" alt="Graffiti Painting">
           </div>
           <p><b>2 - Graffiti</b>
             </br></br>
@@ -136,7 +146,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/serigraphie.png" alt="Skillscreen Printing">
+            <img class="img_slide2" src="img/img-slide2/serigraphie.webp" alt="Skillscreen Printing">
           </div>
           <p><b>3 - Silkscreen Printing</b>
             </br></br>
@@ -148,7 +158,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/clothes.png" alt="Nike Lab Workshop">
+            <img class="img_slide2" src="img/img-slide2/clothes.webp" alt="Nike Lab Workshop">
           </div>
           <p><b>4 - Custom Clothes (Nike Lab)</b>
             </br></br>
@@ -160,7 +170,7 @@
       <div class="swiper-slide slide-flex">
         <div class="slide-div-flex">
           <div class="divImage_slide2">
-            <img class="img_slide2" src="img/img-slide2/hiphop.png" alt="Hip-Hop Choreography">
+            <img class="img_slide2" src="img/img-slide2/hiphop.webp" alt="Hip-Hop Choreography">
           </div>
           <p><b>5 - Hip Hop</b>
             </br></br>
@@ -173,7 +183,7 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
-  <div class="info2">
+  <div class="info2" data-aos="fade-up">
     <h3 class="info_title">DISCOVER THE GUESTS</h3>
     <div class="line"></div>
     <div class="div_btn">
@@ -191,7 +201,7 @@
       $resultats->closeCursor();
       $nbIntervenants = count($tabIntervenants);
       for($i=0; $i < $nbIntervenants; $i++){
-        echo '<div class="info_intervenants">';
+        echo '<div class="info_intervenants" data-aos="fade-up">';
         echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="yellow cercle">';
         echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="  speakers image">';
         echo '<div class="text_intervenants">
@@ -203,7 +213,7 @@
       } 
     ?>
   </div>
-  <div class="section_map">
+  <div class="section_map" data-aos="fade-up">
     <h3 class="info_title" id="lieu">LOCATION & SCHEDULES</h3>
     <div class="line"></div>
     <div class="global_map">
@@ -213,42 +223,59 @@
         </div>
         <div class="text_map">
           <h4 class="title_map">WHERE TO FIND US</h4>
-          <p>Our teams will be happy to welcome you during the weekend of May 27 to 28 at 4 Rte de Coubon, 43700 Brives-Charensac.</p>
-          <div>
-            <p class="horaires">SATURDAY 27 May 2023 (10AM to 10PM)</p>
-            <p class="horaires">SUNDAY 28 May 2023 (10AM to 12AM)</p>
-          </div>
+          <p class="map_description">Our teams will be happy to welcome you during the weekend of May 27 to 28 at 4 Rte de Coubon, 43700 Brives-Charensac.</p>
+          <p class="horaires">SATURDAY 27 May 2023 (10AM to 10PM)</p>
+          <p class="horaires">SUNDAY 28 May 2023 (10AM to 12AM)</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="section_lots">
-    <h3 class="concours_title" id="concours">PARTICIPATE IN THE CONTEST</h3>
-    <div class="line_lots"></div>
-    <div class="bandeau_lots">
-      <h4>PRIZES TO WIN</h4>
-    </div>
-    <div class="col-md-10 form">
-      <form class="index_form">
-        <?php
-          $requete='SELECT * FROM lots';
-          $resultats=$bdd->query($requete);
-          $tabLots = $resultats->fetchAll();
-          $resultats->closeCursor();
-          $nbLots = count($tabLots);
-          for($i=0; $i < $nbLots; $i++){
-            echo'
-              <div class="mb-4">
-                <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
-                <h5>'.$tabLots[$i]['description_lots'].'</h5>
-              </div>
-            ';
-          }
-        ?>  
-      </form>
-  </div>
-  <?php include('footer.php'); ?>
+  <div class="section_lots" data-aos="fade-up">
+    <h3 class="info_title" id="concours">PARTICIPATE IN THE CONTEST</h3>
+    
+    <?php 
+    if(isset($_GET['id'])){
+      echo '
+      <div class="line_lots"></div>
+      <div class="bandeau_lots">
+        <h4>PRIZES TO WIN</h4>
+      </div>
+      <div class="col-md-10 form">
+        <img src="img/IMG_CONCOURS.webp" class="img_concours" alt="Prizes to win in contest">
+        <form class="index_form">';
+            $requete='SELECT * FROM lots';
+            $resultats=$bdd->query($requete);
+            $tabLots = $resultats->fetchAll();
+            $resultats->closeCursor();
+            $nbLots = count($tabLots);
+            for($i=0; $i < $nbLots; $i++){
+              echo'
+                <div class="mb-4">
+                  <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
+                  <h5>'.$tabLots[$i]['description_lots'].'</h5>
+                </div>
+              ';
+            }
+        echo'  
+        </form>
+      </div>';
+    } else { 
+      echo'
+      <div class="line"></div>
+      <div class="bandeau_lots">
+        <h4>You must be register to access to contest</h4>
+      </div>
+      <div class="col-md-10 form">
+        <img src="img/IMG_CONCOURS.webp" class="img_concours" alt="Prizes to win in contest">
+        <form class="div_concours" action="signin.php">
+          <input type="submit" class="info_btn" value="Register">
+        </form>
+      </div>';
+      
+    }
+  include('footer.php'); ?>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="js/library.js"></script>
+  <script> AOS.init();</script>
 </body>
 </html>

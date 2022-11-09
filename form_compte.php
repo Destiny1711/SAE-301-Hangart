@@ -12,11 +12,65 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
   <title>HANGART - ADMIN</title>
 </head>
-<body class="body_compte">
+<body>
+<div class="container-fluid" id="accueil">
+        <div class="row">
+            <div class="col-md topbar">
+              <h4 class="toptitle">Book a ticket</h4>
+              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md navigation">
+            <div class="divLogo">
+                <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+            </div>
+            <ul class="menu">
+                <?php 
+                    echo'
+                        <li><a href="index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                        <li><a href="index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                        <li><a href="index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                        <li><a href="index.php?id='.$_GET['id'].'#concours">Concours</a></li>
+                        <li><a href="index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
+                ?>
+            </ul>
+            <div class="profil">
+                <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                <div class="compte">
+                  <ul class="profil_list">
+                    <li>
+                      <?php 
+                        if(!isset($_GET['id'])){
+                          echo '<a class="text_profil" href="login.php">Connect</a>';
+                        } else {
+                          echo '<a class="text_profil" href="#">Profil</a>
+                          <ul>';
+                            $requete='SELECT * FROM profil WHERE id_profil="1"';
+                            $resultats=$bdd->query($requete);
+                            $tabAdmin = $resultats->fetchAll();
+                            $resultats->closeCursor();
+                            if($_GET['id']==$tabAdmin[0]['id_profil']){
+                              echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
+                            }
+                              echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
+                              <li><a href="index.php" class="text_profil">Log Out</a></li>
+                          </ul>';
+                        }
+                      ?>   
+                    </li>
+                  </ul>
+                </div>
+                <div class="lang_div">
+                  <img src="img/lang_en.png" class="lang" alt="england flag">
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
     <div class="div_global_form">
         <form class="log_form" method="POST" enctype="multipart/form-data">  
             <h2>ACCOUNT INFORMATION</h2>
