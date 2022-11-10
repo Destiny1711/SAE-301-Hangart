@@ -50,7 +50,7 @@
                 <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
                 } else { 
                   echo'
-                <a href="index.php"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
                 }
                 ?>
               </div>
