@@ -15,93 +15,87 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
-  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
-  <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <title>HANGART Street Art</title>
+  <title>HANGART - Street Art</title>
 </head>
 <body>
   <header>
     <div class="container-fluid" id="accueil">
-        <div class="row">
-            <div class="topbar">
-
-              <div class="darkmode">
-                <img src="img/light.png" alt="light mode" class="img_light">
-                <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
-                <img src="img/dark.png" alt="dark mode" class="img_dark">
-              </div>
-              <div class="top_vip">
-              <h4 class="toptitle">Book a ticket</h4>
-              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
-            </div>
-            <div class="translation-icons" style="visibility:hidden">
-              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
-              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
-              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
-              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
-            </div>
-            <div id="google_translate_element" style="display:none;"></div>
-            </div>
+      <div class="row">
+        <div class="topbar">
+          <div class="darkmode">
+            <img src="img/light.png" alt="light mode" class="img_light">
+            <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+            <img src="img/dark.png" alt="dark mode" class="img_dark">
+          </div>
+          <div class="top_vip">
+            <h4 class="toptitle">Book a ticket</h4>
+            <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
+          </div>
+          <div class="translation-icons" style="visibility:hidden">
+            <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+            <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+            <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+            <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
+          </div>
+          <div id="google_translate_element" style="display:none;"></div>
         </div>
-        <div class="row">
-            <div class="col-md navigation">
-              <div class="divLogo">
-                <?php
-                if(isset($_GET['id'])){
+      </div>
+      <div class="row">
+        <div class="col-md navigation">
+          <div class="divLogo">
+            <?php
+              if(isset($_GET['id'])){
+              echo'
+              <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+              } 
+              else { 
                 echo'
-                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-                } else { 
-                  echo'
-                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-                }
-                ?>
-              </div>
-              <ul class="menu">
-                <li><a href="#accueil">Home</a></li>
-                <li><a href="#programme">Program</a></li>
-                <li><a href="#lieu">Location & Schedules</a></li>
-                <li><a href="#concours">Contest</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-              <div class="profil">
-                <div class="account">
-                  <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
-
-                  <div class="compte">
-                    <ul class="profil_list">
-                      <li>
-                        <?php 
-                          if(!isset($_GET['id'])){
-                            echo '<a class="text_profil" href="login.php">Login</a>';
-                          } else {
-                            echo '<a class="text_profil" href="#">Profil</a>
-                            <ul>';
-                              $requete='SELECT * FROM profil WHERE id_profil="1"';
-                              $resultats=$bdd->query($requete);
-                              $tabAdmin = $resultats->fetchAll();
-                              $resultats->closeCursor();
-                              if($_GET['id']==$tabAdmin[0]['id_profil']){
-                                echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
-                              }
-                                echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
-                                <li><a href="index.php" class="text_profil">Log Out</a></li>
-                            </ul>';
+              <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+              }
+            ?>
+          </div>
+          <ul class="menu">
+            <li><a href="#accueil">Home</a></li>
+            <li><a href="#programme">Program</a></li>
+            <li><a href="#lieu">Location & Schedules</a></li>
+            <li><a href="#concours">Contest</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="profil">
+            <div class="account">
+              <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
+              <div class="compte">
+                <ul class="profil_list">
+                  <li>
+                    <?php 
+                      if(!isset($_GET['id'])){
+                        echo '<a class="text_profil" href="login.php">Login</a>';
+                      } 
+                      else {
+                        echo '<a class="text_profil" href="#">Profil</a>
+                        <ul>';
+                          $requete='SELECT * FROM profil WHERE id_profil="1"';
+                          $resultats=$bdd->query($requete);
+                          $tabAdmin = $resultats->fetchAll();
+                          $resultats->closeCursor();
+                          if($_GET['id']==$tabAdmin[0]['id_profil']){
+                            echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
                           }
-                        ?>   
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
+                            echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
+                            <li><a href="index.php" class="text_profil">Log Out</a></li>
+                        </ul>';
+                      }
+                    ?>   
+                  </li>
+                </ul>
               </div>
-                
-              
-            </div>
+            </div>  
+          </div>         
         </div>
+      </div>
     </div>
   </header>
   <div class="swiper swiper1" id="swiper1">
@@ -126,13 +120,7 @@
   <div class="info">
     <h3 class="info_title" id="programme" data-aos="fade-up">OUTSTANDING STREET ART</h3>
     <div class="line" data-aos="fade-up"></div>
-    <p class="info_description" data-aos="fade-up">Welcome to the 1st edition of the Hangart place of creation open to Europe. Hangart is a street art event 
-      in which artists will introduce you to their art. It will take place in the public transport warehouses of the agglomeration of 
-      Puy en Velay where the various stands will be held. Recently, the city’s public vehicle fleet has been renewed, leaving the old 
-      buses abandoned. We offer them a second life with this event, they will be at the heart of the weekend, renovated and transformed 
-      into a stand. Once the event is over, they will then be given to the artists to allow them to continue their tour in the different 
-      European countries.</p>
-      
+    <p class="info_description" data-aos="fade-up">Welcome to the 1st edition of the Hangart place of creation open to Europe. Hangart is a street art event in which artists will introduce you to their art. It will take place in the public transport warehouses of the agglomeration of Puy en Velay where the various stands will be held. Recently, the city’s public vehicle fleet has been renewed, leaving the old buses abandoned. We offer them a second life with this event, they will be at the heart of the weekend, renovated and transformed into a stand. Once the event is over, they will then be given to the artists to allow them to continue their tour in the different European countries.</p> 
   </div>
   <div class="swiper swiper2" id="swiper2" data-aos="fade-up">
     <div class="swiper-wrapper">
@@ -198,6 +186,16 @@
             Rap (or MCing), DJing, Break dancing (or b-boying), Graffiti, Beatboxing.</p>
         </div>
       </div>
+      <div class="swiper-slide slide-flex">
+        <div class="slide-div-flex">
+          <div class="divImage_slide2">
+            <img class="img_slide2" src="img/img-slide2/skateboard.webp" alt="Skateboard">
+          </div>
+          <p><b>6 - Custom Skateboard</b>
+            </br></br>
+            It is possible to give a new look to your skateboard thanks to the booth that will be present on site. Artists can customize your piece or even teach you how to make illustrations. Feel free to bring back your skateboard even if it is not functional, the speakers will know what to do with it !</p>
+        </div>
+      </div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -209,8 +207,7 @@
       <div class="info_btn">27 May 2023</div>
       <div class="info_btn">28 May 2023</div>
     </div>
-    <p class="info_description">It is with pleasure that we welcome you to the Hangart. Our different teams will be at your disposal for all requests of 
-    information on the program of the event as well as information on the various stakeholders.
+    <p class="info_description">It is with pleasure that we welcome you to the Hangart. Our different teams will be at your disposal for all requests of information on the program of the event as well as information on the various stakeholders.
     For the various speakers present, we let you check the information below.</p>
   </div>
   <div class="div_intervenants">
@@ -252,7 +249,6 @@
   </div>
   <div class="section_lots" data-aos="fade-up">
     <h3 class="info_title" id="concours">PARTICIPATE IN THE CONTEST</h3>
-    
     <?php 
     if(isset($_GET['id'])){
       echo '
@@ -263,23 +259,24 @@
       <div class="col-md-10 form">
         <img src="img/IMG_CONCOURS.webp" class="img_concours" alt="Prizes to win in contest">
         <form class="index_form">';
-            $requete='SELECT * FROM lots';
-            $resultats=$bdd->query($requete);
-            $tabLots = $resultats->fetchAll();
-            $resultats->closeCursor();
-            $nbLots = count($tabLots);
-            for($i=0; $i < $nbLots; $i++){
-              echo'
-                <div class="mb-4">
-                  <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
-                  <h5>'.$tabLots[$i]['description_lots'].'</h5>
-                </div>
-              ';
-            }
+          $requete='SELECT * FROM lots';
+          $resultats=$bdd->query($requete);
+          $tabLots = $resultats->fetchAll();
+          $resultats->closeCursor();
+          $nbLots = count($tabLots);
+          for($i=0; $i < $nbLots; $i++){
+            echo'
+              <div class="mb-4">
+                <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
+                <h5>'.$tabLots[$i]['description_lots'].'</h5>
+              </div>
+            ';
+          }
         echo'  
         </form>
       </div>';
-    } else { 
+    } 
+    else { 
       echo'
       <div class="line"></div>
       <div class="bandeau_lots">
@@ -291,7 +288,6 @@
           <button type="submit" class="info_btn">Register</button>
         </form>
       </div>';
-      
     }
   include('footer.php'); ?>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -299,7 +295,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="js/translate.js"></script>
   <script src="js/darkMode.js"></script>
+  <script src="js_bootstrap/bootstrap.min.js"></script>
   <script src="js/library.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script> AOS.init();</script>
 </body>
 </html>
