@@ -15,7 +15,7 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
   <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
@@ -38,7 +38,13 @@
               <h4 class="toptitle">Book a ticket</h4>
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
             </div>
-            <div class="lang_div" id="google_translate_element"></div>
+            <div class="translation-icons" style="visibility:hidden">
+              <a href="#" class="fr" data-placement="0">fr</a>
+              <a href="#" class="en" data-placement="1">en</a>
+              <a href="#" class="es" data-placement="2">es</a>
+              <a href="#" class="it" data-placement="3">it</a>
+            </div>
+            <div class="lang_div" id="google_translate_element" style="display:none;"></div>
             </div>
         </div>
         <div class="row">
@@ -200,7 +206,8 @@
     <h3 class="info_title">DISCOVER THE GUESTS</h3>
     <div class="line"></div>
     <div class="div_btn">
-      <input type="button" class="info_btn" value="27 May 2023">
+      <div class="info_btn">27 May 2023</div>
+      <div class="info_btn">28 May 2023</div>
     </div>
     <p class="info_description">It is with pleasure that we welcome you to the Hangart. Our different teams will be at your disposal for all requests of 
     information on the program of the event as well as information on the various stakeholders.
@@ -281,14 +288,14 @@
       <div class="col-md-10 form">
         <img src="img/IMG_CONCOURS.webp" class="img_concours" alt="Prizes to win in contest">
         <form class="div_concours" action="signin.php">
-          <input type="submit" class="info_btn" value="Register">
+          <button type="submit" class="info_btn">Register</button>
         </form>
       </div>';
       
     }
   include('footer.php'); ?>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha512-jGR1T3dQerLCSm/IGEGbndPwzszJBlKQ5Br9vuB0Pw2iyxOy+7AK+lJcCC8eaXyz/9du+bkCy4HXxByhxkHf+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="js/translate.js"></script>
   <script src="js/darkMode.js"></script>
