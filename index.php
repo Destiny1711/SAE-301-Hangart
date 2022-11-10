@@ -39,12 +39,12 @@
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
             </div>
             <div class="translation-icons" style="visibility:hidden">
-              <a href="#" class="fr" data-placement="0">fr</a>
-              <a href="#" class="en" data-placement="1">en</a>
-              <a href="#" class="es" data-placement="2">es</a>
-              <a href="#" class="it" data-placement="3">it</a>
+              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
             </div>
-            <div class="lang_div" id="google_translate_element" style="display:none;"></div>
+            <div id="google_translate_element" style="display:none;"></div>
             </div>
         </div>
         <div class="row">
