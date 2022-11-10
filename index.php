@@ -28,8 +28,17 @@
     <div class="container-fluid" id="accueil">
         <div class="row">
             <div class="topbar">
+
+              <div class="darkmode">
+                <img src="img/light.png" alt="light mode" class="img_light">
+                <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+                <img src="img/dark.png" alt="dark mode" class="img_dark">
+              </div>
+              <div class="top_vip">
               <h4 class="toptitle">Book a ticket</h4>
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
+            </div>
+            <div class="lang_div" id="google_translate_element"></div>
             </div>
         </div>
         <div class="row">
@@ -38,7 +47,7 @@
                 <?php
                 if(isset($_GET['id'])){
                 echo'
-                <a href="index.php?id='.$_GET['id'].'"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
                 } else { 
                   echo'
                 <a href="index.php"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
@@ -54,7 +63,8 @@
               </ul>
               <div class="profil">
                 <div class="account">
-                  <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                  <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
+
                   <div class="compte">
                     <ul class="profil_list">
                       <li>
@@ -82,7 +92,8 @@
                 </div>
                 
               </div>
-              <div class="lang_div" id="google_translate_element"></div>
+                
+              
             </div>
         </div>
     </div>
@@ -115,6 +126,7 @@
       buses abandoned. We offer them a second life with this event, they will be at the heart of the weekend, renovated and transformed 
       into a stand. Once the event is over, they will then be given to the artists to allow them to continue their tour in the different 
       European countries.</p>
+      
   </div>
   <div class="swiper swiper2" id="swiper2" data-aos="fade-up">
     <div class="swiper-wrapper">
@@ -276,18 +288,10 @@
     }
   include('footer.php'); ?>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script type="text/javascript">
-    function googleTranslateElementInit(){
-      new google.translate.TranslateElement({
-        defaultLanguage: 'en',
-        pageLanguage: 'en',
-        includedLanguages: 'bn,de,nl,en,es,it,fr,no',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-        multilanguagePage: true}, 'google_translate_element')
-    };
-  </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="js/translate.js"></script>
+  <script src="js/darkMode.js"></script>
   <script src="js/library.js"></script>
   <script> AOS.init();</script>
 </body>
