@@ -1,6 +1,9 @@
 * {
   font: TW CEN MT, sans-serif;
-  color:black; 
+
+}
+body {
+  top: 0px !important;
 }
 @media screen and (max-width: 500px) {
   .info_title{
@@ -160,11 +163,10 @@
     height: 0.5vw!important;
 
   }
-  .profil {
-    
-    width: 100%!important;
-    justify-content: center!important;
+  .lang_div{
+    width:25%!important;
   }
+
   .profil_list li{
     width:40vw!important;
   }
@@ -222,7 +224,7 @@
   width:3.5%;
 }
 .divLogo {
-  width: 20%;
+  width: 30%;
   margin-top:0.5vw;
   display:flex;
   align-items:center;
@@ -299,6 +301,7 @@ a:hover {
   width: 20%;
 }
 
+
 .account{
   display:flex;
   align-items:center;
@@ -357,7 +360,20 @@ a:hover {
 .lang_div {
   display: flex;
   align-items: center;
-  width:100%;
+  width:10%;
+
+}
+
+.goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple img {
+  display: none !important;
+
+}
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
 }
 .lang {
   margin-left:3vw;

@@ -60,7 +60,7 @@
                       <li>
                         <?php 
                           if(!isset($_GET['id'])){
-                            echo '<a class="text_profil" href="login.php">Connect</a>';
+                            echo '<a class="text_profil" href="login.php">Login</a>';
                           } else {
                             echo '<a class="text_profil" href="#">Profil</a>
                             <ul>';
@@ -80,10 +80,9 @@
                     </ul>
                   </div>
                 </div>
-                <div class="lang_div">
-                  <img src="img/lang_en.png" class="lang" alt="england flag">
-                </div>
+                
               </div>
+              <div class="lang_div" id="google_translate_element"></div>
             </div>
         </div>
     </div>
@@ -276,6 +275,18 @@
       
     }
   include('footer.php'); ?>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({
+        defaultLanguage: 'en',
+        pageLanguage: 'en',
+        includedLanguages: 'bn,de,nl,en,es,it,fr,no',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        multilanguagePage: true}, 'google_translate_element')
+    };
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="js/library.js"></script>
   <script> AOS.init();</script>
