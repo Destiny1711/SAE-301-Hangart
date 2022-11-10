@@ -104,7 +104,7 @@
                     $nom_profil=$_POST['nom_profil'];
                     $prenom_profil=$_POST['prenom_profil'];
                     $email_profil=$_POST['email_profil'];
-                    $mdp_profil=$_POST['mdp_profil'];
+                    $mdp_profil=md5($_POST['mdp_profil']);
                     $adresse_profil=$_POST['adresse_profil'];
                     $tel_profil=$_POST['tel_profil'];
                     Insert($nom_profil,$prenom_profil,$email_profil,$mdp_profil,$adresse_profil,$tel_profil);
