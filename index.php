@@ -15,6 +15,8 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
+  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+  <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -23,79 +25,79 @@
 <body>
   <header>
     <div class="container-fluid" id="accueil">
-      <div class="row">
-        <div class="topbar">
-          <div class="darkmode">
-            <img src="img/light.png" alt="light mode" class="img_light">
-            <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
-            <img src="img/dark.png" alt="dark mode" class="img_dark">
-          </div>
-          <div class="top_vip">
-            <h4 class="toptitle">Book a ticket</h4>
-            <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
-          </div>
-          <div class="translation-icons" style="visibility:hidden">
-            <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
-            <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
-            <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
-            <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
-          </div>
-          <div id="google_translate_element" style="display:none;"></div>
+        <div class="row">
+            <div class="topbar">
+              <div class="darkmode">
+                <img src="img/light.png" alt="light mode" class="img_light">
+                <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+                <img src="img/dark.png" alt="dark mode" class="img_dark">
+              </div>
+              <div class="top_vip">
+              <h4 class="toptitle">Book a ticket</h4>
+              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
+            </div>
+            <div class="translation-icons" style="visibility:hidden">
+              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
+            </div>
+            <div id="google_translate_element" style="display:none;"></div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md navigation">
-          <div class="divLogo">
-            <?php
-              if(isset($_GET['id'])){
-              echo'
-              <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+        <div class="row">
+            <div class="col-md navigation">
+              <div class="divLogo">
+                <?php
+                if(isset($_GET['id'])){
+                echo'
+                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
               } 
               else { 
-                echo'
-              <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-              }
-            ?>
-          </div>
-          <ul class="menu">
-            <li><a href="#accueil">Home</a></li>
-            <li><a href="#programme">Program</a></li>
-            <li><a href="#lieu">Location & Schedules</a></li>
-            <li><a href="#concours">Contest</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="profil">
-            <div class="account">
-              <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
-              <div class="compte">
-                <ul class="profil_list">
-                  <li>
-                    <?php 
-                      if(!isset($_GET['id'])){
-                        echo '<a class="text_profil" href="login.php">Login</a>';
+                  echo'
+                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                }
+                ?>
+              </div>
+              <ul class="menu">
+                <li><a href="#accueil">Home</a></li>
+                <li><a href="#programme">Program</a></li>
+                <li><a href="#lieu">Location & Schedules</a></li>
+                <li><a href="#concours">Contest</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+              <div class="profil">
+                <div class="account">
+                  <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
+                  <div class="compte">
+                    <ul class="profil_list">
+                      <li>
+                        <?php 
+                          if(!isset($_GET['id'])){
+                            echo '<a class="text_profil" href="login.php">Login</a>';
                       } 
                       else {
-                        echo '<a class="text_profil" href="#">Profil</a>
-                        <ul>';
-                          $requete='SELECT * FROM profil WHERE id_profil="1"';
-                          $resultats=$bdd->query($requete);
-                          $tabAdmin = $resultats->fetchAll();
-                          $resultats->closeCursor();
-                          if($_GET['id']==$tabAdmin[0]['id_profil']){
-                            echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
+                            echo '<a class="text_profil" href="#">Profil</a>
+                            <ul>';
+                              $requete='SELECT * FROM profil WHERE id_profil="1"';
+                              $resultats=$bdd->query($requete);
+                              $tabAdmin = $resultats->fetchAll();
+                              $resultats->closeCursor();
+                              if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
+                              }
+                                echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
+                                <li><a href="index.php" class="text_profil">Log Out</a></li>
+                            </ul>';
                           }
-                            echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
-                            <li><a href="index.php" class="text_profil">Log Out</a></li>
-                        </ul>';
-                      }
-                    ?>   
-                  </li>
-                </ul>
+                        ?>   
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>  
-          </div>         
+            </div>
         </div>
-      </div>
     </div>
   </header>
   <div class="swiper swiper1" id="swiper1">
@@ -219,7 +221,7 @@
       $nbIntervenants = count($tabIntervenants);
       for($i=0; $i < $nbIntervenants; $i++){
         echo '<div class="info_intervenants" data-aos="fade-up">';
-        echo '<img class="img_intervenants" src="img/intervenants/cercles.png" alt="yellow cercle">';
+        echo '<img class="img_intervenants" src="img/intervenants/cercles.png" id="cercle" alt="circle">';
         echo '<img class="pp_intervenants" src="img/intervenants/'.$tabIntervenants[$i]['img_intervenants'].'" alt="  speakers image">';
         echo '<div class="text_intervenants">
                 <h4 class="title_intervenants">'.$tabIntervenants[$i]['nom_intervenants'].' '.$tabIntervenants[$i]['prenom_intervenants'].'</h4>
@@ -259,19 +261,19 @@
       <div class="col-md-10 form">
         <img src="img/IMG_CONCOURS.webp" class="img_concours" alt="Prizes to win in contest">
         <form class="index_form">';
-          $requete='SELECT * FROM lots';
-          $resultats=$bdd->query($requete);
-          $tabLots = $resultats->fetchAll();
-          $resultats->closeCursor();
-          $nbLots = count($tabLots);
-          for($i=0; $i < $nbLots; $i++){
-            echo'
-              <div class="mb-4">
-                <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
-                <h5>'.$tabLots[$i]['description_lots'].'</h5>
-              </div>
-            ';
-          }
+            $requete='SELECT * FROM lots';
+            $resultats=$bdd->query($requete);
+            $tabLots = $resultats->fetchAll();
+            $resultats->closeCursor();
+            $nbLots = count($tabLots);
+            for($i=0; $i < $nbLots; $i++){
+              echo'
+                <div class="mb-4">
+                  <h5><b>'.$tabLots[$i]['nom_lots'].':</b></h5>
+                  <h5>'.$tabLots[$i]['description_lots'].'</h5>
+                </div>
+              ';
+            }
         echo'  
         </form>
       </div>';
