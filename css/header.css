@@ -146,13 +146,11 @@ a:hover {
     color: var(--font-color);
     display: block;
 }
-
 .profil_list li:hover,
 .profil_list a:hover {
     background-color: var(--primary-color);
     font-weight: bold;
 }
-
 .profil_list li ul {
     display: none;
     height: auto;

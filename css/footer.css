@@ -1,66 +1,66 @@
 footer {
-    width:100%;
-    background-color: #303030;
-    height: auto;
-    display: flex;
-    flex-wrap:wrap;
-  }
-  footer > div {
-    width: 33%;
-    padding:3vw 4vw 4vw 4vw;
-  }
-  .footer_left > img {
-    width: 30%;
-    margin-bottom: 3vw;
-  }
-  .footer_left > p {
-    color:white;
-    font-size: 1vw;
-    font-weight:normal;
-    text-align: justify;
-  }
-  .footer_menu {
-    padding:0;
-    margin-top:3vw; 
-  }
-  .footer_menu > li {
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    margin-bottom:1vw;
-    font-size: 1vw;
-  }
-  .footer_menu > li > a {
-    color:white;
-    font-weight:normal;
-  }
-  .footer_menu > li > a:hover {
-    color: var(--primary-color);
-  }
-  .footer_title {
-    font-size:2vw;
-    color:white;
-  }
-  .footer_line {
-    border-top: 0.2vw solid var(--primary-color);
-    width : 100%;
-  }
-  .flex_reseaux {
-    display: flex;
-  }
-  .footer_right > h4, .footer_right > p {
-    color:white;
-  }
-  .footer_right > p {
-    font-size:1vw;
-    font-weight:normal;
-    margin: 3vw 0vw 1vw 0vw;
-  }
-  .footer_right > h4 {
-    font-size:1vw;
-    margin-bottom: 1vw;
-  }
-  .flex_reseaux > img {
-    width: 10%;
-    margin: 1vw 3vw 0vw 0vw;
-  }
+  width:100%;
+  background-color: #303030;
+  height: auto;
+  display: flex;
+  flex-wrap:wrap;
+}
+footer > div {
+  width: 33%;
+  padding:3vw 4vw 4vw 4vw;
+}
+.footer_left > img {
+  width: 30%;
+  margin-bottom: 3vw;
+}
+.footer_left > p {
+  color:white;
+  font-size: 1vw;
+  font-weight:normal;
+  text-align: justify;
+}
+.footer_menu {
+  padding:0;
+  margin-top:3vw; 
+}
+.footer_menu > li {
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  margin-bottom:1vw;
+  font-size: 1vw;
+}
+.footer_menu > li > a {
+  color:white;
+  font-weight:normal;
+}
+.footer_menu > li > a:hover {
+  color: var(--primary-color);
+}
+.footer_title {
+  font-size:2vw;
+  color:white;
+}
+.footer_line {
+  border-top: 0.2vw solid var(--primary-color);
+  width : 100%;
+}
+.flex_reseaux {
+  display: flex;
+}
+.footer_right > h4, .footer_right > p {
+  color:white;
+}
+.footer_right > p {
+  font-size:1vw;
+  font-weight:normal;
+  margin: 3vw 0vw 1vw 0vw;
+}
+.footer_right > h4 {
+  font-size:1vw;
+  margin-bottom: 1vw;
+}
+.flex_reseaux > img {
+  width: 10%;
+  margin: 1vw 3vw 0vw 0vw;
+}

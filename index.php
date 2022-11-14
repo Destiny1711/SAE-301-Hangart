@@ -15,7 +15,6 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
-  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
   <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
@@ -25,14 +24,15 @@
 <body>
   <header>
     <div class="container-fluid" id="accueil">
-        <div class="row">
-            <div class="topbar">
-              <div class="darkmode">
-                <img src="img/light.png" alt="light mode" class="img_light">
-                <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
-                <img src="img/dark.png" alt="dark mode" class="img_dark">
-              </div>
-              <div class="top_vip">
+      <div class="row">
+        <div class="topbar">
+          <div class="darkmode">
+            <img src="img/light.png" alt="light mode" class="img_light">
+            <div class="form-check form-switch div_checkbox">
+              <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+              <img src="img/dark.png" alt="dark mode" class="img_dark">
+            </div>
+            <div class="top_vip">
               <h4 class="toptitle">Book a ticket</h4>
               <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
             </div>
@@ -43,20 +43,20 @@
               <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
             </div>
             <div id="google_translate_element" style="display:none;"></div>
-            </div>
+          </div>
         </div>
         <div class="row">
             <div class="col-md navigation">
               <div class="divLogo">
                 <?php
-                if(isset($_GET['id'])){
-                echo'
-                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-              } 
-              else { 
-                  echo'
-                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-                }
+                  if(isset($_GET['id'])){
+                    echo'
+                    <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                  } 
+                  else { 
+                    echo'
+                    <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                  }
                 ?>
               </div>
               <ul class="menu">
@@ -75,8 +75,8 @@
                         <?php 
                           if(!isset($_GET['id'])){
                             echo '<a class="text_profil" href="login.php">Login</a>';
-                      } 
-                      else {
+                          } 
+                          else {
                             echo '<a class="text_profil" href="#">Profil</a>
                             <ul>';
                               $requete='SELECT * FROM profil WHERE id_profil="1"';

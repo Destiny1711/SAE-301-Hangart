@@ -52,14 +52,11 @@
             ?>
           </div>
           <ul class="menu">
-            <?php 
-              echo'
-              <li><a href="index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
-              <li><a href="index.php?id='.$_GET['id'].'#programme">Programme</a></li>
-              <li><a href="index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
-              <li><a href="index.php?id='.$_GET['id'].'#concours">Concours</a></li>
-              <li><a href="index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
-              ?>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="index.php">Programme</a></li>
+            <li><a href="index.php">Lieu & Horaires</a></li>
+            <li><a href="index.php">Concours</a></li>
+            <li><a href="index.php">Contact</a></li>
           </ul>
           <div class="profil"></div>
         </div>

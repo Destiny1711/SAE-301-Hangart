@@ -6,79 +6,65 @@
 
 * {
   font: TW CEN MT, sans-serif;
-  
 }
 body {
   top: 0px !important;
   background: var(--bg-color);
-  color:var(--font-color);
+  color: var(--font-color);
 }
 @media screen and (max-width: 500px) {
-  
   .info_title{
-    font:4vw Montserrat !important;
+    font: 4vw Montserrat !important;
     font-weight: bold !important;
   }
   .line{
-
     border-top: 0.4vw solid var(--secondary-color) !important;
     width : 10vw !important;
   }
   .divImage_slide2 {
-    width:100% !important;
-    height:50% !important;
+    width: 100% !important;
+    height: 50% !important;
   }
-
   .slide-flex > div > p {
-    width:100% !important;
+    width: 100% !important;
     font: 2.5vw Montserrat !important;
-    margin-top:2vw !important;
+    margin-top: 2vw !important;
   }
-  
-
   .info_btn {
-    width:30%!important;
-    border-radius:2vw!important;
+    width: 30%!important;
+    border-radius: 2vw!important;
     padding: 1vw 2.5vw 1vw 2.5vw!important;
     font-size: 2vw!important;
-    margin:3vw!important;
-    font-weight:bold!important;
+    margin: 3vw!important;
+    font-weight: bold!important;
   }
   .info_description{
     text-align: justify !important;
     font: 3vw Montserrat !important;
-    padding:4vw 8vw 4vw 8vw !important;
-
+    padding: 4vw 8vw 4vw 8vw !important;
   }
-
   .info_intervenants {
-    width:100% !important;
-
+    width: 100% !important;
   }
   .img_intervenants {
-    width:30vw !important;
+    width: 30vw !important;
   }
   .pp_intervenants { 
-    width:29.9vw !important;
-    
+    width: 29.9vw !important; 
   }
-
   .title_intervenants {
     font: 3vw Montserrat !important;
     font-weight: bold !important;
   }
   .bio_intervenants {
-
     font: 2.5vw Montserrat !important;
   }
   .div_map {
-
     width: 100% !important;
-    height:50% !important;
+    height: 50% !important;
   }
-
   .text_map {
-    width:100% !important;
+    width: 100% !important;
   }
   .text_map > h4 {
     font: 4vw Montserrat !important;
@@ -86,46 +72,37 @@ body {
   }
   .map_description {
     font: 3vw Montserrat !important;
-    
   }
   .horaires {
     font: 3vw Montserrat !important;
     font-weight: 600 !important;
   }
-
   .bandeau_lots > h4 {
-
     font: 3vw Montserrat !important;
-    font-weight:bold !important;
-
+    font-weight: bold !important;
   }
   footer > div {
     width: 100% !important;
-    
   }
   .footer_left > p {
-
     font-size: 3vw!important;
     text-align: justify;
   }
   .footer_title {
-    font-size:5vw!important;
+    font-size: 5vw!important;
   }
   .footer_menu > li {
     font-size: 3vw!important;
   }
   .footer_right > p {
-    font-size:3vw!important;
+    font-size: 3vw!important;
   }
   .footer_right > h4 {
-    font-size:3vw!important;
+    font-size: 3vw!important;
   }
   .topbar {
-
     height: 10vw!important;
     justify-content: flex-start!important;
-
-    
   }
   .img_light{
     width: 6vw!important;
@@ -148,40 +125,37 @@ body {
     justify-content: center!important;
   }
   .logo {
-    margin-top:2vw !important;
+    margin-top: 2vw !important;
     width: 25vw!important;
   }
   .navigation {
     flex-wrap: wrap!important;
     height: auto!important;
-    padding-bottom:3vw;
+    padding-bottom: 3vw;
   }
   .menu {
     width: 100%!important;
     flex-wrap: wrap!important;
-    margin-top:2vw!important;
-    margin-bottom:2vw!important;
+    margin-top: 2vw!important;
+    margin-bottom: 2vw!important;
     text-align: center!important;
   }
   .menu > li {
-
-    width:100%!important;
-    margin-bottom:3vw!important;
-    font-size:4vw!important;
-    
+    width: 100%!important;
+    margin-bottom: 3vw!important;
+    font-size: 4vw!important;
   }
   .menu a:before, .menu a:after {
-    display:none!important;
+    display: none!important;
   }
   .menu a:before {
     height: 0.5vw!important;
-
   }
   .lang_div{
-    width:25%!important;
+    width: 25%!important;
   }
   .profil_list li{
-    width:40vw!important;
+    width: 40vw!important;
   }
   .profil_list li ul {
     width:100%!important;
@@ -199,13 +173,13 @@ body {
     width:60%!important;
   }
   .logo_log{
-    width:20vw!important;
+    width: 20vw!important;
   }
   .div_form_signin {
     width:100% !important;
   }
   label {
-    font-size:3vw!important;
+    font-size: 3vw!important;
   }
   .signin_form > p, .log_form > p{
     font-size:3vw!important;
@@ -214,7 +188,7 @@ body {
     font-size:3vw!important;
   }
   .mb-3 > input {
-    height:4vh!important;
+    height: 4vh!important;
   }
   .btn{
     font-size:3vw!important;
@@ -222,74 +196,74 @@ body {
   }
 }
 .info {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin:4vw;
+  margin: 4vw;
 }
 .info_title {
   text-align: center;
-  font-size:2.2vw;
-  width:100%;
+  font-size: 2.2vw;
+  width: 100%;
   font-family: Montserrat;
-  font-weight:bold;
+  font-weight: bold;
 }
 .line{
   border-top: 0.2vw solid var(--secondary-color);
   width : 5vw;
 }
 .info_description{
-  width:100%;
+  width: 100%;
   text-align: justify;
-  margin:2vw 2vw 1vw 2vw;
+  margin: 2vw 2vw 1vw 2vw;
   font: 1.2vw Montserrat; 
 }
 .div_concours > .info_btn:hover {
-  color:var(--font-color-invert);
+  color: var(--font-color-invert);
   background-color: var(--secondary-color);
 }
 .info2 {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin:1vw;
+  margin: 1vw;
 }
 .div_btn {
   display: flex;
-  width:100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  margin:3vw 3vw 0vw 3vw;
+  margin: 3vw 3vw 0vw 3vw;
 }
 .info_btn {
-  width:15%;
+  width: 15%;
   background-color: var(--primary-color);
   border: none;
-  border-radius:2vw;
+  border-radius: 2vw;
   padding: 0.5vw 2vw 0.5vw 2vw;
   font-size: 1vw;
-  color:black;
-  text-align:center;
-  margin:2vw;
-  font-weight:bold;
+  color: black;
+  text-align: center;
+  margin: 2vw;
+  font-weight: bold;
 }
 /* ============== INFO INTERVENANTS ===============*/
 .div_intervenants {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding:0vw 5vw 4vw 5vw;
+  padding: 0vw 5vw 4vw 5vw;
 }
 .info_intervenants {
   display: flex;
-  width:50%;
+  width: 50%;
   align-items: center;
 }
 .img_intervenants {
-  width:10vw;
+  width: 10vw;
   position: absolute;
 }
 .pp_intervenants {
@@ -301,9 +275,9 @@ body {
   padding:2vw;
 }
 .title_intervenants {
-  width:100%;
+  width: 100%;
   font: 1.3vw Montserrat;
-  font-weight:bold;
+  font-weight: bold;
   text-transform: uppercase;
 }
 .bio_intervenants {
@@ -356,7 +330,6 @@ body {
 .map_description {
   font: 1.2vw Montserrat;
 }
-
 .horaires {
   font: 1.2vw Montserrat;
   font-weight:600;
@@ -595,7 +568,6 @@ body {
 .upload, .envoyer {
   display: flex;
   justify-content: center;
-
 }
 .envoyer2 {
   display: flex;
