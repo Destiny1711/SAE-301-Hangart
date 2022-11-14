@@ -3,7 +3,6 @@
     //connexion a la base de donnee
     $bdd = new PDO('mysql:host='.$hote.';port='.$port.';dbname='.$nombase,$utilisateur,$mdp);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

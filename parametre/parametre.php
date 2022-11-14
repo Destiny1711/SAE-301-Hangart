@@ -1,6 +1,6 @@
 <?php
     //fichier contenant les differents parametres permettant de se connecter a la base de donnee 
-    //le fichier est relie sur chaque page
+    //le fichier est relie sur chaque page 
     $hote='localhost';
     $utilisateur='ermenut_hangart';
     $mdp='hangartgroupe5';

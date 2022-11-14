@@ -22,7 +22,7 @@ footer > div {
 .footer_menu {
   padding:0;
   margin-top:3vw; 
-}
+} 
 .footer_menu > li {
   display: flex;
   flex-wrap:wrap;
