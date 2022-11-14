@@ -18,16 +18,34 @@
 <body>
 <div class="container-fluid" id="accueil">
         <div class="row">
-            <div class="col-md topbar">
-              <h4 class="toptitle">Book a ticket</h4>
-              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+          <div class="topbar">
+            <div class="darkmode">
+              <img src="img/light.png" alt="light mode" class="img_light">
+              <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+              <img src="img/dark.png" alt="dark mode" class="img_dark">
             </div>
+            <div class="top_vip"></div>
+            <div class="translation-icons" style="visibility:hidden">
+              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
+            </div>
+            <div id="google_translate_element" style="display:none;"></div>
+          </div>
         </div>
         <div class="row">
             <div class="col-md navigation">
-            <div class="divLogo">
-                <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
-            </div>
+            <?php
+              if(isset($_GET['id'])){
+                echo'
+                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+              } 
+              else { 
+                echo'
+                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+              }
+            ?>
             <ul class="menu">
                 <?php 
                     echo'

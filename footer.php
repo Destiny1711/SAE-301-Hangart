@@ -16,14 +16,16 @@
           <li><a href="index.php?id='.$_GET['id'].'#programme">• Programme</a></li>
           <li><a href="index.php?id='.$_GET['id'].'#lieu">• Lieu & Horaires</a></li>
           <li><a href="index.php?id='.$_GET['id'].'#concours">• Concours</a></li>
-          <li><a href="index.php?id='.$_GET['id'].'#contact">• Contact</a></li>';
+          <li><a href="index.php?id='.$_GET['id'].'#contact">• Contact</a></li>
+          <li><a href="plan.php?id='.$_GET['id'].'">• Plan du Site</a></li>';
         } else {
           echo '
           <li><a href="index.php#accueil">• Accueil</a></li>
           <li><a href="index.php#programme">• Programme</a></li>
           <li><a href="index.php#lieu">• Lieu & Horaires</a></li>
           <li><a href="index.php#concours">• Concours</a></li>
-          <li><a href="index.php#contact">• Contact</a></li>';
+          <li><a href="index.php#contact">• Contact</a></li>
+          <li><a href="plan.php">• Plan du Site</a></li>';
         }
         ?>
       </ul>

@@ -13,9 +13,7 @@
   <link rel="icon" type="images/x-icon" href="img/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="css_bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/design.css"/>
-  <link rel="stylesheet" href="css/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>HANGART - Account</title>
 </head>
 <body>
@@ -121,8 +119,5 @@
   <script src="js/translate.js"></script>
   <script src="js/darkMode.js"></script>
   <script src="js_bootstrap/bootstrap.min.js"></script>
-  <script src="js/library.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script> AOS.init();</script>
 </body>
 </html>
