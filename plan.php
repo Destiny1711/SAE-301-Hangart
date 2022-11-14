@@ -18,54 +18,58 @@
 <body>
   <header>
     <div class="container-fluid" id="accueil">
-      <div class="row">
-        <div class="col-md topbar">
-          <h4 class="toptitle">Book a ticket</h4>
-          <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+        <div class="row">
+            <div class="topbar">
+              <div class="darkmode">
+                <img src="img/light.png" alt="light mode" class="img_light">
+                <div class="form-check form-switch div_checkbox"><input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+                <img src="img/dark.png" alt="dark mode" class="img_dark">
+              </div>
+              <div class="top_vip">
+              <h4 class="toptitle">Book a ticket</h4>
+              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image">
+            </div>
+            <div class="translation-icons" style="visibility:hidden">
+              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
+            </div>
+            <div id="google_translate_element" style="display:none;"></div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md navigation">
-          <div class="divLogo">
-            <?php
-            if (isset($_GET['id'])) {
-              echo '
-                <a href="index.php?id=' . $_GET['id'] . '"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-            } else {
-              echo '
-                <a href="index.php"><img class="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
-            }
-            ?>
-          </div>
-          <ul class="menu">
-            <?php
-            if(isset($_GET['id'])){
-              echo '
-                <li><a href="index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
-                <li><a href="index.php?id='.$_GET['id'].'#programme">Programme</a></li>
-                <li><a href="index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
-                <li><a href="index.php?id='.$_GET['id'].'#concours">Concours</a></li>
-                <li><a href="index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
-            } else {
-              echo '
-                <li><a href="index.php#accueil">Accueil</a></li>
-                <li><a href="index.php#programme">Programme</a></li>
-                <li><a href="index.php#lieu">Lieu & Horaires</a></li>
-                <li><a href="index.php#concours">Concours</a></li>
-                <li><a href="index.php#contact">Contact</a></li>';
-            }
-            ?>
-          </ul>
-          <div class="profil">
+        <div class="row">
+            <div class="col-md navigation">
+              <div class="divLogo">
+                <?php
+                if(isset($_GET['id'])){
+                echo'
+                <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+              } 
+              else { 
+                  echo'
+                <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                }
+                ?>
+              </div>
+              <ul class="menu">
+                <li><a href="#accueil">Home</a></li>
+                <li><a href="#programme">Program</a></li>
+                <li><a href="#lieu">Location & Schedules</a></li>
+                <li><a href="#concours">Contest</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+              <div class="profil">
                 <div class="account">
-                  <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                  <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
                   <div class="compte">
                     <ul class="profil_list">
                       <li>
                         <?php 
                           if(!isset($_GET['id'])){
                             echo '<a class="text_profil" href="login.php">Login</a>';
-                          } else {
+                      } 
+                      else {
                             echo '<a class="text_profil" href="#">Profil</a>
                             <ul>';
                               $requete='SELECT * FROM profil WHERE id_profil="1"';
@@ -84,14 +88,12 @@
                     </ul>
                   </div>
                 </div>
-                
               </div>
-              <div class="lang_div" id="google_translate_element"></div>
+            </div>
         </div>
-      </div>
     </div>
   </header>
-  <div class="info2">
+  <div class="info">
     <h3 class="info_title">SITE PLAN</h3>
     <div class="line"></div>
   </div>
@@ -114,19 +116,8 @@
   </div>
   <?php include('footer.php'); ?>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script type="text/javascript">
-    function googleTranslateElementInit(){
-      new google.translate.TranslateElement({
-        defaultLanguage: 'en',
-        pageLanguage: 'en',
-        includedLanguages: 'bn,de,nl,en,es,it,fr,no',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-        multilanguagePage: true}, 'google_translate_element')
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="js/library.js"></script>
+  <script src="js/translate.js"></script>
+  <script src="js/darkMode.js"></script>
 </body>
 
 </html>

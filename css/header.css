@@ -1,49 +1,37 @@
 .container-fluid {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-
 .topbar {
-
     display: flex;
     align-items: center;
-
     background-color: #303030;
     height: 3vw;
     width: 100%;
-
 }
-
 .top_vip {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 33%;
 }
-
 .toptitle {
     margin: 0.5vw;
     color: white;
     font-size: 1.1vw;
 }
-
 .viptext {
     width: 10%;
 }
-
-
 .translation-icons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 33%;
 }
-
 .flag {
     width: 1.8vw;
     margin-right:1vw;
 }
-
 .navigation {
     display: flex;
     position: relative;
@@ -52,7 +40,6 @@
     color: var(--font-color);
     height: 5vw;
 }
-
 .divLogo {
     width: 20%;
     margin-top: 0.5vw;
@@ -60,30 +47,24 @@
     align-items: center;
     justify-content: flex-start;
 }
-
 .logo {
     margin-left: 2vw;
     width: 8vw;
 }
-
 li {
     list-style-type: none;
 }
-
 a {
     text-decoration: none;
     color: var(--font-color);
     font-weight: 600;
 }
-
 a:hover {
     color: #ffbb00;
 }
-
 .icon_connect {
     width: 2vw;
 }
-
 .menu {
     display: flex;
     width: 60%;
@@ -92,7 +73,6 @@ a:hover {
     margin: 0;
     padding: 0;
 }
-
 .menu li {
     display: inline-block;
     margin: 0 1.5vw 0 1.5vw;
@@ -100,21 +80,18 @@ a:hover {
     font-size: 1.1vw;
     font-weight: 400 !important;
 }
-
 .menu a {
     padding: 0.5vw 0;
     color: var(--font-color);
     position: relative;
     text-decoration: none;
 }
-
 .menu a:before,
 .menu a:after {
     position: absolute;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
-
 .menu a:before {
     bottom: 0;
     display: block;
@@ -122,40 +99,30 @@ a:hover {
     width: 0%;
     content: "";
     background-color: var(--primary-color);
-    ;
 }
-
 .menu a:after {
-
     color: var(--font-color);
     max-width: 0%;
 }
-
 .menu a:hover:before,
 .menu .current a:before {
     opacity: 1;
     width: 100%;
 }
-
 .menu a:hover:after,
 .menu .current a:after {
     max-width: 100%;
 }
-
 .profil {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20%;
 }
-
-
 .account {
     display: flex;
     align-items: center;
-
 }
-
 .compte {
     width: 100%;
     margin: 0;
@@ -164,18 +131,15 @@ a:hover {
     display: flex;
     align-items: center;
 }
-
 .profil_list {
     padding: 0;
     margin: 0;
     position: absolute;
 }
-
 .profil_list li {
     list-style: none;
     width: 9vw;
 }
-
 .profil_list a {
     padding: 0.5vw 0;
     text-decoration: none;
@@ -197,27 +161,21 @@ a:hover {
     position: absolute;
     width: 9vw;
 }
-
 .profil_list li:hover ul {
     display: block;
 }
-
 .profil_list li ul li {
     background-color: var(--font-color-invert);
 }
-
 .profil_list li ul li a:hover {
     background-color: var(--primary-color);
 }
-
 .text_profil {
     font-size: 1.1vw;
     font-weight: 600;
     margin: 0 0.5vw 0 0.5vw;
     padding: 0;
 }
-
-
 .darkmode {
     display: flex;
     align-items: center;
@@ -225,45 +183,29 @@ a:hover {
     width: 33%;
     margin: 0 1vw 0 1vw;
 }
-
 .div_checkbox {
-
     margin: 0 0vw 0vw 0.5vw;
-
 }
-
 .div_checkbox>input {
-
     width: 10vw;
 }
-
 .img_light {
     width: 1.9vw;
 }
-
 .img_dark {
     width: 1.2vw;
 }
-
-
-
-
-
 .goog-te-banner-frame.skiptranslate,
 .goog-te-gadget-simple img {
     display: none !important;
-
 }
-
 .goog-tooltip:hover {
     display: none !important;
 }
-
 .goog-text-highlight {
     background-color: transparent !important;
     border: none !important;
 }
-
 .lang {
     margin-left: 3vw;
     width: 2vw;
