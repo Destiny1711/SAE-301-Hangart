@@ -4,7 +4,7 @@
       <p>The Hangart event is spreading across Europe by 2023 and brings back a new concept by welcoming its public in warehouses to be 
         introduced to several activities and in particular customize unused buses of the city by graffiti. The aim is to bring together 
         different artists from several European countries and create a stronger community around street art.</p>
-    </div>
+    </div> 
     <div class="footer_center">
       <h3 class="footer_title">LINKS</h3>
       <div class="footer_line"></div>
