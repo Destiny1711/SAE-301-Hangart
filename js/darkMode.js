@@ -1,4 +1,3 @@
-
 var checkbox = document.querySelector("input[name=darkMode]");
     checkbox.addEventListener('change', function() {
       if (this.checked) {
