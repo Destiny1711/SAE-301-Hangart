@@ -4,7 +4,6 @@ var swiper = new Swiper('.swiper1', {
   direction: 'horizontal',
   loop: true,
   allowTouchMove: false,
-
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -30,7 +29,6 @@ var swiper = new Swiper('.swiper2', {
   },
 
 });
-
 
 var swiper = new Swiper('.swiper3', {
   speed: 400,
