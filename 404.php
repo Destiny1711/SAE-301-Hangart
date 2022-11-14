@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js_bootstrap/bootstrap.min.js"></script>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <title>Hangart -404 Not Found</title>
+    <title>Hangart - 404 Not Found</title>
 </head>
 <body>
   <header>

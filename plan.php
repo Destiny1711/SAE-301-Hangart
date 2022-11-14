@@ -12,9 +12,8 @@
   <script src="js_bootstrap/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css">
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-  <title>HANGART Street Art</title>
+  <title>HANGART - Street Art</title>
 </head>
-
 <body>
   <header>
     <div class="container-fluid" id="accueil">
@@ -70,12 +69,26 @@
     <div class="global_map">
       <div class="info_plan-du-site">
         <div class="text_plan-du-site">
-          <h4 class="title_plan"><a href="#accueil">HOME</a></h4>
-          <h4 class="title_plan"><a href="#programme">PROGRAM</a></h4>
-          <h4 class="title_plan"><a href="#lieu">LOCATION & SCHEDULES</a></h4>
-          <h4 class="title_plan"><a href="#concours">CONTEST</a></h4>
-          <h4 class="title_plan"><a href="#contact">CONTACT</a></h4>
-          <h4 class="title_plan"><a href="login.php">CONNECTION</a></h4>
+          <?php
+          if(isset($_GET['id'])){
+            echo'
+              <h4 class="title_plan"><a href="index.php?id='.$_GET['id'].'#accueil">HOME</a></h4>
+              <h4 class="title_plan"><a href="index.php?id='.$_GET['id'].'#programme">PROGRAM</a></h4>
+              <h4 class="title_plan"><a href="index.php?id='.$_GET['id'].'#lieu">LOCATION & SCHEDULES</a></h4>
+              <h4 class="title_plan"><a href="index.php?id='.$_GET['id'].'#concours">CONTEST</a></h4>
+              <h4 class="title_plan"><a href="index.php?id='.$_GET['id'].'#contact">CONTACT</a></h4>
+              <h4 class="title_plan"><a href="login.php"index.php?id='.$_GET['id'].'">CONNECTION</a></h4>';
+          } 
+          else {
+            echo'
+              <h4 class="title_plan"><a href="index.php#accueil">HOME</a></h4>
+              <h4 class="title_plan"><a href="index.php#programme">PROGRAM</a></h4>
+              <h4 class="title_plan"><a href="index.php#lieu">LOCATION & SCHEDULES</a></h4>
+              <h4 class="title_plan"><a href="index.php#concours">CONTEST</a></h4>
+              <h4 class="title_plan"><a href="index.php#contact">CONTACT</a></h4>
+              <h4 class="title_plan"><a href="login.php">CONNECTION</a></h4>';
+          }
+          ?>
         </div>
       </div>
     </div>
