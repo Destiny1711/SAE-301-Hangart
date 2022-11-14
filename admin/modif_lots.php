@@ -20,7 +20,67 @@
   <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
   <title>HANGART - Admin</title>
 </head>
-<body class="body_compte">
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md navigation">
+                    <div class="divLogo">
+                    <?php
+                        if(isset($_GET['id'])){
+                            echo'
+                            <a href="../index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                        } 
+                        else { 
+                            echo'
+                            <a href="../index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                        }
+                    ?>
+                    </div>
+                    <ul class="menu">
+                        <?php 
+                            echo'
+                                <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
+                                <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
+                                <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
+                                <li><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>
+                                <li><a href="../index.php?id='.$_GET['id'].'#contact">Contact</a></li>
+                            ';
+                        ?>
+                    </ul>
+                    <div class="profil">
+                        <div class="account">
+                            <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
+                            <div class="compte">
+                                <ul class="profil_list">
+                                    <li>
+                                        <?php 
+                                            if(!isset($_GET['id'])){
+                                                echo '<a class="text_profil" href="../login.php">Se connecter</a>';
+                                            } else {
+                                                echo '<a class="text_profil" href="#">Profil</a>
+                                                <ul>';
+                                                    $requete='SELECT * FROM profil WHERE id_profil="1"';
+                                                    $resultats=$bdd->query($requete);
+                                                    $tabAdmin = $resultats->fetchAll();
+                                                    $resultats->closeCursor();
+                                                    if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                                        echo '<li><a href="pagePasserelle.php?id='.$_GET['id'].'" class="text_profil">Admin</a></li>';
+                                                    }
+                                                        echo '<li><a href="../compte.php?id='.$_GET['id'].'" class="text_profil">Compte</a></li>
+                                                        <li><a href="../index.php" class="text_profil">Se déconnecter</a></li>
+                                                </ul>';
+                                            }
+                                        ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="div_global_form">
         <form class="log_form" method="POST" enctype="multipart/form-data">  
             <h2>MODIFIER LE LOT</h2>
@@ -45,13 +105,6 @@
                 </select>
             </div>      
             <input class="btn2" type="submit" name="btn" value="Envoyer">
-            <?php
-                echo'
-                    <form action="formulaire_lot.php?id='.$_GET['id'].'" method="POST">
-                        <input class="btn2" type="submit" value="Retourner sur la page précédente">
-                    </form>
-                ';
-            ?>
             <?php 
                 if (isset($_POST['btn'])){
                 /** Execute une requete sql verifiant si le mail saisit existe dans la table*/
@@ -67,5 +120,6 @@
             ?>
         </form>
     </div>
+    <?php include('../footer.php'); ?>
 </body>
 </html>
