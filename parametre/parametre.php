@@ -6,4 +6,4 @@
     $mdp='hangartgroupe5';
     $port=3306;
     $nombase='ermenut_hangart';
-?> 
+?>
