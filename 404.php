@@ -16,60 +16,78 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js_bootstrap/bootstrap.min.js"></script>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <title>Hangart 404 Not Found</title>
+    <title>Hangart -404 Not Found</title>
 </head>
 <body>
-<header>
+  <header>
     <div class="container-fluid" id="accueil">
-        <div class="row">
-            <div class="col-md topbar">
-              <h4 class="toptitle">Book a ticket</h4>
-              <img class="toptitle viptext" src="img/brush_vip.png" alt="brush image"></h4>
+      <div class="row">
+        <div class="topbar">
+          <div class="darkmode">
+            <img src="img/light.png" alt="light mode" class="img_light">
+            <div class="form-check form-switch div_checkbox">
+              <input class="form-check-input" type="checkbox" role="switch" id="darkMode" name="darkMode"></div>
+              <img src="img/dark.png" alt="dark mode" class="img_dark">
             </div>
+            <div class="top_vip"></div>
+            <div class="translation-icons" style="visibility:hidden">
+              <a href="#" class="fr" data-placement="0"><img src="img/france.png" class="flag" alt="french flag"></a>
+              <a href="#" class="en" data-placement="1"><img src="img/uk.png" class="flag" alt="united kingdom flag"></a>
+              <a href="#" class="es" data-placement="2"><img src="img/espagne.png" class="flag" alt="spanish flag"></a>
+              <a href="#" class="it" data-placement="3"><img src="img/italy.png" class="flag" alt="italian flag"></a>
+            </div>
+            <div id="google_translate_element" style="display:none;"></div>
+          </div>
         </div>
         <div class="row">
             <div class="col-md navigation">
               <div class="divLogo">
-                <img class="logo" src="img/logo_hangart.png" alt="Logo Hangart">
+                <?php
+                  if(isset($_GET['id'])){
+                    echo'
+                    <a href="index.php?id='.$_GET['id'].'"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                  } 
+                  else { 
+                    echo'
+                    <a href="index.php"><img class="logo" id="logo" src="img/logo_hangart.png" alt="Logo Hangart"></a>';
+                  }
+                ?>
               </div>
               <ul class="menu">
-                <?php 
-                echo'
-                  <li><a href="../index.php?id='.$_GET['id'].'#accueil">Accueil</a></li>
-                  <li><a href="../index.php?id='.$_GET['id'].'#programme">Programme</a></li>
-                  <li><a href="../index.php?id='.$_GET['id'].'#lieu">Lieu & Horaires</a></li>
-                  <li><a href="../index.php?id='.$_GET['id'].'#concours">Concours</a></li>
-                  <li><a href="../index.php?id='.$_GET['id'].'#contact">Contact</a></li>';
-                ?>
+                <li><a href="#accueil">Home</a></li>
+                <li><a href="#programme">Program</a></li>
+                <li><a href="#lieu">Location & Schedules</a></li>
+                <li><a href="#concours">Contest</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
               <div class="profil">
-                <img class="icon_connect" src="img/profil.png" alt="Icône Profil">
-                <div class="compte">
-                  <ul class="profil_list">
-                    <li>
-                      <?php 
-                        if(!isset($_GET['id'])){
-                          echo '<a class="text_profil" href="login.php">Connect</a>';
-                        } else {
-                          echo '<a class="text_profil" href="#">Profil</a>
-                          <ul>';
-                            $requete='SELECT * FROM profil WHERE id_profil="1"';
-                            $resultats=$bdd->query($requete);
-                            $tabAdmin = $resultats->fetchAll();
-                            $resultats->closeCursor();
-                            if($_GET['id']==$tabAdmin[0]['id_profil']){
-                              echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
-                            }
-                              echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
-                              <li><a href="index.php" class="text_profil">Log Out</a></li>
-                          </ul>';
-                        }
-                      ?>   
-                    </li>
-                  </ul>
-                </div>
-                <div class="lang_div">
-                  <img src="img/lang_en.png" class="lang" alt="england flag">
+                <div class="account">
+                  <img class="icon_connect" id="logoProfil" src="img/profil.png" alt="Icône Profil">
+                  <div class="compte">
+                    <ul class="profil_list">
+                      <li>
+                        <?php 
+                          if(!isset($_GET['id'])){
+                            echo '<a class="text_profil" href="login.php">Login</a>';
+                          } 
+                          else {
+                            echo '<a class="text_profil" href="#">Profil</a>
+                            <ul>';
+                              $requete='SELECT * FROM profil WHERE id_profil="1"';
+                              $resultats=$bdd->query($requete);
+                              $tabAdmin = $resultats->fetchAll();
+                              $resultats->closeCursor();
+                              if($_GET['id']==$tabAdmin[0]['id_profil']){
+                                echo '<li><a href="admin/pagePasserelle.php?id='.$tabAdmin[0]['id_profil'].'" class="text_profil">Admin</a></li>';
+                              }
+                                echo '<li><a href="compte.php?id='.$_GET['id'].'" class="text_profil">Account</a></li>
+                                <li><a href="index.php" class="text_profil">Log Out</a></li>
+                            </ul>';
+                          }
+                        ?>   
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,5 +112,14 @@
     ?>
   </div>
   <?php include('footer.php'); ?>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha512-jGR1T3dQerLCSm/IGEGbndPwzszJBlKQ5Br9vuB0Pw2iyxOy+7AK+lJcCC8eaXyz/9du+bkCy4HXxByhxkHf+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="js/translate.js"></script>
+  <script src="js/darkMode.js"></script>
+  <script src="js_bootstrap/bootstrap.min.js"></script>
+  <script src="js/library.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init();</script>
 </body>
 </html>

@@ -64,7 +64,7 @@
     <link rel="stylesheet" type="text/css" href="../css_bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/design.css"/>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <title>HANGART - ANNEXE</title>
+    <title>HANGART - Admin</title>
 </head>
 <body class="body_compte">
     <div class="div_global_form">
